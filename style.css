@@ -203,6 +203,28 @@ body {
     transform: scale(1.1);
 }
 
+.personal-Imagem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.personal img{
+    display: flex;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.personal img:hover{
+    transform: scale(1.1);
+    border:3px solid #b9d900;
+}
 /* =========================================
    MODAL DE MATRÍCULA
 ========================================= */
