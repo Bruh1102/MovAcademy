@@ -1,0 +1,446 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 0;
+}
+
+body {
+    background-color: #000;
+    width: 100%;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+.header-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    padding: 10px 40px;
+    background-color: #000;
+}
+
+.nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 30px;
+    position: relative;
+    max-width: 1440px;
+    margin: auto;
+}
+
+.logo-img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.menu-principal {
+    position: relative;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.lista-menu a,
+.lista-menu1 a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    transition: 0.3s ease;
+    text-transform: uppercase;
+}
+
+/* Efeito de aumento */
+.lista-menu a:hover,
+.lista-menu1 a:hover {
+    transform: scale(1.1);
+}
+
+/* Linha verde */
+.lista-menu a::after,
+.lista-menu1 a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background-color: #D6F90B;
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+/* Aparecer linha ao passar o mouse */
+.lista-menu a:hover::after,
+.lista-menu1 a:hover::after {
+    width: 100%;
+}
+
+/* Página atual */
+.lista-menu1 a::after {
+    width: 100%;
+}
+.busca-Treino{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.busca-Treino input{
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 15px  60px;
+    background-color: #1a1025;
+    border: 1px solid #8A2BE2;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.busca-Treino input::placeholder{
+       color: #afafaf;
+}
+#textBusca {
+    color: #fff;
+    border: none;
+}
+#textBusca:focus {
+    outline: none;
+    box-shadow: none;
+}
+.busca i{
+    color: #fff;
+    font-size: 20px;
+    color: #A855F7;
+    display: block;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/*   ===========================================
+     Imagem da Página inicial
+     ==========================================*/
+
+.treino-Imagem {
+    position: relative;
+    width: 100%;
+    height: 700px;
+}
+
+.treino-Imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 25%;
+}
+
+/*   ==============================================
+      Texto que vai ficar em cima da imagem
+     =============================================*/
+
+.motivacao-text{
+    position: absolute;
+    left: 8%;
+    top: 30%;
+    z-index: 100;
+}
+.titulo-motivacao{
+    color: #fff;
+    width: 290px;
+    font-weight: 800;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.dest-desen{
+    color: #8A2BE2;
+}
+
+.dest-opor{
+    color: #D6F90B;
+}
+
+.juntesse{
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.btn-matricule{
+    display: flex;
+    justify-content: center;
+    position: relative; 
+}
+.btn-matricule button{
+    border: none;
+    padding: 20px 100px;
+    background-color: #D6F90B;
+    color: #000;
+    border-radius: 30px;
+    margin-top: 40px;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+.btn-matricule button:hover{
+    transform: scale(1.1);
+}
+
+/* =========================================
+   MODAL DE MATRÍCULA
+========================================= */
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.85);
+}
+
+.modal.ativo {
+    display: flex;
+}
+
+.modal-site {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    max-width: 900px;
+    min-height: 540px;
+    background-color: #111;
+    border: 1px solid #D6F90B;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+/* BOTÃO FECHAR */
+
+.fechar-modal {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    z-index: 10;
+    background: transparent;
+    color: #fff;
+    font-size: 35px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.fechar-modal:hover {
+    color: #D6F90B;
+    transform: scale(1.1);
+}
+
+/* IMAGEM */
+
+.modal-imagem {
+    position: relative;
+    height: 100%;
+    min-height: 540px;
+}
+
+.modal-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* TEXTOS SOBRE A IMAGEM */
+
+.text-modal {
+    position: absolute;
+    top: 55%;
+    left: 5%;
+    z-index: 2;
+}
+
+.modal-logo img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.matricula-titulo {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 35px;
+}
+
+.dest-matri {
+    color: #D6F90B;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.matri-para {
+    color: #fff;
+    font-weight: 600;
+}
+
+/* FORMULÁRIO */
+
+.input-model {
+    position: relative;
+    padding: 55px 25px 30px;
+    width: 100%;
+}
+
+.cad-model {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.item-model {
+    color: #D6F90B;
+    font-size: 30px;
+}
+
+.matri-text {
+    color: #fff;
+    font-size: 25px;
+    padding: 10px;
+}
+
+.vaga {
+    color: #ccc;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid #555;
+}
+
+/* INPUTS */
+
+.input-box {
+    padding: 8px 0;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #2b2a2a;
+    color: #fff;
+    font-size: 14px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-box input::placeholder {
+    color: #ccc;
+}
+
+.input-box input:focus {
+    border-color: #D6F90B;
+    box-shadow: 0 0 6px rgba(214, 249, 11, 0.25);
+}
+
+#dataNascimento {
+    color: #fff;
+}
+
+/* BOTÃO */
+
+.button-criar {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.button-criar button {
+    width: 100%;
+    padding: 13px;
+    border-radius: 5px;
+    background-color: #D6F90B;
+    color: #000;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.button-criar button:hover {
+    background-color: #b9d900;
+    transform: translateY(-2px);
+}
+
+/*  =========================================
+    Rodapé do site
+    ========================================*/
+
+.footer-box{
+    text-align: center;
+    margin-top: 80px;
+    border-top:1px solid #2b2a2a;
+}
+
+.rede-social{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.icone-redes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.icone-redes a i {
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.icone-redes a i:hover {
+    color: #D6F90B;
+    transform: scale(1.2);
+}
+
+.politica a{
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    margin-top: 30px;
+    font-size: 20px;
+    color: #fff;
+    transition: 0.5s ease;
+    text-decoration: none;
+}
+
+.politica a:hover{
+     color: #D6F90B;
+    transform: scale(1.1);
+}
