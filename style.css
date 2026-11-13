@@ -219,6 +219,7 @@ body {
     border-radius: 50%;
     cursor: pointer;
     transition: 0.3s ease;
+    margin-bottom: 30px;
 }
 
 .personal img:hover{
@@ -417,26 +418,24 @@ body {
     Rodapé do site
     ========================================*/
 
-.footer-box{
+.footer-box {
     text-align: center;
     margin-top: 80px;
-    border-top:1px solid #2b2a2a;
+    border-top: 1px solid #2b2a2a;
 }
 
-.rede-social{
+.rede-social {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 30px;
-    margin-top: 30px;
+    border-bottom: 1px solid #2b2a2a;
+    width: 100%;
+    padding: 40px 0;
 }
 
 .icone-redes {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 30px;
+    margin: 0;
 }
 
 .icone-redes a i {
@@ -448,21 +447,35 @@ body {
 
 .icone-redes a i:hover {
     color: #D6F90B;
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
-
-.politica a{
-    display: flex;
-    justify-content: center;
+.politica {
+    border-bottom: 1px solid #2b2a2a;
+    width: 100%;
+    padding: 20px 0;
+}
+.politica a {
+    display: inline-block;
     color: #fff;
     margin-top: 30px;
+    margin-bottom: 40px;
     font-size: 20px;
-    color: #fff;
-    transition: 0.5s ease;
+    transition: 0.3s ease;
     text-decoration: none;
+    
+
 }
 
-.politica a:hover{
-     color: #D6F90B;
+.politica a:hover {
+    color: #D6F90B;
     transform: scale(1.1);
+}
+
+.direito-uso  {
+   padding: 20px 0;
+}
+
+.direitos {
+    color: #ccc;
+    margin: 5px 0;
 }

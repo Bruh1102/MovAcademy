@@ -271,3 +271,254 @@ margin-right: auto;
     cursor: pointer;
     transition: 0.5s ease;
 }
+
+/*  ==============================
+    Modal Plano
+    =============================*/
+
+.plano-ModalCard{
+    background-color: #171519;
+    border: 1px solid #2b2a2a;
+    width: 100%;
+    max-width: 630px;
+    height: auto;
+    border-radius: 15px;
+    padding: 15px ;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    display: none;
+}
+.plano-ModalCard.ativo {
+    display: block;
+}
+.plano-Modal{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icone-Plano{
+    color: #E6FF00;
+    font-size: 35px;
+}
+
+.assinar-Plano{
+    color: #fff;
+}
+
+.confir-Plano{
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+/*  ========================================
+     Card Valor a pagar no Plano
+    =======================================*/
+.valor-PlanoM {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #39363B;
+    width: 100%;
+    max-width: 580px;
+    height: 100px;
+    border-radius: 10px;
+    background-color: #1a1025;
+    padding: 15px;
+    gap: 50px;
+}
+
+.selec-Plano {
+    border-right: 1px solid #fff;
+    padding: 0 50px 0 5px;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.preco-modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.valor-modal,
+.plano-Slec {
+    color: #fff;
+}
+
+.selecionado,
+.tempo-pago {
+    color: #ccc;
+}
+
+/*  =========================================
+     Escolhendo forma de Pagamento
+    ========================================*/
+.form-Paga{
+    position: relative;
+}
+.tipo-Paga{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+.card-paga{
+    position: relative;
+    border: 1px solid #39363B;
+    width: 100%;
+    max-width: 180px;
+    height: 130px;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #171519;
+    cursor: pointer;
+    transition: 0.5s ease;
+     margin-top: 10px;
+     text-align: center;
+}
+
+.pagamento-card{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.card-paga:hover{
+    border: 1px solid #E6FF00;
+    transform: scale(1.05);
+}
+.icone-Paga{
+    color: #fff;
+    font-size: 30px;
+}
+
+.pagamento{
+    color: #fff;
+}
+.input-paga input{
+    position: absolute;
+    top: 13%;
+    left: 8%;
+    z-index: 10;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}
+.pagmento-modal{
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    padding: 15px 0;
+}
+.pagmento-modal i{
+    color: #fff;
+    font-size: 30px;
+}
+.pago-Plano{
+    width: 150px;
+    color: #fff;
+    text-align: center;
+}
+
+.button-Assinar{
+    text-align: center;
+    margin-top: 40px;
+}
+.button-Assinar button{
+    width: 100%;
+    max-width: 300px;
+    padding: 10px 20px;
+    background-color: #E6FF00;
+    border-radius: 10px;
+    border: none;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.cancelar-button{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.cancelar-button button{
+    background-color: transparent;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+/*  =========================================
+    Rodapé do site
+    ========================================*/
+
+.footer-box {
+    text-align: center;
+    margin-top: 0px;
+    border-top: 1px solid #2b2a2a;
+    padding-top: 30px;
+}
+
+.rede-social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    border-bottom: 1px solid #2b2a2a;
+    width: 100%;
+    padding: 40px 0;
+}
+
+.icone-redes {
+    margin: 0;
+}
+
+.icone-redes a i {
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.icone-redes a i:hover {
+    color: #D6F90B;
+    transform: scale(1.1);
+}
+.politica {
+    border-bottom: 1px solid #2b2a2a;
+    width: 100%;
+    padding: 20px 0;
+}
+.politica a {
+    display: inline-block;
+    color: #fff;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    font-size: 20px;
+    transition: 0.3s ease;
+    text-decoration: none;
+    
+
+}
+
+.politica a:hover {
+    color: #D6F90B;
+    transform: scale(1.1);
+}
+
+.direito-uso  {
+   padding: 20px 0;
+}
+
+.direitos {
+    color: #ccc;
+    margin: 5px 0;
+}
