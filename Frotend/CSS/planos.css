@@ -1,0 +1,524 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&display=swap');
+
+:root {
+    --fundo-secao: #171519;
+    --fundo-card: #39363B;
+    --fundo-preco: #242226;
+    --amarelo-neon: #E6FF00;
+    --branco: #FFFFFF;
+    --cinza: #999999;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 0;
+}
+
+body {
+    background-color: #000;
+    width: 100%;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+.header-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    padding: 10px 40px;
+    background-color: #000;
+}
+
+.nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 30px;
+    position: relative;
+    max-width: 1440px;
+    margin: auto;
+}
+
+.logo-img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.menu-principal {
+    position: relative;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.lista-menu a,
+.lista-menu1 a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    transition: 0.3s ease;
+    text-transform: uppercase;
+}
+
+/* Efeito de aumento */
+.lista-menu a:hover,
+.lista-menu1 a:hover {
+    transform: scale(1.1);
+}
+
+/* Linha verde */
+.lista-menu a::after,
+.lista-menu1 a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background-color: #D6F90B;
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+/* Aparecer linha ao passar o mouse */
+.lista-menu a:hover::after,
+.lista-menu1 a:hover::after {
+    width: 100%;
+}
+
+/* Página atual */
+.lista-menu1 a::after {
+    width: 100%;
+}
+.busca-Treino{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.busca-Treino input{
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 15px  60px;
+    background-color: #1a1025;
+    border: 1px solid #8A2BE2;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.busca-Treino input::placeholder{
+       color: #afafaf;
+}
+#textBusca {
+    color: #fff;
+    border: none;
+}
+#textBusca:focus {
+    outline: none;
+    box-shadow: none;
+}
+.busca i{
+    color: #fff;
+    font-size: 20px;
+    color: #A855F7;
+    display: block;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+/*   ==================================================
+     Pagina de Planos
+     ================================================*/
+
+.academia {
+    position: relative;
+    width: 100%;
+    height: 800px;
+}
+
+.academia img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.assinaturas{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 300;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+
+.planos{
+    color: #fff;
+    width: 400px;
+    font-weight: 600;
+    font-size: 40px;
+}
+
+.plano-coomum{
+    width: 100%;
+    max-width: 400px;
+    height: 600px;
+    border-radius: 10px;
+    background-color: #39363B;
+}
+.valor-plano{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.comum-text{
+    background-color: #171718;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    text-transform: uppercase;
+    border-radius: 10px;
+}
+
+.preco{
+    background-color: #242226;
+    margin-top: 30px;
+    padding: 20px;
+    
+    
+}
+
+.linha{
+    border-bottom: 2px solid #000;
+    margin-top: 20px;
+    width: 80%;
+    text-align: center;
+    margin-left: auto;
+margin-right: auto;
+}
+.comum, 
+.valor,
+.mensal{
+    color: #fff;
+}
+
+.valor-desc{
+    color: #999999;
+    text-decoration: line-through;
+}
+.beneficios{
+    margin-top: 0px;
+    margin-left: 30px;
+}
+.list-bene{
+    color: #fff;
+    width: 240px;
+    padding: 8px;
+}
+.btn-assinar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+}
+.btn-assinar button{
+    padding: 8px 60px;
+    border: none;
+    border-radius: 10px;
+    background-color: #E6FF00;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.btn-assinar,
+.btn-premium, button:hover{
+    transform: scale(1.1);
+}
+
+.btn-premium {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+.btn-premium button{
+    padding: 8px 60px;
+    border: none;
+    border-radius: 10px;
+    background-color: #E6FF00;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+/*  ==============================
+    Modal Plano
+    =============================*/
+
+.plano-ModalCard{
+    background-color: #171519;
+    border: 1px solid #2b2a2a;
+    width: 100%;
+    max-width: 630px;
+    height: auto;
+    border-radius: 15px;
+    padding: 15px ;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    display: none;
+}
+.plano-ModalCard.ativo {
+    display: block;
+}
+.plano-Modal{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icone-Plano{
+    color: #E6FF00;
+    font-size: 35px;
+}
+
+.assinar-Plano{
+    color: #fff;
+}
+
+.confir-Plano{
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+/*  ========================================
+     Card Valor a pagar no Plano
+    =======================================*/
+.valor-PlanoM {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #39363B;
+    width: 100%;
+    max-width: 580px;
+    height: 100px;
+    border-radius: 10px;
+    background-color: #1a1025;
+    padding: 15px;
+    gap: 50px;
+}
+
+.selec-Plano {
+    border-right: 1px solid #fff;
+    padding: 0 50px 0 5px;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.preco-modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.valor-modal,
+.plano-Slec {
+    color: #fff;
+}
+
+.selecionado,
+.tempo-pago {
+    color: #ccc;
+}
+
+/*  =========================================
+     Escolhendo forma de Pagamento
+    ========================================*/
+.form-Paga{
+    position: relative;
+}
+.tipo-Paga{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+.card-paga{
+    position: relative;
+    border: 1px solid #39363B;
+    width: 100%;
+    max-width: 180px;
+    height: 130px;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #171519;
+    cursor: pointer;
+    transition: 0.5s ease;
+     margin-top: 10px;
+     text-align: center;
+}
+
+.pagamento-card{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.card-paga:hover{
+    border: 1px solid #E6FF00;
+    transform: scale(1.05);
+}
+.icone-Paga{
+    color: #fff;
+    font-size: 30px;
+}
+
+.pagamento{
+    color: #fff;
+}
+.input-paga input{
+    position: absolute;
+    top: 13%;
+    left: 8%;
+    z-index: 10;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}
+.pagmento-modal{
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    padding: 15px 0;
+}
+.pagmento-modal i{
+    color: #fff;
+    font-size: 30px;
+}
+.pago-Plano{
+    width: 150px;
+    color: #fff;
+    text-align: center;
+}
+
+.button-Assinar{
+    text-align: center;
+    margin-top: 40px;
+}
+.button-Assinar button{
+    width: 100%;
+    max-width: 300px;
+    padding: 10px 20px;
+    background-color: #E6FF00;
+    border-radius: 10px;
+    border: none;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.cancelar-button{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.cancelar-button button{
+    background-color: transparent;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+/*  =========================================
+    Rodapé do site
+    ========================================*/
+
+.footer-box {
+    text-align: center;
+    margin-top: 0px;
+    border-top: 1px solid #2b2a2a;
+    padding-top: 30px;
+}
+
+.rede-social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    border-bottom: 1px solid #2b2a2a;
+    width: 100%;
+    padding: 40px 0;
+}
+
+.icone-redes {
+    margin: 0;
+}
+
+.icone-redes a i {
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.icone-redes a i:hover {
+    color: #D6F90B;
+    transform: scale(1.1);
+}
+.politica {
+    border-bottom: 1px solid #2b2a2a;
+    width: 100%;
+    padding: 20px 0;
+}
+.politica a {
+    display: inline-block;
+    color: #fff;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    font-size: 20px;
+    transition: 0.3s ease;
+    text-decoration: none;
+    
+
+}
+
+.politica a:hover {
+    color: #D6F90B;
+    transform: scale(1.1);
+}
+
+.direito-uso  {
+   padding: 20px 0;
+}
+
+.direitos {
+    color: #ccc;
+    margin: 5px 0;
+}
