@@ -270,22 +270,26 @@ body {
     margin-top: 7rem;
 }
 .imagem-logo{
+    margin-top: 150px;
     position: relative;
     width: 100%;
     display: block;
+    text-align: center;
 }
 
 .imagem-logo img{
     width: 100%;
-    height: 650px;
+    height: 500px;
     object-fit: cover;
     border: 1px solid #39363B;
+    max-width: 90%;
+    border-radius: 10px;
 }
 
 .informa-loja{
     position: absolute;
-    top: 25%;
-    left: 25%;
+    top: 20%;
+    left: 30%;
     z-index: 30;
 }
 
@@ -293,8 +297,8 @@ body {
     text-align: center;
 }
 .loja-logo img {
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     object-fit: cover;
 }
 
@@ -326,14 +330,16 @@ body {
 .cards-loja-bene{
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 20px;
+    margin-top: 40px;
 }
 .card-loja{
     text-align: center;
     border: 1px solid #39363B;
     background-color: #333;
     width: 200px;
-    height: 100px;
-    padding: 10px;
+    height: 150px;
     border-radius: 8px;
+    padding: 25px 0;
 }
