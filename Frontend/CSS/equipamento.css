@@ -25,6 +25,7 @@ body {
     min-height: 100vh;
     font-family: 'Poppins', sans-serif;
     overflow-x: hidden;
+    position: relative;
 }
 
 .header-box {
@@ -673,7 +674,7 @@ body {
     text-align: center;
     margin-top: 80px;
     border-top: 1px solid #2b2a2a;
-    margin-left: 0;
+    margin-left: 150px;
     box-sizing: border-box;
 }
 
