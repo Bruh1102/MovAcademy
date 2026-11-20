@@ -342,7 +342,7 @@ img {
 
 .box-equipa {
     position: absolute;
-    top:10%;
+    top:8%;
     left: 27%;
     z-index: 100;
 }
@@ -865,7 +865,7 @@ img {
 
     .nome-produto,
     .preco-produto {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .info-loja2 {

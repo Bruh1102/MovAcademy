@@ -1,149 +1,313 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="/style.css">
     <link rel="shortcut icon" href="/Frontend/Assets/IMG/android-chrome-512x512.png" type="image/x-icon">
-    <link rel="stylesheet" href="/style.css">
+
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+
     <title>Inicio</title>
 </head>
+
 <body>
-    
+
     <header class="header-box">
-        <nav class="nav-bar">
-            <img src="/Frontend/Assets/IMG/logo.png" alt="imagrm principal" class="logo-img">
-            <ul class="menu-principal">
-                <li class="lista-menu1"><a href="/index.html">Inicio</a></li>
-                <li class="lista-menu"><a href="/Frontend/pages/planos.html">Planos</a></li>
-                <li class="lista-menu"><a href="/Frontend/pages/sobrenos.html">Sobre-nós
-                </a></li>
-                <li class="lista-menu"><a href="/Frontend/pages/loja.html">Loja</a></li>
-            </ul>
-             <div class="busca-Treino">
-                    <input type="text" name="texto" id="textBusca" placeholder="Buscar treinos...">
-                   <div class="busca"> <i class='bx bx-search'></i></div>
-                </div>
-        </nav>
+
+        
+<nav class="nav-bar">
+
+    <img src="/Frontend/Assets/IMG/logo.png"
+         alt="Imagem principal" class="logo-img">
+
+    <!-- BOTÃO MENU HAMBÚRGUER -->
+    <button class="btn-menu" id="btnMenu" type="button"
+        aria-label="Abrir menu" aria-expanded="false"
+        aria-controls="menuLateral">
+
+        <i class='bx bx-menu'></i>
+
+    </button>
+
+    <!-- MENU LATERAL -->
+    <div class="menu-lateral" id="menuLateral">
+
+        <!-- MENU PRINCIPAL -->
+        <ul class="menu-principal" id="menuPrincipal">
+
+            <li class="lista-menu1">
+                <a href="/index.html">Inicio</a>
+            </li>
+
+            <li class="lista-menu">
+                <a href="/Frontend/pages/planos.html">Planos</a>
+            </li>
+
+            <li class="lista-menu">
+                <a href="/Frontend/pages/sobrenos.html">Sobre-nós</a>
+            </li>
+
+            <li class="lista-menu">
+                <a href="/Frontend/pages/loja.html">Loja</a>
+            </li>
+
+            
+
+    </div>
+         <div class="busca-Treino">
+
+            <input type="text" name="texto" id="textBusca"
+                placeholder="Buscar treinos...">
+
+            <div class="busca">
+                <i class='bx bx-search'></i>
+            </div>
+
+        </div>
+        </ul>
+
+        <!-- PESQUISA -->
+        
+
+</nav>
+
+
     </header>
+
 
     <main>
 
-         <section>
-            <div class="treino-Imagem"><img src="/Frontend/Assets/IMG/imagem-home.png" alt="Imagem pagina Principal"></div>
+        <section>
 
-           <div class="motivacao-text">
-             <h1 class="titulo-motivacao">Invista seu <span class="dest-desen">desenvolvimento</span> e amplie suas <span class="dest-opor">oportunidade.</span></h1>
-            <p class="juntesse">Juste-se à nos!</p>
-           </div>
+            <!-- IMAGEM PRINCIPAL E TEXTO DE MOTIVAÇÃO -->
+            <div class="treino-Imagem">
 
-           <div class="btn-matricule"><button type="submit" id="matricule">Matricule-se</button></div>
+                <img src="/Frontend/Assets/IMG/imagem-home.png" alt="Imagem pagina Principal">
 
-           <div class="personal-Imagem">
-            <div class="personal"><img src="/Frontend/Assets/IMG/personal.jpeg" alt="personal"></div>
-            <div class="personal"><img src="/Frontend/Assets/IMG/personal1.jpeg" alt="personal"></div>
-            <div class="personal"><img src="/Frontend/Assets/IMG/personal2.jpeg" alt="personal"></div>
-           </div>
+                <div class="motivacao-text">
 
-           
-<!-- MODAL DE MATRÍCULA -->
-<div class="modal" id="modalMatricula">
+                    <h1 class="titulo-motivacao">
+                        Invista seu
+                        <span class="dest-desen">desenvolvimento</span>
+                        e amplie suas
+                        <span class="dest-opor">oportunidade.</span>
+                    </h1>
 
-    <div class="modal-site">
+                    <p class="juntesse">Juste-se à nos!</p>
 
-        <button class="fechar-modal" id="fecharModal" type="button">
-            &times;
-        </button>
-
-        <div class="modal-imagem">
-            <img src="/Frontend/Assets/IMG/modal-img.png" alt="Mulher treinando na academia">
-        </div>
-
-        <div class="text-modal">
-
-            <div class="modal-logo">
-                <img src="/Frontend/Assets/IMG/logo.png" alt="Logo MOV">
-            </div>
-
-            <h1 class="matricula-titulo">
-                Matri<span class="dest-matri">cule-se</span>
-            </h1>
-
-            <p class="matri-para">E dê o primeiro passo</p>
-            <p class="matri-para">para uma versão mais forte de você!</p>
-
-        </div>
-
-        <form class="input-model" id="formMatricula">
-
-            <div class="cad-model">
-                <div class="item-model">
-                    <i class='bx bx-dumbbell'></i>
                 </div>
 
-                <h1 class="matri-text">
-                    Matricule-se <span class="dest-matri">na MOV</span>
-                </h1>
             </div>
 
-            <p class="vaga">
-                Preencha todos os campos abaixo para garantir sua
-                <span class="dest-matri">vaga!</span>
-            </p>
 
-            <div class="input-box">
-                <input type="text" placeholder="Nome completo"
-                    id="nameUsuario" required>
+            <!-- BOTÃO DE MATRÍCULA FORA DA IMAGEM -->
+            <div class="btn-matricule">
+
+                <button type="submit" id="matricule">
+                    Matricule-se
+                </button>
+
             </div>
 
-            <div class="input-box">
-                <input type="email" id="email"
-                    placeholder="user@gmail.com" required>
+
+            <!-- PERSONAL TRAINERS -->
+            <div class="personal-Imagem">
+
+                <div class="personal">
+                    <img src="/Frontend/Assets/IMG/personal.jpeg" alt="personal">
+                </div>
+
+                <div class="personal">
+                    <img src="/Frontend/Assets/IMG/personal1.jpeg" alt="personal">
+                </div>
+
+                <div class="personal">
+                    <img src="/Frontend/Assets/IMG/personal2.jpeg" alt="personal">
+                </div>
+
             </div>
 
-            <div class="input-box">
-                <input type="password" id="password"
-                    placeholder="Digite sua senha" required>
+
+            <!-- MODAL DE MATRÍCULA -->
+            <div class="modal" id="modalMatricula">
+
+                <div class="modal-site">
+
+                    <button class="fechar-modal" id="fecharModal" type="button">
+                        &times;
+                    </button>
+
+
+                    <div class="modal-imagem">
+
+                        <img src="/Frontend/Assets/IMG/modal-img.png" alt="Mulher treinando na academia">
+
+                    </div>
+
+
+                    <div class="text-modal">
+
+                        <div class="modal-logo">
+                            <img src="/Frontend/Assets/IMG/logo.png" alt="Logo MOV">
+                        </div>
+
+                        <h1 class="matricula-titulo">
+                            Matri<span class="dest-matri">cule-se</span>
+                        </h1>
+
+                        <p class="matri-para">
+                            E dê o primeiro passo
+                        </p>
+
+                        <p class="matri-para">
+                            para uma versão mais forte de você!
+                        </p>
+
+                    </div>
+
+
+                    <form class="input-model" id="formMatricula">
+
+                        <div class="cad-model">
+
+                            <div class="item-model">
+                                <i class='bx bx-dumbbell'></i>
+                            </div>
+
+                            <h1 class="matri-text">
+                                Matricule-se
+                                <span class="dest-matri">na MOV</span>
+                            </h1>
+
+                        </div>
+
+
+                        <p class="vaga">
+                            Preencha todos os campos abaixo para garantir sua
+                            <span class="dest-matri">vaga!</span>
+                        </p>
+
+
+                        <div class="input-box">
+                            <input type="text" placeholder="Nome completo" id="nameUsuario" required>
+                        </div>
+
+
+                        <div class="input-box">
+                            <input type="email" id="email" placeholder="user@gmail.com" required>
+                        </div>
+
+
+                        <div class="input-box">
+                            <input type="password" id="password" placeholder="Digite sua senha" required>
+                        </div>
+
+
+                        <div class="input-box">
+                            <input type="date" id="dataNascimento" required>
+                        </div>
+
+
+                        <div class="input-box">
+                            <input type="tel" id="telefone" placeholder="(xx) xxxxx-xxxx" required>
+                        </div>
+
+
+                        <div class="button-criar">
+                            <button type="submit">
+                                Criar matrícula
+                            </button>
+                        </div>
+
+                    </form>
+
+                </div>
+
             </div>
 
-            <div class="input-box">
-                <input type="date" id="dataNascimento" required>
-            </div>
-
-            <div class="input-box">
-                <input type="tel" id="telefone"
-                    placeholder="(xx) xxxxx-xxxx" required>
-            </div>
-
-            <div class="button-criar">
-                <button type="submit">Criar matrícula</button>
-            </div>
-
-        </form>
-
-    </div>
-
-</div>
-
-         </section>
+        </section>
 
     </main>
+
+
+    <!-- RODAPÉ -->
     <footer class="footer-box">
+
         <img src="/Frontend/Assets/IMG/logo.png" alt="logo" class="logo-img">
 
+
         <div class="rede-social">
-               <p class="icone-redes"> <a href="#"><i class='bx bxl-instagram'></i></a></p>
-                <p class="icone-redes"><a href="#"><i class='bx bxl-facebook'></i></a></p>
-                <p class="icone-redes"><a href="#"><i class='bx bxl-tiktok'></i></a></p>
+
+            <p class="icone-redes">
+                <a href="#">
+                    <i class='bx bxl-instagram'></i>
+                </a>
+            </p>
+
+            <p class="icone-redes">
+                <a href="#">
+                    <i class='bx bxl-facebook'></i>
+                </a>
+            </p>
+
+            <p class="icone-redes">
+                <a href="#">
+                    <i class='bx bxl-tiktok'></i>
+                </a>
+            </p>
+
         </div>
-        <p class="politica"><a href="#">Políticas de Privacidade</a></p>
+
+
+        <p class="politica">
+            <a href="#">Políticas de Privacidade</a>
+        </p>
+
+
         <div class="direito-uso">
-            <p class="direitos">&copy; Todos os direitos reservados.</p>
-        <p class="direitos">Mov's Academia de Ginástica A/S CNPJ 455.796.890/0001</p>
+
+            <p class="direitos">
+                &copy; Todos os direitos reservados.
+            </p>
+
+            <p class="direitos">
+                Mov's Academia de Ginástica A/S CNPJ 455.796.890/0001
+            </p>
+
         </div>
+
     </footer>
 
+
     <script src="/Frontend/JS/model.js"></script>
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", () => {
+
+    const btnMenu = document.getElementById("btnMenu");
+    const menuPrincipal = document.getElementById("menuPrincipal");
+
+    btnMenu.addEventListener("click", (event) => {
+        event.stopPropagation();
+        menuPrincipal.classList.toggle("menu-aberto");
+    });
+
+    menuPrincipal.addEventListener("click", (event) => {
+        event.stopPropagation();
+    });
+
+    document.addEventListener("click", () => {
+        menuPrincipal.classList.remove("menu-aberto");
+    });
+
+});
+
+    </script>
+
 </body>
+
 </html>
