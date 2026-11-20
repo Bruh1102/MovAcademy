@@ -491,7 +491,7 @@ body {
 .imagem-prod img{
     width: 120px;
     height: 100px;
-    object-fit: cover;
+    object-fit: contain;
     background-color: #fff;
     padding: 5px;
     border-radius: 10px;
@@ -603,24 +603,19 @@ body {
      Trecho Sobre Nós, Página da Loja
      =====================================*/
 
+.benficios-content{
+    position: relative;
+}
+
 .container-cardSobre{
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 20px;
-    margin-top: 30px;
+    margin-top: 0px;
     position: relative;
 }
 
-.sobreNos-box{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    border: 1px solid #39363B;
-    width: 100%;
-    max-width: 880px;
-    height: 350px;
-    border-radius: 10px;
-}
 
 .image-content-treino img{
     width: 100%;
