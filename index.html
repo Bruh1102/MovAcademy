@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -7,7 +8,6 @@
 
     <link rel="stylesheet" href="/style.css">
     <link rel="shortcut icon" href="/Frontend/Assets/IMG/android-chrome-512x512.png" type="image/x-icon">
-
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
 
     <title>Inicio</title>
@@ -17,66 +17,62 @@
 
     <header class="header-box">
 
-        
-<nav class="nav-bar">
+        <nav class="nav-bar">
 
-    <img src="/Frontend/Assets/IMG/logo.png"
-         alt="Imagem principal" class="logo-img">
+            <img src="/Frontend/Assets/IMG/logo.png"
+                alt="Imagem principal" class="logo-img">
 
-    <!-- BOTÃO MENU HAMBÚRGUER -->
-    <button class="btn-menu" id="btnMenu" type="button"
-        aria-label="Abrir menu" aria-expanded="false"
-        aria-controls="menuLateral">
+            <!-- BOTÃO MENU HAMBÚRGUER -->
+            <button class="btn-menu" id="btnMenu" type="button"
+                aria-label="Abrir menu"
+                aria-expanded="false"
+                aria-controls="menuLateral">
 
-        <i class='bx bx-menu'></i>
+                <i class='bx bx-menu'></i>
 
-    </button>
+            </button>
 
-    <!-- MENU LATERAL -->
-    <div class="menu-lateral" id="menuLateral">
+            <!-- MENU LATERAL -->
+            <div class="menu-lateral" id="menuLateral">
 
-        <!-- MENU PRINCIPAL -->
-        <ul class="menu-principal" id="menuPrincipal">
+                <!-- MENU PRINCIPAL -->
+                <ul class="menu-principal" id="menuPrincipal">
 
-            <li class="lista-menu1">
-                <a href="/index.html">Inicio</a>
-            </li>
+                    <li class="lista-menu1">
+                        <a href="/index.html">Inicio</a>
+                    </li>
 
-            <li class="lista-menu">
-                <a href="/Frontend/pages/planos.html">Planos</a>
-            </li>
+                    <li class="lista-menu">
+                        <a href="/Frontend/pages/planos.html">Planos</a>
+                    </li>
 
-            <li class="lista-menu">
-                <a href="/Frontend/pages/sobrenos.html">Sobre-nós</a>
-            </li>
+                    <li class="lista-menu">
+                        <a href="/Frontend/pages/sobrenos.html">Sobre-nós</a>
+                    </li>
 
-            <li class="lista-menu">
-                <a href="/Frontend/pages/loja.html">Loja</a>
-            </li>
+                    <li class="lista-menu">
+                        <a href="/Frontend/pages/loja.html">Loja</a>
+                    </li>
 
-            
+                </ul>
 
-    </div>
-         <div class="busca-Treino">
+                <!-- PESQUISA -->
+                <div class="busca-Treino">
 
-            <input type="text" name="texto" id="textBusca"
-                placeholder="Buscar treinos...">
+                    <input type="text" name="texto" id="textBusca"
+                        placeholder="Buscar treinos...">
 
-            <div class="busca">
-                <i class='bx bx-search'></i>
+                    <div class="busca">
+                        <i class='bx bx-search'></i>
+                    </div>
+
+                </div>
+
             </div>
 
-        </div>
-        </ul>
-
-        <!-- PESQUISA -->
-        
-
-</nav>
-
+        </nav>
 
     </header>
-
 
     <main>
 
@@ -85,7 +81,8 @@
             <!-- IMAGEM PRINCIPAL E TEXTO DE MOTIVAÇÃO -->
             <div class="treino-Imagem">
 
-                <img src="/Frontend/Assets/IMG/imagem-home.png" alt="Imagem pagina Principal">
+                <img src="/Frontend/Assets/IMG/imagem-home.png"
+                    alt="Imagem pagina Principal">
 
                 <div class="motivacao-text">
 
@@ -102,7 +99,6 @@
 
             </div>
 
-
             <!-- BOTÃO DE MATRÍCULA FORA DA IMAGEM -->
             <div class="btn-matricule">
 
@@ -111,7 +107,6 @@
                 </button>
 
             </div>
-
 
             <!-- PERSONAL TRAINERS -->
             <div class="personal-Imagem">
@@ -130,7 +125,6 @@
 
             </div>
 
-
             <!-- MODAL DE MATRÍCULA -->
             <div class="modal" id="modalMatricula">
 
@@ -140,13 +134,12 @@
                         &times;
                     </button>
 
-
                     <div class="modal-imagem">
 
-                        <img src="/Frontend/Assets/IMG/modal-img.png" alt="Mulher treinando na academia">
+                        <img src="/Frontend/Assets/IMG/modal-img.png"
+                            alt="Mulher treinando na academia">
 
                     </div>
-
 
                     <div class="text-modal">
 
@@ -168,7 +161,6 @@
 
                     </div>
 
-
                     <form class="input-model" id="formMatricula">
 
                         <div class="cad-model">
@@ -184,37 +176,34 @@
 
                         </div>
 
-
                         <p class="vaga">
                             Preencha todos os campos abaixo para garantir sua
                             <span class="dest-matri">vaga!</span>
                         </p>
 
-
                         <div class="input-box">
-                            <input type="text" placeholder="Nome completo" id="nameUsuario" required>
+                            <input type="text" placeholder="Nome completo"
+                                id="nameUsuario" required>
                         </div>
 
-
                         <div class="input-box">
-                            <input type="email" id="email" placeholder="user@gmail.com" required>
+                            <input type="email" id="email"
+                                placeholder="user@gmail.com" required>
                         </div>
 
-
                         <div class="input-box">
-                            <input type="password" id="password" placeholder="Digite sua senha" required>
+                            <input type="password" id="password"
+                                placeholder="Digite sua senha" required>
                         </div>
-
 
                         <div class="input-box">
                             <input type="date" id="dataNascimento" required>
                         </div>
 
-
                         <div class="input-box">
-                            <input type="tel" id="telefone" placeholder="(xx) xxxxx-xxxx" required>
+                            <input type="tel" id="telefone"
+                                placeholder="(xx) xxxxx-xxxx" required>
                         </div>
-
 
                         <div class="button-criar">
                             <button type="submit">
@@ -232,12 +221,10 @@
 
     </main>
 
-
     <!-- RODAPÉ -->
     <footer class="footer-box">
 
         <img src="/Frontend/Assets/IMG/logo.png" alt="logo" class="logo-img">
-
 
         <div class="rede-social">
 
@@ -261,11 +248,9 @@
 
         </div>
 
-
         <p class="politica">
-            <a href="#">Políticas de Privacidade</a>
+            <a href="/Frontend/pages/politicaeprivacidade.html">Políticas de Privacidade</a>
         </p>
-
 
         <div class="direito-uso">
 
@@ -281,33 +266,80 @@
 
     </footer>
 
-
     <script src="/Frontend/JS/model.js"></script>
 
+    <!-- JAVASCRIPT DO MENU HAMBÚRGUER -->
     <script>
 
         document.addEventListener("DOMContentLoaded", () => {
 
-    const btnMenu = document.getElementById("btnMenu");
-    const menuPrincipal = document.getElementById("menuPrincipal");
+            const btnMenu = document.getElementById("btnMenu");
+            const menuLateral = document.getElementById("menuLateral");
+            const linksMenu = menuLateral.querySelectorAll("a");
 
-    btnMenu.addEventListener("click", (event) => {
-        event.stopPropagation();
-        menuPrincipal.classList.toggle("menu-aberto");
-    });
+            function abrirMenu() {
 
-    menuPrincipal.addEventListener("click", (event) => {
-        event.stopPropagation();
-    });
+                menuLateral.classList.add("menu-aberto");
 
-    document.addEventListener("click", () => {
-        menuPrincipal.classList.remove("menu-aberto");
-    });
+                btnMenu.setAttribute("aria-expanded", "true");
+                btnMenu.setAttribute("aria-label", "Fechar menu");
 
-});
+                btnMenu.innerHTML = "<i class='bx bx-x'></i>";
+
+            }
+
+            function fecharMenu() {
+
+                menuLateral.classList.remove("menu-aberto");
+
+                btnMenu.setAttribute("aria-expanded", "false");
+                btnMenu.setAttribute("aria-label", "Abrir menu");
+
+                btnMenu.innerHTML = "<i class='bx bx-menu'></i>";
+
+            }
+
+            btnMenu.addEventListener("click", (event) => {
+
+                event.stopPropagation();
+
+                const menuAberto = menuLateral.classList.contains("menu-aberto");
+
+                if (menuAberto) {
+                    fecharMenu();
+                } else {
+                    abrirMenu();
+                }
+
+            });
+
+            menuLateral.addEventListener("click", (event) => {
+                event.stopPropagation();
+            });
+
+            document.addEventListener("click", () => {
+                fecharMenu();
+            });
+
+            linksMenu.forEach((link) => {
+
+                link.addEventListener("click", () => {
+                    fecharMenu();
+                });
+
+            });
+
+            document.addEventListener("keydown", (event) => {
+
+                if (event.key === "Escape") {
+                    fecharMenu();
+                }
+
+            });
+
+        });
 
     </script>
 
 </body>
-
 </html>

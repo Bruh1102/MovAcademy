@@ -67,6 +67,19 @@ img {
 
 
 /* =========================================
+   MENU LATERAL / AGRUPAMENTO
+========================================= */
+
+.menu-lateral {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    flex: 1;
+}
+
+
+/* =========================================
    MENU PRINCIPAL
 ========================================= */
 
@@ -193,7 +206,7 @@ img {
 
 .treino-Imagem {
     position: relative;
-    width:  100%;
+    width: 100%;
 }
 
 .treino-Imagem img {
@@ -588,6 +601,10 @@ img {
         height: 85px;
     }
 
+    .menu-lateral {
+        gap: 20px;
+    }
+
     .menu-principal {
         gap: 22px;
     }
@@ -613,6 +630,7 @@ img {
 
 /* =========================================
    TABLETS E IPADS
+   MENU SUSPENSO
 ========================================= */
 
 @media screen and (max-width: 1024px) {
@@ -624,6 +642,7 @@ img {
     .nav-bar {
         justify-content: space-between;
         gap: 15px;
+        position: relative;
     }
 
     .logo-img {
@@ -638,55 +657,84 @@ img {
         order: 3;
         font-size: 38px;
         position: relative;
-        z-index: 1002;
+        z-index: 10002;
     }
 
-    /* MENU PRINCIPAL */
+    /* PAINEL FECHADO */
+
+    .menu-lateral {
+        display: block;
+        position: absolute;
+        top: calc(100% + 12px);
+        right: 0;
+        left: auto;
+        z-index: 10000;
+
+        width: min(280px, 85vw);
+        height: auto;
+        max-height: calc(100dvh - 110px);
+
+        padding: 15px;
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        background: #0b0b0b;
+        border: 1px solid #39363B;
+        border-radius: 12px;
+
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+
+        transform: translateY(-10px);
+
+        transition:
+            opacity 0.25s ease,
+            transform 0.25s ease,
+            visibility 0.25s ease;
+    }
+
+    /* PAINEL ABERTO */
+
+    .menu-lateral.menu-aberto {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+
+    /* ITENS DO MENU */
 
     .menu-principal {
         display: flex;
-        position: fixed;
+        position: relative;
 
-        top: 0;
-        right: 0;
+        width: 100%;
+        max-width: none;
+        height: auto;
 
-        width: 250px;
-        height: 100vh;
-        height: 100dvh;
+        padding: 0;
 
-        padding: 110px 20px 30px;
-
-        background-color: #080808;
-        border-left: 2px solid #8A2BE2;
-
+        background: transparent;
+        border: none;
         border-radius: 0;
 
         flex-direction: column;
         align-items: stretch;
         justify-content: flex-start;
 
-        gap: 15px;
+        gap: 0;
 
-        box-shadow: -8px 0 25px rgba(138, 43, 226, 0.2);
+        box-shadow: none;
+        overflow: visible;
 
-        overflow-y: auto;
-
-        transform: translateX(100%);
-        visibility: hidden;
-
-        transition: transform 0.35s ease, visibility 0.35s ease;
-
-        z-index: 1001;
-    }
-
-    /* MENU ABERTO */
-
-    .menu-principal.menu-aberto {
-        transform: translateX(0);
+        transform: none;
         visibility: visible;
-    }
-    /* ITENS DO MENU */
 
+        transition: none;
+    }
 
     .menu-principal li {
         width: 100%;
@@ -694,35 +742,55 @@ img {
         list-style: none;
     }
 
-    .menu-principal li a {
-        display: block;
+    .lista-menu a,
+    .lista-menu1 a {
+        display: flex;
+        align-items: center;
         width: 100%;
-        padding: 15px 12px;
-        font-size: 18px;
+        padding: 12px 13px;
+        font-size: 15px;
         color: #fff;
-        border-radius: 8px;
+        border-bottom: 1px solid #252525;
+        text-transform: uppercase;
         transition: 0.3s ease;
     }
 
-    .menu-principal li a:hover {
-        background-color: #1a1025;
-        color: #D6F90B;
-        transform: translateX(5px);
-    }
-
-    .menu-principal li a::after {
+    .lista-menu a::after,
+    .lista-menu1 a::after {
         display: none;
     }
 
-    /* PESQUISA */
+    .lista-menu a:hover,
+    .lista-menu1 a:hover {
+        color: #D6F90B;
+        transform: none;
+        padding-left: 18px;
+        background: transparent;
+    }
+
+    .lista-menu:last-child a,
+    .lista-menu1:last-child a {
+        border-bottom: none;
+    }
+
+    /* PESQUISA DENTRO DO PAINEL */
 
     .busca-Treino {
-        width: min(300px, 100%);
-        margin-left: auto;
+        display: flex;
+        width: 100%;
+        max-width: 100%;
+        margin: 15px 0 0;
+        flex-shrink: 0;
     }
 
     .busca-Treino input {
-        padding: 13px 40px 13px 15px;
+        padding: 12px 38px 12px 12px;
+        font-size: 12px;
+    }
+
+    .busca i {
+        font-size: 18px;
+        right: 10px;
     }
 
     /* TEXTO DA IMAGEM PRINCIPAL */
@@ -776,8 +844,8 @@ img {
     .matricula-titulo {
         font-size: 28px;
     }
-
 }
+
 
 /* =========================================
    CELULARES GRANDES E TABLETS PEQUENOS
@@ -802,22 +870,25 @@ img {
         font-size: 34px;
     }
 
+    /* PAINEL DO MENU */
+
+    .menu-lateral {
+        width: min(300px, 85vw);
+        max-height: calc(100dvh - 100px);
+        padding: 15px;
+        gap: 0;
+    }
+
+    .menu-principal {
+        gap: 0;
+    }
+
     .busca-Treino {
-        width: min(240px, 100%);
+        margin-top: 15px;
     }
 
     .busca-Treino input {
         padding: 12px 35px 12px 12px;
-        font-size: 12px;
-    }
-
-    .busca i {
-        font-size: 18px;
-        right: 10px;
-    }
-
-    .menu-principal {
-        width: min(300px, 90vw);
     }
 
     .treino-Imagem img {
@@ -992,23 +1063,16 @@ img {
         font-size: 32px;
     }
 
-    .busca-Treino {
-        width: 48%;
-    }
+    /* PAINEL DO MENU */
 
-    .busca-Treino input {
-        padding: 10px 30px 10px 10px;
-        font-size: 11px;
-    }
-
-    .busca i {
-        font-size: 16px;
-        right: 8px;
+    .menu-lateral {
+        width: min(280px, 88vw);
+        padding: 15px;
+        max-height: calc(100dvh - 90px);
     }
 
     .menu-principal {
-        width: min(280px, 90vw);
-        padding: 22px;
+        gap: 0;
     }
 
     .motivacao-text {
@@ -1126,24 +1190,16 @@ img {
         font-size: 28px;
     }
 
-    .busca-Treino {
-        width: 50%;
-    }
+    /* PAINEL DO MENU */
 
-    .busca-Treino input {
-        padding: 9px 27px 9px 7px;
-        font-size: 10px;
-    }
-
-    .busca i {
-        font-size: 14px;
-        right: 7px;
+    .menu-lateral {
+        width: min(250px, 90vw);
+        padding: 12px;
+        max-height: calc(100dvh - 80px);
     }
 
     .menu-principal {
-        width: 250px;
-        padding: 18px;
-        gap: 20px;
+        gap: 0;
     }
 
     .lista-menu a,
@@ -1424,6 +1480,14 @@ img {
         height: 50px;
     }
 
+    /* PAINEL DO MENU */
+
+    .menu-lateral {
+        max-height: calc(100dvh - 70px);
+        padding: 12px 15px;
+        gap: 0;
+    }
+
     .modal {
         align-items: flex-start;
     }
@@ -1440,5 +1504,4 @@ img {
     .input-model {
         padding: 15px;
     }
-
 }

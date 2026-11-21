@@ -21,503 +21,410 @@
 <body>
 
     <!-- CABEÇALHO -->
-    <header class="cabecalho">
+    <header class="header-box">
 
-        <a href="/index.html" class="logo">
-            <span class="logo-simbolo">M</span>
-            <span class="logo-texto">
-                <strong>MOV</strong>
-                <small>ACADEMY</small>
-            </span>
-        </a>
+        <nav class="nav-bar">
 
-        <nav class="menu">
-            <a href="/index.html">Home</a>
-            <a href="/Frontend/HTML/planos.html">Planos</a>
-            <a href="/Frontend/HTML/sobre.html">Quem somos?</a>
-            <a href="/Frontend/HTML/loja.html">Loja</a>
-            <a href="/Frontend/HTML/busca.html">Busca</a>
-        </nav>
+            <!-- LOGO -->
+            <img src="/Frontend/Assets/IMG/logo.png"
+                alt="Logo MOV Academy"
+                class="logo-img">
 
-        <div class="acoes">
+            <!-- MENU LATERAL -->
+            <div class="menu-lateral" id="menuLateral">
 
-            <div class="pesquisa">
-                <input type="text" placeholder="Pesquisar produtos...">
-                <i class='bx bx-search'></i>
+                <!-- MENU PRINCIPAL -->
+                <ul class="menu-principal" id="menuPrincipal">
+
+                    <li class="lista-menu1">
+                        <a href="/index.html">Início</a>
+                    </li>
+
+                    <li class="lista-menu">
+                        <a href="/Frontend/pages/planos.html">Planos</a>
+                    </li>
+
+                    <li class="lista-menu">
+                        <a href="/Frontend/pages/sobrenos.html">Sobre-nós</a>
+                    </li>
+
+                    <li class="lista-menu">
+                        <a href="/Frontend/pages/loja.html">Loja</a>
+                    </li>
+
+                      <div class="busca-Treino">
+
+                <input
+                    type="text"
+                    name="texto"
+                    id="textBusca"
+                    placeholder="Buscar treinos..."
+                >
+
+                <div class="busca">
+                    <i class='bx bx-search'></i>
+                </div>
+
             </div>
 
-            <a href="#" class="icone">
-                <i class='bx bx-user'></i>
-            </a>
+                </ul>
 
-            <a href="#" class="icone carrinho">
-                <i class='bx bx-cart'></i>
-                <span>0</span>
-            </a>
+            </div>
 
-        </div>
+            <!-- PESQUISA -->
+          
+
+            <!-- BOTÃO MENU HAMBÚRGUER -->
+            <button
+                class="btn-menu"
+                id="btnMenu"
+                type="button"
+                aria-label="Abrir menu"
+                aria-expanded="false"
+                aria-controls="menuLateral"
+            >
+                <i class='bx bx-menu'></i>
+            </button>
+
+        </nav>
 
     </header>
 
 
-    <!-- BANNER PRINCIPAL -->
-    <section class="banner">
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main>
 
-        <div class="banner-conteudo">
+        <section class="politica">
 
-            <span class="subtitulo">
-                SUA PRIVACIDADE EM PRIMEIRO LUGAR
-            </span>
-
-            <h1>
-                Políticas de<br>
-                <strong>Privacidade</strong>
-            </h1>
-
-            <p>
-                Conheça os nossos termos de privacidade e saiba
-                como protegemos as suas informações.
-            </p>
-
-            <div class="linha-verde"></div>
-
-        </div>
-
-        <div class="banner-icone">
-            <i class='bx bx-shield-quarter'></i>
-            <i class='bx bx-lock-alt cadeado'></i>
-        </div>
-
-    </section>
-
-
-    <!-- CONTEÚDO -->
-    <main class="conteudo">
-
-        <!-- MENU LATERAL -->
-        <aside class="lateral">
-
-            <div class="navegacao">
-
-                <h3>Navegação</h3>
-
-                <a href="/index.html">
-                    <i class='bx bx-home-alt'></i>
-                    Início
-                </a>
-
-                <a href="#" class="ativo">
-                    <i class='bx bx-shield-quarter'></i>
-                    Políticas de Privacidade
-                </a>
-
-                <a href="/Frontend/HTML/termos.html">
-                    <i class='bx bx-file'></i>
-                    Termos de Uso
-                </a>
-
-                <a href="/Frontend/HTML/trocas.html">
-                    <i class='bx bx-transfer-alt'></i>
-                    Trocas e Devoluções
-                </a>
-
-                <a href="/Frontend/HTML/contato.html">
-                    <i class='bx bx-envelope'></i>
-                    Contato
-                </a>
-
-            </div>
-
-
-            <!-- CARD LATERAL -->
-            <div class="card-lateral">
-
-                <div class="card-lateral-conteudo">
-
-                    <span> MOV ACADEMY </span>
-
-                    <h3>
-                        Treine com
-                        segurança e
-                        confiança.
-                    </h3>
-
-                    <p>
-                        Sua experiência é nossa prioridade.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </aside>
-
-
-        <!-- POLÍTICA DE PRIVACIDADE -->
-        <article class="politica-card">
-
+            <!-- TÍTULO -->
             <div class="titulo-politica">
 
-                <div class="icone-titulo">
-                    <i class='bx bx-shield-quarter'></i>
-                    <i class='bx bx-lock-alt cadeado-titulo'></i>
-                </div>
-
-                <div>
-                    <h2>Políticas de Privacidade</h2>
-
-                    <p class="data">
-                        Última atualização:
-                        <strong>19 de Novembro de 2026</strong>
-                    </p>
-                </div>
-
-            </div>
-
-
-            <div class="introducao">
+                <h1>Política de Privacidade</h1>
 
                 <p>
-                    A MOV Academy respeita e protege a privacidade de
-                    todos os usuários do nosso site. Esta Política
-                    mostra como armazenamos seus dados e protegemos
-                    suas informações com segurança.
+                    Sua privacidade também faz parte do seu treino.
                 </p>
 
             </div>
 
 
-            <!-- SEÇÃO 1 -->
-            <section class="secao">
+            <!-- 1. COMPROMISSO -->
+            <section>
 
-                <div class="icone-secao">
-                    <i class='bx bx-user'></i>
-                </div>
+                <h2>1. Nosso compromisso com você</h2>
 
-                <div class="texto-secao">
-
-                    <h3>1. Visão Geral</h3>
-
-                    <p>
-                        A MOV Academy respeita e protege a privacidade
-                        de todos os usuários do nosso site.
-                    </p>
-
-                </div>
+                <p>
+                    Na MOV Academy, acreditamos que cuidar de você vai muito além
+                    dos treinos. Respeitar sua privacidade e proteger suas
+                    informações pessoais também é uma das nossas prioridades.
+                    Por isso, esta Política de Privacidade explica como seus dados
+                    são coletados, utilizados e protegidos quando você acessa
+                    nosso site ou utiliza nossos serviços.
+                </p>
 
             </section>
 
 
-            <!-- SEÇÃO 2 -->
-            <section class="secao">
+            <!-- 2. INFORMAÇÕES COLETADAS -->
+            <section>
 
-                <div class="icone-secao">
-                    <i class='bx bx-data'></i>
-                </div>
+                <h2>2. Quais informações coletamos?</h2>
 
-                <div class="texto-secao">
+                <p>
+                    Para oferecer nossos serviços e proporcionar uma boa
+                    experiência, podemos coletar algumas informações durante
+                    seu cadastro ou utilização da plataforma, como:
+                </p>
 
-                    <h3>2. Informações Coletadas</h3>
+                <ul>
+                    <li>Nome completo;</li>
+                    <li>Endereço de e-mail;</li>
+                    <li>Número de telefone;</li>
+                    <li>Informações relacionadas a pagamentos, quando necessário;</li>
+                    <li>Dados de navegação e utilização do site.</li>
+                </ul>
 
-                    <p>
-                        Durante o uso do nosso site, poderão ser
-                        solicitadas breves informações pessoais.
-                        Essas informações serão coletadas para
-                        melhorar a experiência em nosso site e
-                        fornecer serviços especializados.
-                    </p>
-
-                    <p>As informações pedidas podem incluir:</p>
-
-                    <ul>
-                        <li>Nome completo;</li>
-                        <li>Endereço de e-mail;</li>
-                        <li>Número de telefone;</li>
-                        <li>CPF;</li>
-                        <li>Data de nascimento;</li>
-                        <li>Endereço residencial (opcional).</li>
-                    </ul>
-
-                </div>
+                <p>
+                    Essas informações nos ajudam a identificar você, organizar
+                    seus cadastros e oferecer nossos serviços da melhor maneira.
+                </p>
 
             </section>
 
 
-            <!-- SEÇÃO 3 -->
-            <section class="secao">
+            <!-- 3. UTILIZAÇÃO DAS INFORMAÇÕES -->
+            <section>
 
-                <div class="icone-secao">
-                    <i class='bx bx-cog'></i>
-                </div>
+                <h2>3. Como utilizamos suas informações?</h2>
 
-                <div class="texto-secao">
+                <p>
+                    Seus dados são utilizados para manter nossos serviços
+                    funcionando e melhorar sua experiência com a MOV Academy.
+                    Entre as principais finalidades estão:
+                </p>
 
-                    <h3>3. Utilização dos Dados</h3>
-
-                    <p>
-                        As informações coletadas serão utilizadas
-                        para fornecer serviços personalizados,
-                        melhorar a experiência do usuário e enviar
-                        comunicações relevantes.
-                    </p>
-
-                    <p>
-                        Não compartilharemos suas informações com
-                        terceiros sem a sua permissão, exceto quando
-                        exigido por lei.
-                    </p>
-
-                    <ul>
-                        <li>Processar pedidos e compras;</li>
-                        <li>Realizar entregas;</li>
-                        <li>Enviar atualizações sobre pedidos;</li>
-                        <li>Melhorar a experiência de navegação;</li>
-                        <li>Oferecer atendimento ao cliente.</li>
-                    </ul>
-
-                </div>
+                <ul>
+                    <li>Realizar cadastros e gerenciar matrículas;</li>
+                    <li>Oferecer suporte e atendimento;</li>
+                    <li>Melhorar nossos serviços e funcionalidades;</li>
+                    <li>Enviar informações sobre planos e novidades, quando autorizado;</li>
+                    <li>Cumprir obrigações legais e regulatórias.</li>
+                </ul>
 
             </section>
 
 
-            <!-- SEÇÃO 4 -->
-            <section class="secao">
+            <!-- 4. PROTEÇÃO DOS DADOS -->
+            <section>
 
-                <div class="icone-secao">
-                    <i class='bx bx-shield-quarter'></i>
-                </div>
+                <h2>4. Como protegemos seus dados?</h2>
 
-                <div class="texto-secao">
+                <p>
+                    Levamos a segurança das suas informações a sério.
+                    Adotamos medidas de proteção para evitar acessos não
+                    autorizados, alterações, perdas ou utilizações indevidas.
+                </p>
 
-                    <h3>4. Proteção das Informações</h3>
+                <p>
+                    O acesso aos dados pessoais deve ser limitado às pessoas
+                    autorizadas que realmente precisam dessas informações
+                    para realizar suas atividades.
+                </p>
 
-                    <p>
-                        A MOV Academy busca adotar medidas técnicas
-                        e protetivas para proteger os dados pessoais
-                        contra acessos não autorizados, perdas,
-                        alterações ou divulgações indevidas.
-                    </p>
-
-                </div>
-
-            </section>
-
-
-            <!-- SEÇÃO 5 -->
-            <section class="secao">
-
-                <div class="icone-secao">
-                    <i class='bx bx-share-alt'></i>
-                </div>
-
-                <div class="texto-secao">
-
-                    <h3>5. Compartilhamento de Dados</h3>
-
-                    <p>
-                        Não espalhamos informações pessoais dos
-                        nossos clientes. O compartilhamento poderá
-                        ocorrer quando necessário para a realização
-                        de pagamentos, entregas ou cumprimento de
-                        obrigações legais.
-                    </p>
-
-                </div>
+                <p>
+                    Mesmo com todos os cuidados, nenhum sistema é totalmente
+                    livre de riscos. Por isso, buscamos manter nossas medidas
+                    de segurança sempre atualizadas.
+                </p>
 
             </section>
 
 
-            <!-- SEÇÃO 6 -->
-            <section class="secao">
+            <!-- 5. DIREITOS DO USUÁRIO -->
+            <section>
 
-                <div class="icone-secao">
-                    <i class='bx bx-cookie'></i>
-                </div>
+                <h2>5. Quais são os seus direitos?</h2>
 
-                <div class="texto-secao">
+                <p>
+                    Você tem o direito de saber como suas informações são
+                    utilizadas e pode solicitar alterações sempre que necessário.
+                    Conforme a Lei Geral de Proteção de Dados (LGPD), você pode:
+                </p>
 
-                    <h3>6. Cookies</h3>
+                <ul>
+                    <li>Consultar seus dados pessoais;</li>
+                    <li>Solicitar a correção de informações incompletas ou desatualizadas;</li>
+                    <li>Solicitar a exclusão dos dados, quando aplicável;</li>
+                    <li>Obter informações sobre o tratamento dos seus dados;</li>
+                    <li>Revogar seu consentimento, quando aplicável.</li>
+                </ul>
 
-                    <p>
-                        Nosso site poderá utilizar cookies para
-                        personalizar a experiência do usuário,
-                        melhorar a navegação e compreender como
-                        os visitantes utilizam a plataforma.
-                    </p>
-
-                </div>
-
-            </section>
-
-
-            <!-- SEÇÃO 7 -->
-            <section class="secao">
-
-                <div class="icone-secao">
-                    <i class='bx bx-refresh'></i>
-                </div>
-
-                <div class="texto-secao">
-
-                    <h3>7. Direitos dos Usuários</h3>
-
-                    <p>
-                        De acordo com a Lei Geral de Proteção de
-                        Dados (LGPD), os usuários podem solicitar,
-                        conforme as condições legais:
-                    </p>
-
-                    <ul>
-                        <li>Confirmação do tratamento de seus dados;</li>
-                        <li>Acesso às informações pessoais;</li>
-                        <li>Correção de dados incompletos ou incorretos;</li>
-                        <li>Exclusão de dados, quando aplicável.</li>
-                    </ul>
-
-                </div>
+                <p>
+                    Respeitamos seus direitos e estamos disponíveis para
+                    atender às suas solicitações.
+                </p>
 
             </section>
 
 
-            <!-- SEÇÃO 8 -->
-            <section class="secao">
+            <!-- 6. COMPARTILHAMENTO -->
+            <section>
 
-                <div class="icone-secao">
-                    <i class='bx bx-edit'></i>
-                </div>
+                <h2>6. Compartilhamento de informações</h2>
 
-                <div class="texto-secao">
+                <p>
+                    A MOV Academy não compartilha seus dados pessoais
+                    indiscriminadamente.
+                </p>
 
-                    <h3>8. Alterações na Política</h3>
+                <p>
+                    Quando necessário, algumas informações poderão ser
+                    compartilhadas com prestadores de serviços e parceiros
+                    envolvidos no funcionamento da plataforma, sempre
+                    respeitando as finalidades do tratamento e a legislação
+                    aplicável.
+                </p>
 
-                    <p>
-                        Esta Política de Privacidade poderá ser
-                        atualizada sempre que necessário.
-                        Recomendamos que os usuários consultem
-                        esta página com frequência.
-                    </p>
-
-                </div>
+                <p>
+                    Também poderemos compartilhar informações quando houver
+                    uma obrigação legal ou determinação de autoridade competente.
+                </p>
 
             </section>
 
 
-            <!-- SEÇÃO 9 -->
-            <section class="secao">
+            <!-- 7. LINKS EXTERNOS -->
+            <section>
 
-                <div class="icone-secao">
-                    <i class='bx bx-envelope'></i>
-                </div>
+                <h2>7. Links para sites externos</h2>
 
-                <div class="texto-secao">
+                <p>
+                    Nosso site poderá apresentar links para páginas externas,
+                    como redes sociais e outros serviços.
+                </p>
 
-                    <h3>9. Contato</h3>
+                <p>
+                    Esses ambientes possuem suas próprias políticas de
+                    privacidade e regras de utilização. Por isso, recomendamos
+                    que você consulte as respectivas políticas antes de
+                    compartilhar informações pessoais nesses sites.
+                </p>
 
-                    <p>
-                        Caso tenha dúvidas sobre esta Política
-                        de Privacidade ou sobre o tratamento
-                        de seus dados, entre em contato com
-                        nossa equipe pelos canais de atendimento
-                        da loja.
-                    </p>
+            </section>
 
-                </div>
+
+            <!-- 8. ATUALIZAÇÕES -->
+            <section>
+
+                <h2>8. Atualizações desta Política</h2>
+
+                <p>
+                    Esta Política de Privacidade poderá ser atualizada para
+                    acompanhar melhorias em nossos serviços, mudanças na
+                    plataforma ou alterações na legislação.
+                </p>
+
+                <p>
+                    Recomendamos que você consulte esta página periodicamente
+                    para ficar por dentro de possíveis mudanças.
+                </p>
+
+            </section>
+
+
+            <!-- 9. CONTATO -->
+            <section>
+
+                <h2>9. Fale com a MOV Academy</h2>
+
+                <p>
+                    Ficou com alguma dúvida sobre a utilização dos seus dados
+                    ou deseja fazer alguma solicitação relacionada à sua
+                    privacidade?
+                </p>
+
+                <p>
+                    Entre em contato com nossa equipe pelos canais oficiais
+                    de atendimento da MOV Academy.
+                </p>
 
             </section>
 
 
             <!-- MENSAGEM FINAL -->
-            <div class="mensagem-final">
+            <section class="final-politica">
 
-                <i class='bx bx-shield-quarter'></i>
+                <p>
+                    Sua confiança é muito importante para nós. Queremos que
+                    você se sinta seguro para cuidar da sua saúde, alcançar
+                    seus objetivos e evoluir com tranquilidade.
+                </p>
 
-                <div>
-                    <h4>Nosso compromisso é com a sua privacidade.</h4>
+                <h3>
+                    MOV Academy — Cuidando de você em cada detalhe.
+                </h3>
 
-                    <p>
-                        Agradecemos por escolher a MOV Academy
-                        e confiar em nossos serviços.
-                    </p>
-                </div>
+            </section>
 
-            </div>
-
-        </article>
+        </section>
 
     </main>
 
 
     <!-- RODAPÉ -->
-    <footer class="rodape">
+    <footer class="footer-box">
 
-        <div class="rodape-conteudo">
-
-            <a href="/index.html" class="logo logo-rodape">
-                <span class="logo-simbolo">M</span>
-                <span class="logo-texto">
-                    <strong>MOV</strong>
-                    <small>ACADEMY</small>
-                </span>
-            </a>
+        <img src="/Frontend/Assets/IMG/logo.png"
+            alt="Logo MOV Academy"
+            class="logo-img">
 
 
-            <div class="rodape-coluna">
+        <!-- REDES SOCIAIS -->
+        <div class="rede-social">
 
-                <h4>Formas de pagamento</h4>
-
-                <div class="pagamentos">
-                    <span>VISA</span>
-                    <i class='bx bxl-mastercard'></i>
-                    <i class='bx bx-credit-card'></i>
-                    <span class="pix">◆ pix</span>
-                </div>
-
-            </div>
-
-
-            <div class="rodape-coluna">
-
-                <h4>Fale Conosco</h4>
-
-                <p>
-                    <i class='bx bx-envelope'></i>
-                    contato@movacademy.com.br
-                </p>
-
-                <p>
+            <p class="icone-redes">
+                <a href="#" aria-label="Instagram">
                     <i class='bx bxl-instagram'></i>
-                    @MOVacademy
-                </p>
+                </a>
+            </p>
 
-            </div>
+            <p class="icone-redes">
+                <a href="#" aria-label="Facebook">
+                    <i class='bx bxl-facebook'></i>
+                </a>
+            </p>
 
-
-            <div class="redes-sociais">
-
-                <a href="#"><i class='bx bxl-tiktok'></i></a>
-                <a href="#"><i class='bx bxl-instagram'></i></a>
-                <a href="#"><i class='bx bxl-facebook'></i></a>
-
-            </div>
+            <p class="icone-redes">
+                <a href="#" aria-label="TikTok">
+                    <i class='bx bxl-tiktok'></i>
+                </a>
+            </p>
 
         </div>
 
 
-        <div class="rodape-final">
+        <!-- POLÍTICA DE PRIVACIDADE -->
+        <p class="politica">
+            <a href="/Frontend/pages/politica.html">
+                Políticas de Privacidade
+            </a>
+        </p>
 
-            <p>
-                © 2026 MOV Academy. Todos os direitos reservados.
+
+        <!-- DIREITOS -->
+        <div class="direito-uso">
+
+            <p class="direitos">
+                &copy; Todos os direitos reservados.
             </p>
 
-            <div>
-                <a href="#">Política de Privacidade</a>
-                <span>|</span>
-                <a href="/Frontend/HTML/termos.html">Termos de Uso</a>
-            </div>
+            <p class="direitos">
+                Mov's Academia de Ginástica A/S CNPJ 455.796.890/0001
+            </p>
 
         </div>
 
     </footer>
 
+
+    <!-- JAVASCRIPT DO MENU -->
+    <script>
+
+        const btnMenu = document.getElementById('btnMenu');
+const menuLateral = document.getElementById('menuLateral');
+
+if (btnMenu && menuLateral) {
+
+    btnMenu.addEventListener('click', (event) => {
+        event.stopPropagation();
+
+        menuLateral.classList.toggle('menu-aberto');
+
+        const aberto = menuLateral.classList.contains('menu-aberto');
+
+        btnMenu.setAttribute('aria-expanded', aberto);
+    });
+
+    document.addEventListener('click', (event) => {
+        if (
+            !menuLateral.contains(event.target) &&
+            !btnMenu.contains(event.target)
+        ) {
+            menuLateral.classList.remove('menu-aberto');
+            btnMenu.setAttribute('aria-expanded', 'false');
+        }
+    });
+
+    menuLateral.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            menuLateral.classList.remove('menu-aberto');
+            btnMenu.setAttribute('aria-expanded', 'false');
+        });
+    });
+}
+
+    </script>
+
 </body>
+
 </html>

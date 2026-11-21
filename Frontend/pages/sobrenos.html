@@ -10,22 +10,52 @@
 </head>
 <body>
     
-    <header class="header-box">
-        <nav class="nav-bar">
-            <img src="/Frontend/Assets/IMG/logo.png" alt="imagrm principal" class="logo-img">
+   
+<header class="header-box">
+    <nav class="nav-bar">
+
+        <img src="/Frontend/Assets/IMG/logo.png"
+             alt="Logo MOV Academy"
+             class="logo-img">
+
+        <div class="menu-lateral" id="menuLateral">
             <ul class="menu-principal">
-                <li class="lista-menu"><a href="/index.html">Inicio</a></li>
-                <li class="lista-menu"><a href="/Frontend/pages/planos.html">Planos</a></li>
-                <li class="lista-menu1"><a href="/Frontend/pages/sobrenos.html">Sobre-nós
-                </a></li>
-                <li class="lista-menu"><a href="/Frontend/pages/loja.html">Loja</a></li>
+                <li class="lista-menu">
+                    <a href="/index.html">Início</a>
+                </li>
+
+                <li class="lista-menu">
+                    <a href="/Frontend/pages/planos.html">Planos</a>
+                </li>
+
+                <li class="lista-menu1">
+                    <a href="/Frontend/pages/sobrenos.html">Sobre-nós</a>
+                </li>
+
+                <li class="lista-menu">
+                    <a href="/Frontend/pages/loja.html">Loja</a>
+                </li>
             </ul>
-             <div class="busca-Treino">
-                    <input type="text" name="texto" id="textBusca" placeholder="Buscar treinos...">
-                   <div class="busca"> <i class='bx bx-search'></i></div>
+
+            <div class="busca-Treino">
+                <input type="text" name="texto" id="textBusca"
+                       placeholder="Buscar treinos...">
+                <div class="busca">
+                    <i class='bx bx-search'></i>
                 </div>
-        </nav>
-    </header>
+            </div>
+        </div>
+
+        <button class="btn-menu" id="btnMenu"
+                type="button"
+                aria-label="Abrir menu"
+                aria-expanded="false">
+            <i class='bx bx-menu'></i>
+        </button>
+
+    </nav>
+</header>
+
 
     <main>
 
@@ -124,6 +154,66 @@
         <p class="direitos">Mov's Academia de Ginástica A/S CNPJ 455.796.890/0001</p>
         </div>
     </footer>
+
+    
+<script>
+    const btnMenu = document.getElementById('btnMenu');
+    const menuLateral = document.getElementById('menuLateral');
+
+    // ABRIR E FECHAR O MENU
+    btnMenu.addEventListener('click', () => {
+
+        const aberto = menuLateral.classList.toggle('menu-aberto');
+
+        btnMenu.setAttribute('aria-expanded', aberto);
+
+        btnMenu.innerHTML = aberto
+            ? "<i class='bx bx-x'></i>"
+            : "<i class='bx bx-menu'></i>";
+
+    });
+
+
+    // FECHAR AO CLICAR FORA DO MENU
+    document.addEventListener('click', (event) => {
+
+        if (
+            !menuLateral.contains(event.target) &&
+            !btnMenu.contains(event.target)
+        ) {
+
+            menuLateral.classList.remove('menu-aberto');
+
+            btnMenu.setAttribute('aria-expanded', 'false');
+
+            btnMenu.innerHTML = "<i class='bx bx-menu'></i>";
+
+        }
+
+    });
+
+
+    // FECHAR AO CLICAR EM UM LINK
+    const linksMenu = menuLateral.querySelectorAll('a');
+
+    linksMenu.forEach((link) => {
+
+        link.addEventListener('click', () => {
+
+            menuLateral.classList.remove('menu-aberto');
+
+            btnMenu.setAttribute('aria-expanded', 'false');
+
+            btnMenu.innerHTML = "<i class='bx bx-menu'></i>";
+
+        });
+
+    });
+
+</script>
+</body>
+</html>
+
 
 </body>
 </html>

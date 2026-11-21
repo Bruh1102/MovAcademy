@@ -10,21 +10,54 @@
 </head>
 <body>
     
-    <header class="header-box">
-        <nav class="nav-bar">
-            <img src="/Frontend/Assets/IMG/logo.png" alt="imagrm principal" class="logo-img">
+    
+<header class="header-box">
+    <nav class="nav-bar">
+
+        <img src="/Frontend/Assets/IMG/logo.png"
+             alt="Logo MOV Academy"
+             class="logo-img">
+
+        <div class="menu-lateral">
+
             <ul class="menu-principal">
-                <li class="lista-menu"><a href="/index.html">Inicio</a></li>
-                <li class="lista-menu1"><a href="/Frontend/pages/planos.html">Planos</a></li>
-                <li class="lista-menu"><a href="/Frontend/pages/sobrenos.html">Sobre-nós</a></li>
-                <li class="lista-menu"><a href="/Frontend/pages/loja.html">Loja</a></li>
+                <li class="lista-menu">
+                    <a href="/index.html">Início</a>
+                </li>
+
+                <li class="lista-menu1">
+                    <a href="/Frontend/pages/planos.html">Planos</a>
+                </li>
+
+                <li class="lista-menu">
+                    <a href="/Frontend/pages/sobrenos.html">Sobre-nós</a>
+                </li>
+
+                <li class="lista-menu">
+                    <a href="/Frontend/pages/loja.html">Loja</a>
+                </li>
             </ul>
-             <div class="busca-Treino">
-                    <input type="text" name="texto" id="textBusca" placeholder="Buscar treinos...">
-                   <div class="busca"> <i class='bx bx-search'></i></div>
+
+            <div class="busca-Treino">
+                <input type="text" name="texto" id="textBusca"
+                       placeholder="Buscar treinos...">
+
+                <div class="busca">
+                    <i class="bx bx-search"></i>
                 </div>
-        </nav>
-    </header>
+            </div>
+
+        </div>
+
+        <button class="btn-menu" id="btnMenu"
+                type="button" aria-label="Abrir menu"
+                aria-expanded="false">
+            <i class="bx bx-menu"></i>
+        </button>
+
+    </nav>
+</header>
+
 
     <main>
          <div class="academia"><img src="/Frontend/Assets/IMG/Academia.png" alt="Academia "></div>
@@ -253,5 +286,59 @@
     </footer>
 
     <script src="/Frontend/JS/plano.js"></script>
+    <script>
+
+const btnMenu = document.getElementById('btnMenu');
+const menuLateral = document.querySelector('.menu-lateral');
+const iconeMenu = btnMenu.querySelector('i');
+
+btnMenu.addEventListener('click', () => {
+
+    const menuAberto = menuLateral.classList.toggle('menu-aberto');
+
+    btnMenu.setAttribute('aria-expanded', menuAberto);
+
+    if (menuAberto) {
+        iconeMenu.classList.replace('bx-menu', 'bx-x');
+    } else {
+        iconeMenu.classList.replace('bx-x', 'bx-menu');
+    }
+
+});
+
+// Fecha o menu ao clicar em um link
+document.querySelectorAll('.menu-principal a').forEach(link => {
+
+    link.addEventListener('click', () => {
+
+        menuLateral.classList.remove('menu-aberto');
+
+        btnMenu.setAttribute('aria-expanded', 'false');
+
+        iconeMenu.classList.replace('bx-x', 'bx-menu');
+
+    });
+
+});
+
+// Fecha o menu ao clicar fora dele
+document.addEventListener('click', (evento) => {
+
+    if (
+        !menuLateral.contains(evento.target) &&
+        !btnMenu.contains(evento.target)
+    ) {
+
+        menuLateral.classList.remove('menu-aberto');
+
+        btnMenu.setAttribute('aria-expanded', 'false');
+
+        iconeMenu.classList.replace('bx-x', 'bx-menu');
+
+    }
+
+});
+
+    </script>
 </body>
 </html>
