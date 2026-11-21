@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="/Frontend/Assets/IMG/android-chrome-512x512.png" type="image/x-icon">
     <link rel="stylesheet" href="/Frontend/CSS/equipamento.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <title>Loja</title>
+    <title>Equipamento Loja</title>
 </head>
 
 <body>
@@ -36,68 +36,122 @@
         </nav>
     </header>
 
-    <aside class="menu-lateral">
+  <aside class="menu-lateral">
+    <ul class="menu-plano">
 
-        <ul class="menu-plano">
-
-            <li class="lista-lateral1">
-                <a href="#">Equipamentos</a>
-            </li>
-
-            <li class="lista-lateral">
-                <a href="/Frontend/pages/acessorios.html">Acessórios</a>
-            </li>
-
-            <li class="lista-lateral">
-                <a href="#">Suplementos</a>
-            </li>
-
-            <li class="lista-lateral roupas-menu">
-
-                <a id="menu-Down">
-                    Roupas <i class='bx bx-chevron-right' id="icon-down"></i>
-                </a>
-
-                <ul class="roupas-itens">
-                    <li class="lista-lateral">
-                        <a href="#">Camisetas</a>
-                    </li>
-
-                    <li class="lista-lateral">
-                        <a href="#">Shorts</a>
-                    </li>
-
-                    <li class="lista-lateral">
-                        <a href="#">Calças</a>
-                    </li>
-                </ul>
-            </li>
-
-        </ul>
-        <li class="lista-lateral">
-            <a href="#">Carrinho</a>
+        <li class="lista-lateral1">
+            <a href="/Frontend/pages/equipamento.html">Equipamentos</a>
         </li>
 
-        <div class="premium-lojamove">
-            <div class="loja-video">
-                <i class='bx bx-dumbbell icone-premium'></i>
-            </div>
+        <li class="lista-lateral">
+            <a href="/Frontend/pages/acessorios.html">Acessórios</a>
+        </li>
 
-            <h3 class="loja-Premium">Seja Premium</h3>
+        <li class="lista-lateral">
+            <a href="/Frontend/pages/suplemento.html">Suplementos</a>
+        </li>
 
-            <p class="acesso-premium">
-                Acesse as ofertas exclusivas e tenha seus benefícios!
-            </p>
+        <!-- MENU ROUPAS -->
+        <li class="lista-lateral roupas-menu">
 
-            <button class="botao-lojas">
-                <a href="/Frontend/pages/planos.html">
-                    <i class='bx bx-crown'></i> Assine agora
-                </a>
-            </button>
+            <a id="menu-Down">
+                Roupas
+                <i class='bx bx-chevron-right' id="icon-down"></i>
+            </a>
+
+            <ul class="roupas-itens">
+
+                <!-- CAMISETAS -->
+                <li class="lista-lateral roupas-menu">
+
+                    <a class="submenu-toggle">
+                        Camisetas
+                        <i class='bx bx-chevron-right'></i>
+                    </a>
+
+                    <ul class="roupas-itens">
+                        <li class="lista-lateral">
+                            <a href="/Frontend/pages/camiseta-feminina.html">Feminino</a>
+                        </li>
+
+                        <li class="lista-lateral">
+                            <a href="/Frontend/pages/camiseta-masculina.html">Masculino</a>
+                        </li>
+                    </ul>
+
+                </li>
+
+                <!-- SHORTS -->
+                <li class="lista-lateral roupas-menu">
+
+                    <a class="submenu-toggle">
+                        Shorts
+                        <i class='bx bx-chevron-right'></i>
+                    </a>
+
+                    <ul class="roupas-itens">
+                        <li class="lista-lateral">
+                            <a href="/Frontend/pages/shorts-femininos.html">Feminino</a>
+                        </li>
+
+                        <li class="lista-lateral">
+                            <a href="/Frontend/pages/shorts-masculinos.html">Masculino</a>
+                        </li>
+                    </ul>
+
+                </li>
+
+                <!-- CALÇAS -->
+                <li class="lista-lateral roupas-menu">
+
+                    <a class="submenu-toggle">
+                        Calças
+                        <i class='bx bx-chevron-right'></i>
+                    </a>
+
+                    <ul class="roupas-itens">
+                        <li class="lista-lateral">
+                            <a href="/Frontend/pages/calcas-femininas.html">Feminino</a>
+                        </li>
+
+                        <li class="lista-lateral">
+                            <a href="/Frontend/pages/calcas-masculinas.html">Masculino</a>
+                        </li>
+                    </ul>
+
+                </li>
+
+            </ul>
+        </li>
+
+        <!-- CARRINHO -->
+        <li class="lista-lateral">
+            <a href="/Frontend/pages/carrinho.html">Carrinho</a>
+        </li>
+
+    </ul>
+
+    <!-- PREMIUM -->
+    <div class="premium-lojamove">
+
+        <div class="loja-video">
+            <i class='bx bx-dumbbell icone-premium'></i>
         </div>
 
-    </aside>
+        <h3 class="loja-Premium">Seja Premium</h3>
 
+        <p class="acesso-premium">
+            Acesse as ofertas exclusivas e tenha seus benefícios!
+        </p>
+
+        <button class="botao-lojas">
+            <a href="/Frontend/pages/planos.html">
+                <i class='bx bx-crown'></i> Assine agora
+            </a>
+        </button>
+
+    </div>
+</aside>
     <main class="content-principal">
         <section>
             <div class="equipamento-image"><img src="/Frontend/Assets/IMG/equipamento-imagem.jpeg" alt="equipamento">
