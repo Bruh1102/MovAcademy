@@ -1,0 +1,109 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&display=swap');
+
+/* POLÍTICA DE PRIVACIDADE */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(255, 254, 246);
+    color: rgb(0, 0, 0);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+.politica {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 0 25px;
+}
+
+.politica-header {
+    background: #151515;
+    color: white;
+    padding: 55px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+}
+
+.voltar {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.voltar:hover {
+    color: white;
+}
+
+.politica-header h1 {
+    font-size: 36px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.politica-header p {
+    color: #ccc;
+    line-height: 1.6;
+}
+
+.politica-texto {
+    background: white;
+    padding: 45px;
+    border-radius: 12px;
+    line-height: 1.8;
+}
+
+.politica-texto .data {
+    color: #999;
+    font-size: 13px;
+    margin-bottom: 30px;
+}
+
+.politica-texto h2 {
+    font-size: 21px;
+    color: #151515;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.politica-texto h3 {
+    font-size: 8px;
+    color: #151515;
+    margin-top: 20px;
+    margin-bottom: 8px;
+}
+
+.politica-texto p,
+.politica-texto li {
+    color: #555;
+}
+
+.politica-texto ul {
+    padding-left: 25px;
+}
+
+@media (max-width: 600px) {
+    .politica {
+        margin: 30px auto;
+        padding: 0 15px;
+    }
+
+    .politica-header {
+        padding: 30px 22px;
+    }
+
+    .politica-header h1 {
+        font-size: 27px;
+    }
+
+    .politica-texto {
+        padding: 25px;
+    }
+}
