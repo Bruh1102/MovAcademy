@@ -1,9 +1,7 @@
-
 const comprarProduto1 = document.querySelector('.comprar-produto.prod1');
 const comprarProduto2 = document.querySelector('.comprar-produto.prod2');
 const comprarProduto3 = document.querySelector('.comprar-produto.prod3');
 const comprarProduto4 = document.querySelector('.comprar-produto.prod4');
-
 const produto1 = document.querySelector('.card-compra.prod1');
 const produto2 = document.querySelector('.card-compra.prod2');
 const produto3 = document.querySelector('.card-compra.prod3');
@@ -11,7 +9,6 @@ const produto4 = document.querySelector('.card-compra.prod4');
 
 const botaoComprar = document.querySelectorAll('.continuar-but button');
 const iconeX = document.querySelectorAll('.icone-x i');
-
 
 // Abrir modal do produto 1
 comprarProduto1.addEventListener('click', () => {
