@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&display=swap');
 
@@ -581,15 +582,21 @@ img {
 =========================================== */
 
 .card-compra {
-    width: min(92vw, 500px);
-    min-height: 270px;
+    width: min(80vw, 335px);
+    height: auto;
+    min-height: auto;
+    max-height: 85vh;
+    overflow-y: auto;
+
     border: 1px solid #E6FF00;
-    padding: 14px;
+    padding: 16px;
     border-radius: 10px;
-    position: fixed;
+
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
     z-index: 10002;
     background-color: #2b2a2a;
     display: none;
@@ -1461,7 +1468,7 @@ input:active {
         gap: 10px;
     }
 
-    .produto {
+    .produto {  
         min-height: 300px;
         padding: 7px;
     }
@@ -1481,6 +1488,11 @@ input:active {
 
     .cor-produto {
         font-size: 11px;
+    }
+     
+    .card-compra{
+        max-width: 235px;
+        height: auto;
     }
 
     .preco-produto {
@@ -1502,8 +1514,10 @@ input:active {
     }
 
     .info-loja2 {
+        position: absolute;
+        top: 80%;
         gap: 6px;
-        padding: 6px 8px;
+        padding: 10px 8px;
         width: 96%;
         background: transparent;
     }
@@ -1528,7 +1542,7 @@ input:active {
     .container-cardSobre {
         flex-direction: column;
         align-items: stretch;
-    }
+        }
 
     .content-contato {
         max-width: 100%;
@@ -1628,7 +1642,9 @@ input:active {
     }
 
     .info-loja2 {
-        background: transparent;
+        background: #535353;
+        padding: 10px;
+        border-radius: 10px;
     }
 
     .entrega-local {
