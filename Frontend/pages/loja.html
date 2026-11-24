@@ -1,219 +1,303 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="shortcut icon" href="/Frontend/Assets/IMG/android-chrome-512x512.png" type="image/x-icon">
     <link rel="stylesheet" href="/Frontend/CSS/loja.css">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
     <title>Loja</title>
 </head>
 
 <body>
+
+    <!-- CABEÇALHO -->
     <header class="header-box">
         <nav class="nav-bar">
+
             <img src="/Frontend/Assets/IMG/logo.png" alt="imagem principal" class="logo-img">
 
-            <ul class="menu-principal">
-                <li class="lista-menu"><a href="/index.html">Inicio</a></li>
-                <li class="lista-menu"><a href="/Frontend/pages/planos.html">Planos</a></li>
-                <li class="lista-menu"><a href="/Frontend/pages/sobrenos.html">Sobre-nós</a></li>
-                <li class="lista-menu1"><a href="/Frontend/pages/loja.html">Loja</a></li>
-            </ul>
+            <!-- BOTÃO HAMBÚRGUER -->
+            <button
+                type="button"
+                class="menu-hamburguer"
+                id="btnHamburguer"
+                aria-label="Abrir menu"
+                aria-expanded="false"
+                aria-controls="painelMenu"
+            >
+                <i class='bx bx-menu'></i>
+            </button>
 
-            <div class="busca-Treino">
-                <input type="text" name="texto" id="textBusca" placeholder="Buscar treinos...">
-                <div class="busca"><i class='bx bx-search'></i></div>
+            <!-- PAINEL QUE AGRUPA OS MENUS -->
+            <div class="painel-menu-mobile" id="painelMenu">
+
+                <!-- MENU PRINCIPAL -->
+                <ul class="menu-principal">
+                    <li class="lista-menu">
+                        <a href="/index.html">Inicio</a>
+                    </li>
+
+                    <li class="lista-menu">
+                        <a href="/Frontend/pages/planos.html">Planos</a>
+                    </li>
+
+                    <li class="lista-menu">
+                        <a href="/Frontend/pages/sobrenos.html">Sobre-nós</a>
+                    </li>
+
+                    <li class="lista-menu1">
+                        <a href="/Frontend/pages/loja.html">Loja</a>
+                    </li>
+                </ul>
+
+                <!-- CAMPO DE BUSCA -->
+                <div class="busca-Treino">
+                    <input
+                        type="text"
+                        name="texto"
+                        id="textBusca"
+                        placeholder="Buscar treinos..."
+                    >
+
+                    <div class="busca">
+                        <i class='bx bx-search'></i>
+                    </div>
+                </div>
+
+                <!-- MENU LATERAL -->
+                <aside class="menu-lateral">
+
+                    <ul class="menu-plano">
+
+                        <li class="lista-lateral">
+                            <a href="/Frontend/pages/equipamento.html">Equipamentos</a>
+                        </li>
+
+                        <li class="lista-lateral">
+                            <a href="/Frontend/pages/acessorios.html">Acessórios</a>
+                        </li>
+
+                        <li class="lista-lateral">
+                            <a href="/Frontend/pages/suplemento.html">Suplementos</a>
+                        </li>
+
+                        <!-- MENU ROUPAS -->
+                        <li class="lista-lateral roupas-menu">
+
+                            <a id="menu-Down">
+                                Roupas
+                                <i class='bx bx-chevron-right' id="icon-down"></i>
+                            </a>
+
+                            <ul class="roupas-itens">
+
+                                <!-- CAMISETAS -->
+                                <li class="lista-lateral roupas-menu">
+
+                                    <a class="submenu-toggle">
+                                        Camisetas
+                                        <i class='bx bx-chevron-right'></i>
+                                    </a>
+
+                                    <ul class="roupas-itens">
+                                        <li class="lista-lateral">
+                                            <a href="/Frontend/pages/camiseta-feminina.html">Feminino</a>
+                                        </li>
+
+                                        <li class="lista-lateral">
+                                            <a href="/Frontend/pages/camiseta-masculina.html">Masculino</a>
+                                        </li>
+                                    </ul>
+
+                                </li>
+
+                                <!-- SHORTS -->
+                                <li class="lista-lateral roupas-menu">
+
+                                    <a class="submenu-toggle">
+                                        Shorts
+                                        <i class='bx bx-chevron-right'></i>
+                                    </a>
+
+                                    <ul class="roupas-itens">
+                                        <li class="lista-lateral">
+                                            <a href="/Frontend/pages/shorts-feminino.html">Feminino</a>
+                                        </li>
+
+                                        <li class="lista-lateral">
+                                            <a href="/Frontend/pages/shorts-masculinos.html">Masculino</a>
+                                        </li>
+                                    </ul>
+
+                                </li>
+
+                                <!-- CALÇAS -->
+                                <li class="lista-lateral roupas-menu">
+
+                                    <a class="submenu-toggle">
+                                        Calças
+                                        <i class='bx bx-chevron-right'></i>
+                                    </a>
+
+                                    <ul class="roupas-itens">
+                                        <li class="lista-lateral">
+                                            <a href="/Frontend/pages/calcas-femininas.html">Feminino</a>
+                                        </li>
+
+                                        <li class="lista-lateral">
+                                            <a href="/Frontend/pages/calcas-masculinas.html">Masculino</a>
+                                        </li>
+                                    </ul>
+
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <!-- CARRINHO -->
+                        <li class="lista-lateral">
+                            <a href="/Frontend/pages/carrinho.html">Carrinho</a>
+                        </li>
+
+                    </ul>
+
+                    <!-- PREMIUM -->
+                    <div class="premium-lojamove">
+
+                        <div class="loja-video">
+                            <i class='bx bx-dumbbell icone-premium'></i>
+                        </div>
+
+                        <h3 class="loja-Premium">Seja Premium</h3>
+
+                        <p class="acesso-premium">
+                            Acesse as ofertas exclusivas e tenha seus benefícios!
+                        </p>
+
+                        <button class="botao-lojas">
+                            <a href="/Frontend/pages/planos.html">
+                                <i class='bx bx-crown'></i> Assine agora
+                            </a>
+                        </button>
+
+                    </div>
+
+                </aside>
+
             </div>
         </nav>
     </header>
 
-   
-<aside class="menu-lateral">
-    <ul class="menu-plano">
 
-        <li class="lista-lateral">
-            <a href="/Frontend/pages/equipamento.html">Equipamentos</a>
-        </li>
-
-        <li class="lista-lateral">
-            <a href="/Frontend/pages/acessorios.html">Acessórios</a>
-        </li>
-
-        <li class="lista-lateral">
-            <a href="/Frontend/pages/suplemento.html">Suplementos</a>
-        </li>
-
-        <!-- MENU ROUPAS -->
-        <li class="lista-lateral roupas-menu">
-
-            <a id="menu-Down">
-                Roupas
-                <i class='bx bx-chevron-right' id="icon-down"></i>
-            </a>
-
-            <ul class="roupas-itens">
-
-                <!-- CAMISETAS -->
-                <li class="lista-lateral roupas-menu">
-
-                    <a class="submenu-toggle">
-                        Camisetas
-                        <i class='bx bx-chevron-right'></i>
-                    </a>
-
-                    <ul class="roupas-itens">
-                        <li class="lista-lateral">
-                            <a href="/Frontend/pages/camiseta-feminina.html">Feminino</a>
-                        </li>
-
-                        <li class="lista-lateral">
-                            <a href="/Frontend/pages/camiseta-masculina.html">Masculino</a>
-                        </li>
-                    </ul>
-
-                </li>
-
-                <!-- SHORTS -->
-                <li class="lista-lateral roupas-menu">
-
-                    <a class="submenu-toggle">
-                        Shorts
-                        <i class='bx bx-chevron-right'></i>
-                    </a>
-
-                    <ul class="roupas-itens">
-                        <li class="lista-lateral">
-                            <a href="/Frontend/pages/shorts-femininos.html">Feminino</a>
-                        </li>
-
-                        <li class="lista-lateral">
-                            <a href="/Frontend/pages/shorts-masculinos.html">Masculino</a>
-                        </li>
-                    </ul>
-
-                </li>
-
-                <!-- CALÇAS -->
-                <li class="lista-lateral roupas-menu">
-
-                    <a class="submenu-toggle">
-                        Calças
-                        <i class='bx bx-chevron-right'></i>
-                    </a>
-
-                    <ul class="roupas-itens">
-                        <li class="lista-lateral">
-                            <a href="/Frontend/pages/calcas-femininas.html">Feminino</a>
-                        </li>
-
-                        <li class="lista-lateral">
-                            <a href="/Frontend/pages/calcas-masculinas.html">Masculino</a>
-                        </li>
-                    </ul>
-
-                </li>
-
-            </ul>
-        </li>
-
-        <!-- CARRINHO -->
-        <li class="lista-lateral">
-            <a href="/Frontend/pages/carrinho.html">Carrinho</a>
-        </li>
-
-    </ul>
-
-    <!-- PREMIUM -->
-    <div class="premium-lojamove">
-
-        <div class="loja-video">
-            <i class='bx bx-dumbbell icone-premium'></i>
-        </div>
-
-        <h3 class="loja-Premium">Seja Premium</h3>
-
-        <p class="acesso-premium">
-            Acesse as ofertas exclusivas e tenha seus benefícios!
-        </p>
-
-        <button class="botao-lojas">
-            <a href="/Frontend/pages/planos.html">
-                <i class='bx bx-crown'></i> Assine agora
-            </a>
-        </button>
-
-    </div>
-</aside>
-
-
+    <!-- CONTEÚDO PRINCIPAL -->
     <main class="loja-content">
+
         <!-- BANNER PRINCIPAL -->
         <section class="loja-box">
+
             <div class="imagem-logo">
                 <img src="/Frontend/Assets/IMG/mulher-treinando.png" alt="Mulher Treinando">
             </div>
 
             <div class="informa-loja">
+
                 <div class="loja-logo">
                     <img src="/Frontend/Assets/IMG/logo.png" alt="logo">
                 </div>
 
                 <h1 class="disciplina-loja">Disciplina</h1>
                 <h1 class="disciplina-loja">é o que te leva</h1>
+
                 <h1 class="disciplina-loja">
                     <span class="desc-loja">mais longe.</span>
                 </h1>
 
                 <div class="bene-loja">
+
                     <div class="loja-item">
-                        <div class="loja-icone"><i class='bx bx-dumbbell'></i></div>
+                        <div class="loja-icone">
+                            <i class='bx bx-dumbbell'></i>
+                        </div>
                         <p class="informaçao-loja">Treino</p>
                     </div>
+
                     <div class="loja-item">
-                        <div class="loja-icone"><i class='bx bxs-bolt'></i></div>
+                        <div class="loja-icone">
+                            <i class='bx bxs-bolt'></i>
+                        </div>
                         <p class="informaçao-loja">Energia</p>
                     </div>
+
                     <div class="loja-item">
-                        <div class="loja-icone"><i class='bx bx-bullseye'></i></div>
+                        <div class="loja-icone">
+                            <i class='bx bx-bullseye'></i>
+                        </div>
                         <p class="informaçao-loja">Conquista</p>
                     </div>
+
                 </div>
             </div>
         </section>
+
 
         <!-- CATEGORIAS -->
         <section>
+
             <div class="cards-loja-bene">
+
                 <div class="card-loja">
-                    <div class="loja-icone"><i class='bx bx-dumbbell'></i></div>
+                    <div class="loja-icone">
+                        <i class='bx bx-dumbbell'></i>
+                    </div>
                     <p class="informaçao-loja">Equipamento</p>
                 </div>
+
                 <div class="card-loja">
-                    <div class="loja-icone"><i class='bx bx-headphone'></i></div>
+                    <div class="loja-icone">
+                        <i class='bx bx-headphone'></i>
+                    </div>
                     <p class="informaçao-loja">Acessório</p>
                 </div>
+
                 <div class="card-loja">
-                    <div class="loja-icone"><i class='bx bxs-t-shirt'></i></div>
+                    <div class="loja-icone">
+                        <i class='bx bxs-t-shirt'></i>
+                    </div>
                     <p class="informaçao-loja">Roupas</p>
                 </div>
+
                 <div class="card-loja">
-                    <div class="loja-icone"><i class='bx bx-infinite'></i></div>
+                    <div class="loja-icone">
+                        <i class='bx bx-infinite'></i>
+                    </div>
                     <p class="informaçao-loja">Elástico</p>
                 </div>
+
                 <div class="card-loja">
-                    <div class="loja-icone"><i class='bx bx-capsule'></i></div>
+                    <div class="loja-icone">
+                        <i class='bx bx-capsule'></i>
+                    </div>
                     <p class="informaçao-loja">Suplementos</p>
                 </div>
+
                 <div class="card-loja">
-                    <div class="loja-icone"><i class='bx bx-shield-alt-2'></i></div>
+                    <div class="loja-icone">
+                        <i class='bx bx-shield-alt-2'></i>
+                    </div>
                     <p class="informaçao-loja">Proteção</p>
                 </div>
+
             </div>
         </section>
 
+
         <!-- PRODUTOS EM DESTAQUE -->
         <section>
+
             <div class="cardes-lojas">
                 <h1 class="texto-produto">
                     Produtos em <span class="destaque-loja">Destaque</span>
@@ -221,8 +305,15 @@
             </div>
 
             <div class="produtos-content">
+
+                <!-- PRODUTO 1 -->
                 <div class="produto">
-                    <img src="/Frontend/Assets/IMG/Garrafa-produto.png" alt="garrafa" class="item-produto">
+
+                    <img
+                        src="/Frontend/Assets/IMG/Garrafa-produto.png"
+                        alt="garrafa"
+                        class="item-produto"
+                    >
 
                     <div class="card-produto">
                         <h2 class="nome-produto">Garrafa Stanley</h2>
@@ -237,33 +328,50 @@
                     </div>
 
                     <div class="card-compra prod1">
-                        <div class="icone-x"><i class='bx bx-x'></i></div>
+
+                        <div class="icone-x">
+                            <i class='bx bx-x'></i>
+                        </div>
+
                         <h2 class="nome-Adicionado">Produto adicionado!</h2>
 
                         <div class="linha-prod">
+
                             <div class="imagem-prod">
                                 <img src="/Frontend/Assets/IMG/Garrafa-produto.png" alt="garrafa">
                             </div>
+
                             <div>
                                 <h3 class="nome-prod">Garrafa Stanley</h3>
+
                                 <div class="item-prod">
                                     <p class="quantia">Quantidade: 1</p>
                                     <p class="preco-produto">R$59,69</p>
                                 </div>
                             </div>
+
                         </div>
 
                         <div class="continuar-but">
                             <button type="submit">Continuar comprando</button>
                         </div>
+
                         <div class="carrinho-but">
                             <button type="submit">Adicionar ao carrinho</button>
                         </div>
+
                     </div>
                 </div>
 
+
+                <!-- PRODUTO 2 -->
                 <div class="produto">
-                    <img src="/Frontend/Assets/IMG/luva-loja.png" alt="luva" class="item-produto">
+
+                    <img
+                        src="/Frontend/Assets/IMG/luva-loja.png"
+                        alt="luva"
+                        class="item-produto"
+                    >
 
                     <div class="card-produto">
                         <h2 class="nome-produto">Luva de Proteção</h2>
@@ -278,33 +386,50 @@
                     </div>
 
                     <div class="card-compra prod2">
-                        <div class="icone-x"><i class='bx bx-x'></i></div>
+
+                        <div class="icone-x">
+                            <i class='bx bx-x'></i>
+                        </div>
+
                         <h2 class="nome-Adicionado">Produto adicionado!</h2>
 
                         <div class="linha-prod">
+
                             <div class="imagem-prod">
-                                <img src="/Frontend/Assets/IMG/luva-loja.png" alt="garrafa">
+                                <img src="/Frontend/Assets/IMG/luva-loja.png" alt="luva">
                             </div>
+
                             <div>
                                 <h3 class="nome-prod">Luva de Proteção</h3>
+
                                 <div class="item-prod">
                                     <p class="quantia">Quantidade: 1</p>
                                     <p class="preco-produto">R$79,90</p>
                                 </div>
                             </div>
+
                         </div>
 
                         <div class="continuar-but">
                             <button type="submit">Continuar comprando</button>
                         </div>
+
                         <div class="carrinho-but">
                             <button type="submit">Adicionar ao carrinho</button>
                         </div>
+
                     </div>
                 </div>
 
+
+                <!-- PRODUTO 3 -->
                 <div class="produto">
-                    <img src="/Frontend/Assets/IMG/tapete-loja.png" alt="tapete" class="item-produto">
+
+                    <img
+                        src="/Frontend/Assets/IMG/tapete-loja.png"
+                        alt="tapete"
+                        class="item-produto"
+                    >
 
                     <div class="card-produto">
                         <h2 class="nome-produto">Tapete Acadêmico</h2>
@@ -319,33 +444,50 @@
                     </div>
 
                     <div class="card-compra prod3">
-                        <div class="icone-x"><i class='bx bx-x'></i></div>
+
+                        <div class="icone-x">
+                            <i class='bx bx-x'></i>
+                        </div>
+
                         <h2 class="nome-Adicionado">Produto adicionado!</h2>
 
                         <div class="linha-prod">
+
                             <div class="imagem-prod">
-                                <img src="/Frontend/Assets/IMG/tapete-loja.png" alt="garrafa">
+                                <img src="/Frontend/Assets/IMG/tapete-loja.png" alt="tapete">
                             </div>
+
                             <div>
                                 <h3 class="nome-prod">Tapete Acadêmico</h3>
+
                                 <div class="item-prod">
                                     <p class="quantia">Quantidade: 1</p>
                                     <p class="preco-produto">R$85,35</p>
                                 </div>
                             </div>
+
                         </div>
 
                         <div class="continuar-but">
                             <button type="submit">Continuar comprando</button>
                         </div>
+
                         <div class="carrinho-but">
                             <button type="submit">Adicionar ao carrinho</button>
                         </div>
+
                     </div>
                 </div>
 
+
+                <!-- PRODUTO 4 -->
                 <div class="produto">
-                    <img src="/Frontend/Assets/IMG/suplemento-loja.png" alt="suplemento" class="item-produto">
+
+                    <img
+                        src="/Frontend/Assets/IMG/suplemento-loja.png"
+                        alt="suplemento"
+                        class="item-produto"
+                    >
 
                     <div class="card-produto">
                         <h2 class="nome-produto">Pré-Treino</h2>
@@ -360,43 +502,61 @@
                     </div>
 
                     <div class="card-compra prod4">
-                        <div class="icone-x"><i class='bx bx-x'></i></div>
+
+                        <div class="icone-x">
+                            <i class='bx bx-x'></i>
+                        </div>
+
                         <h2 class="nome-Adicionado">Produto adicionado!</h2>
 
                         <div class="linha-prod">
+
                             <div class="imagem-prod">
-                                <img src="/Frontend/Assets/IMG/suplemento-loja.png" alt="garrafa">
+                                <img src="/Frontend/Assets/IMG/suplemento-loja.png" alt="suplemento">
                             </div>
+
                             <div>
                                 <h3 class="nome-prod">Pré-Treino</h3>
+
                                 <div class="item-prod">
                                     <p class="quantia">Quantidade: 1</p>
                                     <p class="preco-produto">R$259,70</p>
                                 </div>
                             </div>
+
                         </div>
 
                         <div class="continuar-but">
                             <button type="submit">Continuar comprando</button>
                         </div>
+
                         <div class="carrinho-but">
                             <button type="submit">Adicionar ao carrinho</button>
                         </div>
+
                     </div>
                 </div>
+
             </div>
         </section>
 
+
         <!-- BENEFÍCIOS DA LOJA -->
         <section>
+
             <div class="loja-sobre">
+
                 <div class="halter-loja">
                     <img src="/Frontend/Assets/IMG/halter.jpeg" alt="halter">
                 </div>
 
                 <div class="info-loja2">
+
                     <div class="entregar">
-                        <div class="icone-entrega"><i class='bx bxs-truck'></i></div>
+                        <div class="icone-entrega">
+                            <i class='bx bxs-truck'></i>
+                        </div>
+
                         <div>
                             <h3 class="entrega-local">Entrega Rápida</h3>
                             <p class="local">Prazo curto até você!</p>
@@ -404,7 +564,10 @@
                     </div>
 
                     <div class="entregar">
-                        <div class="icone-entrega"><i class='bx bx-check-shield'></i></div>
+                        <div class="icone-entrega">
+                            <i class='bx bx-check-shield'></i>
+                        </div>
+
                         <div>
                             <h3 class="entrega-local">Compra Segura</h3>
                             <p class="local">Sua compra protegida.</p>
@@ -412,7 +575,10 @@
                     </div>
 
                     <div class="entregar">
-                        <div class="icone-entrega"><i class='bx bx-credit-card'></i></div>
+                        <div class="icone-entrega">
+                            <i class='bx bx-credit-card'></i>
+                        </div>
+
                         <div>
                             <h3 class="entrega-local">Até 12x no cartão</h3>
                             <p class="local">Sem juros.</p>
@@ -420,43 +586,60 @@
                     </div>
 
                     <div class="entregar">
-                        <div class="icone-entrega"><i class='bx bx-headphone'></i></div>
+                        <div class="icone-entrega">
+                            <i class='bx bx-headphone'></i>
+                        </div>
+
                         <div>
                             <h3 class="entrega-local">Suporte ao cliente</h3>
                             <p class="local">Estamos aqui para ajudar.</p>
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
 
+
         <!-- SOBRE NÓS E CONTATO -->
         <section>
+
             <div class="container-cardSobre">
+
                 <div class="sobreNos-box">
+
                     <div class="image-content-treino">
                         <img src="/Frontend/Assets/IMG/homem-treino.jpeg" alt="Imagem Sobre-nos">
                     </div>
 
                     <div class="texto-card">
+
                         <h4 class="texto-nos">Sobre Nós</h4>
+
                         <h3 class="estilo-vida">
                             Mais que uma academia, um estilo de vida.
                         </h3>
+
                         <p class="sobre-Move">
                             Na MOVA Academy, acreditamos que cada treino é um passo em direção à sua melhor versão.
                             Aqui, você encontra equipamentos de qualidade, suplementos e tudo o que precisa para evoluir.
                         </p>
+
                         <p class="saiba-button">
                             <a href="/Frontend/pages/sobrenos.html">
                                 Saiba mais <i class='bx bx-right-arrow-alt'></i>
                             </a>
                         </p>
+
                     </div>
                 </div>
 
+
+                <!-- MODAL DE CONFIRMAÇÃO -->
                 <div class="modal-overlay" id="modalOverlay">
+
                     <div class="container-confirma" id="modalConfirmacao">
+
                         <div class="cancela-Icone" id="fecharModal">
                             <i class='bx bx-x'></i>
                         </div>
@@ -470,24 +653,32 @@
                                 Seu e-mail foi
                                 <span class="enviado-email">enviado!</span>
                             </h2>
+
                             <p class="agradecimento">
                                 Obrigado por se inscrever em nossas novidades!
                             </p>
+
                             <p class="atenção-msg">
                                 Fique atento ao seu e-mail para receber atualizações,
                                 promoções e conteúdos exclusivos.
                             </p>
                         </div>
+
                     </div>
                 </div>
 
+
                 <!-- CARD DE NOTIFICAÇÕES -->
                 <div class="content-contato">
+
                     <div class="contato-contente">
+
                         <div class="envelope-icone">
                             <i class='bx bx-envelope'></i>
                         </div>
+
                         <div class="notificação">Receba Notificações</div>
+
                     </div>
 
                     <div>
@@ -497,54 +688,140 @@
                     </div>
 
                     <div class="info-contato">
-                        <input type="email" name="email" id="emailLoja"
-                            placeholder="Seu email" required>
+
+                        <input
+                            type="email"
+                            name="email"
+                            id="emailLoja"
+                            placeholder="Seu email"
+                            required
+                        >
+
                         <i class='bx bx-send' id="envio"></i>
+
                     </div>
 
                     <div class="redes-contato">
+
                         <h3 class="conosco">Fale conosco</h3>
+
                         <p class="red-cont">
                             <i class='bx bx-envelope'></i> MoveAcademy@gmail.com
                         </p>
+
                         <p class="red-cont">
                             <i class='bx bxl-instagram'></i> @movacademy
                         </p>
+
                     </div>
                 </div>
+
             </div>
         </section>
+
     </main>
+
 
     <!-- RODAPÉ -->
     <footer class="footer-box">
+
         <img src="/Frontend/Assets/IMG/logo.png" alt="logo" class="logo-img">
 
         <div class="rede-social">
+
             <p class="icone-redes">
                 <a href="#"><i class='bx bxl-instagram'></i></a>
             </p>
+
             <p class="icone-redes">
                 <a href="#"><i class='bx bxl-facebook'></i></a>
             </p>
+
             <p class="icone-redes">
                 <a href="#"><i class='bx bxl-tiktok'></i></a>
             </p>
+
         </div>
 
         <p class="politica">
-            <a href="#">Políticas de Privacidade</a>
+            <a href="/Frontend/pages/politicaeprivacidade.html">Políticas de Privacidade</a>
         </p>
 
         <div class="direito-uso">
             <p class="direitos">&copy; Todos os direitos reservados.</p>
             <p class="direitos">Mov's Academia de Ginástica A/S CNPJ 455.796.890/0001</p>
         </div>
+
     </footer>
 
-    <!-- MODAL DE CONFIRMAÇÃO: FORA DO MAIN E DO FOOTER -->
+
+    <!-- ARQUIVOS JAVASCRIPT -->
     <script src="/Frontend/JS/dropDown.js"></script>
     <script src="/Frontend/JS/email-confirmação.js"></script>
     <script src="/Frontend/JS/produtoCompra.js"></script>
+
+
+    <!-- CONTROLE DO MENU HAMBÚRGUER -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const btnHamburguer = document.getElementById("btnHamburguer");
+            const painelMenu = document.getElementById("painelMenu");
+
+            if (!btnHamburguer || !painelMenu) return;
+
+            function abrirMenu() {
+                painelMenu.classList.add("menu-aberto");
+
+                btnHamburguer.setAttribute("aria-expanded", "true");
+                btnHamburguer.setAttribute("aria-label", "Fechar menu");
+
+                btnHamburguer.innerHTML = "<i class='bx bx-x'></i>";
+            }
+
+            function fecharMenu() {
+                painelMenu.classList.remove("menu-aberto");
+
+                btnHamburguer.setAttribute("aria-expanded", "false");
+                btnHamburguer.setAttribute("aria-label", "Abrir menu");
+
+                btnHamburguer.innerHTML = "<i class='bx bx-menu'></i>";
+            }
+
+            btnHamburguer.addEventListener("click", (e) => {
+                e.stopPropagation();
+
+                if (painelMenu.classList.contains("menu-aberto")) {
+                    fecharMenu();
+                } else {
+                    abrirMenu();
+                }
+            });
+
+            painelMenu.addEventListener("click", (e) => {
+                e.stopPropagation();
+            });
+
+            document.addEventListener("click", () => {
+                fecharMenu();
+            });
+
+            document.addEventListener("keydown", (e) => {
+                if (e.key === "Escape") {
+                    fecharMenu();
+                }
+            });
+
+            painelMenu.querySelectorAll("a").forEach((link) => {
+                link.addEventListener("click", () => {
+                    if (link.getAttribute("href") !== "#") {
+                        fecharMenu();
+                    }
+                });
+            });
+
+        });
+    </script>
+
 </body>
 </html>

@@ -1,344 +1,435 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="shortcut icon" href="/Frontend/Assets/IMG/android-chrome-512x512.png" type="image/x-icon">
+
     <link rel="stylesheet" href="/Frontend/CSS/planos.css">
+    <link rel="stylesheet" href="/Frontend/CSS/header-compartilhado.css">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+
     <title>Planos</title>
 </head>
+
 <body>
-    
-    
-<header class="header-box">
-    <nav class="nav-bar">
 
-        <img src="/Frontend/Assets/IMG/logo.png"
-             alt="Logo MOV Academy"
-             class="logo-img">
+    <!-- HEADER PADRONIZADO -->
+    <header class="header-box">
+        <nav class="nav-bar" aria-label="Navegação principal">
 
-        <div class="menu-lateral">
+            <a class="logo-link" href="/index.html" aria-label="MOV Academy - Início">
+                <img src="/Frontend/Assets/IMG/logo.png" alt="Logo MOV Academy" class="logo-img">
+            </a>
 
-            <ul class="menu-principal">
-                <li class="lista-menu">
-                    <a href="/index.html">Início</a>
-                </li>
+            <div class="menu-lateral1" id="menuLateral">
 
-                <li class="lista-menu1">
-                    <a href="/Frontend/pages/planos.html">Planos</a>
-                </li>
+                <ul class="menu-principal">
+                    <li class="lista-menu">
+                        <a href="/index.html">Início</a>
+                    </li>
 
-                <li class="lista-menu">
-                    <a href="/Frontend/pages/sobrenos.html">Sobre-nós</a>
-                </li>
+                    <li class="lista-menu1">
+                        <a href="/Frontend/pages/planos.html">Planos</a>
+                    </li>
 
-                <li class="lista-menu">
-                    <a href="/Frontend/pages/loja.html">Loja</a>
-                </li>
-            </ul>
+                    <li class="lista-menu">
+                        <a href="/Frontend/pages/sobrenos.html">Sobre-nós</a>
+                    </li>
 
-            <div class="busca-Treino">
-                <input type="text" name="texto" id="textBusca"
-                       placeholder="Buscar treinos...">
+                    <li class="lista-menu">
+                        <a href="/Frontend/pages/loja.html">Loja</a>
+                    </li>
+                </ul>
 
-                <div class="busca">
-                    <i class="bx bx-search"></i>
+                <div class="busca-Treino">
+                    <input type="text" name="texto" id="textBusca"
+                        placeholder="Buscar treinos..." aria-label="Buscar treinos">
+
+                    <div class="busca">
+                        <i class="bx bx-search" aria-hidden="true"></i>
+                    </div>
                 </div>
+
             </div>
 
-        </div>
+            <button class="btn-menu" id="btnMenu" type="button"
+                aria-label="Abrir menu" aria-expanded="false"
+                aria-controls="menuLateral">
+                <i class="bx bx-menu" aria-hidden="true"></i>
+            </button>
 
-        <button class="btn-menu" id="btnMenu"
-                type="button" aria-label="Abrir menu"
-                aria-expanded="false">
-            <i class="bx bx-menu"></i>
-        </button>
-
-    </nav>
-</header>
-
+        </nav>
+    </header>
 
     <main>
-         <div class="academia"><img src="/Frontend/Assets/IMG/Academia.png" alt="Academia "></div>
+
+        <div class="academia">
+            <img src="/Frontend/Assets/IMG/Academia.png" alt="Academia">
+        </div>
+
         <div class="assinaturas">
+
             <div class="planos-text">
-                <h1 class="planos">Escolha seu <span>plano de treino</span> e tenha uma rotina estruturada para acompanhar sua <span>evolucao.</span></h1>
+                <h1 class="planos">
+                    Escolha seu <span>plano de treino</span> e tenha uma
+                    rotina estruturada para acompanhar sua
+                    <span>evolucao.</span>
+                </h1>
             </div>
 
+            <!-- PLANO COMUM -->
             <div class="plano-coomum">
-               <div class="comum-text"> <h3 class="comum">Plano Comum</h3></div>
-               
-               <div class="preco">
 
-                <div class="valor-plano">
-                <div><h1 class="valor">R$ 139,89</h1></div>
-                <p class="mensal">Mês</p>
-               </div>
+                <div class="comum-text">
+                    <h3 class="comum">Plano Comum</h3>
+                </div>
 
-               <div><p class="valor-desc">R$ 209,90</p></div></div>
-                  <hr class="linha">
-               <div>
+                <div class="preco">
+                    <div class="valor-plano">
+                        <div>
+                            <h1 class="valor">R$ 139,89</h1>
+                        </div>
+                        <p class="mensal">Mês</p>
+                    </div>
 
-                <ul class="beneficios">
-                    <li class="list-bene">Musculo e Cardio</li>
-                    <li class="list-bene">Aula Coletiva</li>
-                    <li class="list-bene">Mov App</li>
-                    <li class="list-bene">Até 4 acessos mensais à outras unidades</li>
-                </ul>
-               </div>
-               <div class="btn-assinar"><button type="submit">Assinar</button></div>
-            </div>
+                    <div>
+                        <p class="valor-desc">R$ 209,90</p>
+                    </div>
+                </div>
 
-            <div class="plano-coomum">
-               <div class="comum-text"> <h3 class="comum">Plano Golden</h3></div>
-               
-               <div class="preco">
-
-                <div class="valor-plano">
-                <div><h1 class="valor">R$ 290,99</h1></div>
-                <p class="mensal">Anual</p>
-               </div>
-
-               <div><p class="valor-desc">R$ 399,99</p></div></div>
                 <hr class="linha">
-               <div>
-                <ul class="beneficios">
-                    <li class="list-bene">Musculo e Cardio</li>
-                    <li class="list-bene">Aula Coletiva</li>
-                    <li class="list-bene">Mov App</li>
-                    <li class="list-bene">Até 5 convidados por mês</li>
-                    <li class="list-bene">Avaiação gratuita</li>
-                    <li class="list-bene">Acesso ilimitado a todas unidades MOV</li>
-                </ul>
-                
-               </div>
-               <div class="btn-premium"><button type="submit">Assinar</button></div>
+
+                <div>
+                    <ul class="beneficios">
+                        <li class="list-bene">Musculo e Cardio</li>
+                        <li class="list-bene">Aula Coletiva</li>
+                        <li class="list-bene">Mov App</li>
+                        <li class="list-bene">Até 4 acessos mensais à outras unidades</li>
+                    </ul>
+                </div>
+
+                <div class="btn-assinar">
+                    <button type="submit">Assinar</button>
+                </div>
+
+            </div>
+
+            <!-- PLANO GOLDEN -->
+            <div class="plano-coomum">
+
+                <div class="comum-text">
+                    <h3 class="comum">Plano Golden</h3>
+                </div>
+
+                <div class="preco">
+                    <div class="valor-plano">
+                        <div>
+                            <h1 class="valor">R$ 290,99</h1>
+                        </div>
+                        <p class="mensal">Anual</p>
+                    </div>
+
+                    <div>
+                        <p class="valor-desc">R$ 399,99</p>
+                    </div>
+                </div>
+
+                <hr class="linha">
+
+                <div>
+                    <ul class="beneficios">
+                        <li class="list-bene">Musculo e Cardio</li>
+                        <li class="list-bene">Aula Coletiva</li>
+                        <li class="list-bene">Mov App</li>
+                        <li class="list-bene">Até 5 convidados por mês</li>
+                        <li class="list-bene">Avaiação gratuita</li>
+                        <li class="list-bene">Acesso ilimitado a todas unidades MOV</li>
+                    </ul>
+                </div>
+
+                <div class="btn-premium">
+                    <button type="submit">Assinar</button>
+                </div>
+
             </div>
 
         </div>
 
+        <!-- MODAL DO PLANO COMUM -->
         <div class="plano-ModalCard">
+
             <div class="plano-Modal">
-                <div class="icone-Plano"> <i class='bx bx-dumbbell'></i></div>
+                <div class="icone-Plano">
+                    <i class="bx bx-dumbbell"></i>
+                </div>
+
                 <div>
                     <h3 class="assinar-Plano">Assinar Plano</h3>
-                    <p class="confir-Plano">Confira os detalhes do plano antes de continuar.</p>
+                    <p class="confir-Plano">
+                        Confira os detalhes do plano antes de continuar.
+                    </p>
                 </div>
             </div>
 
-                <div class="valor-PlanoM">
-                    <div class="selec-Plano">
-                        <p class="selecionado">Plano Selecionado</p>
-                        <h2 class="plano-Slec">Plano Comum</h2>
+            <div class="valor-PlanoM">
+
+                <div class="selec-Plano">
+                    <p class="selecionado">Plano Selecionado</p>
+                    <h2 class="plano-Slec">Plano Comum</h2>
+                </div>
+
+                <div class="valor-pagado">
+                    <h2 class="valor-modal">R$ 139,89</h2>
+                    <p class="tempo-pago">por mês</p>
+                </div>
+
+            </div>
+
+            <div class="form-Paga">
+
+                <div class="tipo-Paga">
+                    <div class="icone-Paga">
+                        <i class="bx bx-credit-card"></i>
                     </div>
 
-                    <div class="valor-pagado">
-                        <h2 class="valor-modal">R$ 139,89</h2>
-                        <p class="tempo-pago">por mês</p>
+                    <div>
+                        <h3 class="pagamento">Forma de Pagamento</h3>
                     </div>
                 </div>
 
-                <div class="form-Paga">
+                <div class="pagamento-card">
 
-                    <div class="tipo-Paga">
-                        <div class="icone-Paga"><i class="bx bx-credit-card"></i></div>
-                        <div><h3 class="pagamento">Forma de Pagamento</h3></div>
-                    </div>
+                    <div class="card-paga">
+                        <div class="input-paga">
+                            <input type="radio" name="circulo" id="cartao" class="input-escolha">
 
-                    <div class="pagamento-card">
-                        <div class="card-paga">
-                       <div class="input-paga">
-                        <input type="radio" name="circulo" id="cartao" class="input-escolha">
-
-                        <div class="pagmento-modal">
-                            <i class="bx bx-credit-card"></i>
-                            <h3 class="pago-Plano">Cartão de Crédito</h3>
+                            <div class="pagmento-modal">
+                                <i class="bx bx-credit-card"></i>
+                                <h3 class="pago-Plano">Cartão de Crédito</h3>
+                            </div>
                         </div>
-                       </div>
                     </div>
 
                     <div class="card-paga">
-                       <div class="input-paga">
-                        <input type="radio" name="circulo" id="pix" class="input-escolha">
+                        <div class="input-paga">
+                            <input type="radio" name="circulo" id="pix" class="input-escolha">
 
-                        <div class="pagmento-modal">
-                            <i class="bx bx-qr"></i>
-                            <h3 class="pago-Plano">PIX</h3>
+                            <div class="pagmento-modal">
+                                <i class="bx bx-qr"></i>
+                                <h3 class="pago-Plano">PIX</h3>
+                            </div>
                         </div>
-                       </div>
                     </div>
 
-                     <div class="card-paga">
-                       <div class="input-paga">
-                        <input type="radio" name="circulo" id="boleto" class="input-escolha">
+                    <div class="card-paga">
+                        <div class="input-paga">
+                            <input type="radio" name="circulo" id="boleto" class="input-escolha">
 
-                        <div class="pagmento-modal">
-                            <i class="bx bx-barcode"></i>
-                            <h3 class="pago-Plano">Boleto</h3>
+                            <div class="pagmento-modal">
+                                <i class="bx bx-barcode"></i>
+                                <h3 class="pago-Plano">Boleto</h3>
+                            </div>
                         </div>
-                       </div>
                     </div>
-                    </div>
-                     
+
                 </div>
-            
-            <div class="button-Assinar">
-                <button type="submit" class="confirmarAssina" id="confirmarAssina">Confirmar Assinatura</button>
             </div>
+
+            <div class="button-Assinar">
+                <button type="submit" class="confirmarAssina" id="confirmarAssina">
+                    Confirmar Assinatura
+                </button>
+            </div>
+
             <div class="cancelar-button">
                 <button type="submit" id="cancelar">Cancelar</button>
             </div>
+
         </div>
 
-
-
-
+        <!-- MODAL DO PLANO GOLDEN -->
         <div class="plano-ModalCard" id="modelpremium">
+
             <div class="plano-Modal">
-                <div class="icone-Plano"> <i class='bx bx-dumbbell'></i></div>
+                <div class="icone-Plano">
+                    <i class="bx bx-dumbbell"></i>
+                </div>
+
                 <div>
                     <h3 class="assinar-Plano">Assinar Plano</h3>
-                    <p class="confir-Plano">Confira os detalhes do plano antes de continuar.</p>
+                    <p class="confir-Plano">
+                        Confira os detalhes do plano antes de continuar.
+                    </p>
                 </div>
             </div>
 
-        
+            <div class="valor-PlanoM">
 
-                <div class="valor-PlanoM">
-                    <div class="selec-Plano">
-                        <p class="selecionado">Plano Selecionado</p>
-                        <h2 class="plano-Slec">Plano Golden</h2>
+                <div class="selec-Plano">
+                    <p class="selecionado">Plano Selecionado</p>
+                    <h2 class="plano-Slec">Plano Golden</h2>
+                </div>
+
+                <div class="valor-pagado">
+                    <h2 class="valor-modal">R$ 290,99</h2>
+                    <p class="tempo-pago">por mês</p>
+                </div>
+
+            </div>
+
+            <div class="form-Paga">
+
+                <div class="tipo-Paga">
+                    <div class="icone-Paga">
+                        <i class="bx bx-credit-card"></i>
                     </div>
 
-                    <div class="valor-pagado">
-                        <h2 class="valor-modal">R$  290,99</h2>
-                        <p class="tempo-pago">por mês</p>
+                    <div>
+                        <h3 class="pagamento">Forma de Pagamento</h3>
                     </div>
                 </div>
 
-                <div class="form-Paga">
+                <div class="pagamento-card">
 
-                    <div class="tipo-Paga">
-                        <div class="icone-Paga"><i class="bx bx-credit-card"></i></div>
-                        <div><h3 class="pagamento">Forma de Pagamento</h3></div>
-                    </div>
+                    <div class="card-paga">
+                        <div class="input-paga">
+                            <input type="radio" name="circuloGolden"
+                                id="cartaoGolden" class="input-escolha">
 
-                    <div class="pagamento-card">
-                        <div class="card-paga">
-                       <div class="input-paga">
-                        <input type="radio" name="circuloGolden" id="cartaoGolden" class="input-escolha">
-
-                        <div class="pagmento-modal">
-                            <i class="bx bx-credit-card"></i>
-                            <h3 class="pago-Plano">Cartão de Crédito</h3>
+                            <div class="pagmento-modal">
+                                <i class="bx bx-credit-card"></i>
+                                <h3 class="pago-Plano">Cartão de Crédito</h3>
+                            </div>
                         </div>
-                       </div>
                     </div>
 
                     <div class="card-paga">
-                       <div class="input-paga">
-                        <input type="radio" name="circuloGolden" id="pixGolden" class="input-escolha">
+                        <div class="input-paga">
+                            <input type="radio" name="circuloGolden"
+                                id="pixGolden" class="input-escolha">
 
-                        <div class="pagmento-modal">
-                            <i class="bx bx-qr"></i>
-                            <h3 class="pago-Plano">PIX</h3>
+                            <div class="pagmento-modal">
+                                <i class="bx bx-qr"></i>
+                                <h3 class="pago-Plano">PIX</h3>
+                            </div>
                         </div>
-                       </div>
                     </div>
 
-                     <div class="card-paga">
-                       <div class="input-paga">
-                        <input type="radio" name="circuloGolden" id="boletoGolden" class="input-escolha">
+                    <div class="card-paga">
+                        <div class="input-paga">
+                            <input type="radio" name="circuloGolden"
+                                id="boletoGolden" class="input-escolha">
 
-                        <div class="pagmento-modal">
-                            <i class="bx bx-barcode"></i>
-                            <h3 class="pago-Plano">Boleto</h3>
+                            <div class="pagmento-modal">
+                                <i class="bx bx-barcode"></i>
+                                <h3 class="pago-Plano">Boleto</h3>
+                            </div>
                         </div>
-                       </div>
                     </div>
-                    </div>
-                     
+
                 </div>
-            
-            <div class="button-Assinar">
-                <button type="submit" class="confirmarAssina" id="confirmargolden">Confirmar Assinatura</button>
             </div>
+
+            <div class="button-Assinar">
+                <button type="submit" class="confirmarAssina" id="confirmargolden">
+                    Confirmar Assinatura
+                </button>
+            </div>
+
             <div class="cancelar-button">
                 <button type="submit" id="cancelarpremium">Cancelar</button>
             </div>
+
         </div>
+
     </main>
 
-     <footer class="footer-box">
-        <img src="/Frontend/Assets/IMG/logo.png" alt="logo" class="logo-img">
+    <!-- FOOTER -->
+    <footer class="footer-box">
+
+        <img src="/Frontend/Assets/IMG/logo.png"
+            alt="logo" class="logo-img">
 
         <div class="rede-social">
-               <p class="icone-redes"> <a href="#"><i class='bx bxl-instagram'></i></a></p>
-                <p class="icone-redes"><a href="#"><i class='bx bxl-facebook'></i></a></p>
-                <p class="icone-redes"><a href="#"><i class='bx bxl-tiktok'></i></a></p>
+            <p class="icone-redes">
+                <a href="#"><i class="bx bxl-instagram"></i></a>
+            </p>
+
+            <p class="icone-redes">
+                <a href="#"><i class="bx bxl-facebook"></i></a>
+            </p>
+
+            <p class="icone-redes">
+                <a href="#"><i class="bx bxl-tiktok"></i></a>
+            </p>
         </div>
-        <p class="politica"><a href="#">Políticas de Privacidade</a></p>
+
+        <p class="politica">
+            <a href="#">Políticas de Privacidade</a>
+        </p>
+
         <div class="direito-uso">
-            <p class="direitos">&copy; Todos os direitos reservados.</p>
-        <p class="direitos">Mov's Academia de Ginástica A/S CNPJ 455.796.890/0001</p>
+            <p class="direitos">© Todos os direitos reservados.</p>
+            <p class="direitos">
+                Mov's Academia de Ginástica A/S CNPJ 455.796.890/0001
+            </p>
         </div>
+
     </footer>
 
     <script src="/Frontend/JS/plano.js"></script>
+
+    <!-- FUNCIONAMENTO DO MENU HAMBÚRGUER -->
     <script>
+        document.addEventListener("DOMContentLoaded", () => {
 
-const btnMenu = document.getElementById('btnMenu');
-const menuLateral = document.querySelector('.menu-lateral');
-const iconeMenu = btnMenu.querySelector('i');
+            const btnMenu = document.getElementById("btnMenu");
+            const menuLateral = document.getElementById("menuLateral");
 
-btnMenu.addEventListener('click', () => {
+            if (!btnMenu || !menuLateral) return;
 
-    const menuAberto = menuLateral.classList.toggle('menu-aberto');
+            const abrirMenu = () => {
+                menuLateral.classList.add("menu-aberto");
+                btnMenu.setAttribute("aria-expanded", "true");
+                btnMenu.setAttribute("aria-label", "Fechar menu");
+                btnMenu.innerHTML = "<i class='bx bx-x' aria-hidden='true'></i>";
+            };
 
-    btnMenu.setAttribute('aria-expanded', menuAberto);
+            const fecharMenu = () => {
+                menuLateral.classList.remove("menu-aberto");
+                btnMenu.setAttribute("aria-expanded", "false");
+                btnMenu.setAttribute("aria-label", "Abrir menu");
+                btnMenu.innerHTML = "<i class='bx bx-menu' aria-hidden='true'></i>";
+            };
 
-    if (menuAberto) {
-        iconeMenu.classList.replace('bx-menu', 'bx-x');
-    } else {
-        iconeMenu.classList.replace('bx-x', 'bx-menu');
-    }
+            btnMenu.addEventListener("click", (event) => {
+                event.stopPropagation();
 
-});
+                menuLateral.classList.contains("menu-aberto")
+                    ? fecharMenu()
+                    : abrirMenu();
+            });
 
-// Fecha o menu ao clicar em um link
-document.querySelectorAll('.menu-principal a').forEach(link => {
+            menuLateral.addEventListener("click", (event) => {
+                event.stopPropagation();
+            });
 
-    link.addEventListener('click', () => {
+            document.addEventListener("click", fecharMenu);
 
-        menuLateral.classList.remove('menu-aberto');
+            document.addEventListener("keydown", (event) => {
+                if (event.key === "Escape") fecharMenu();
+            });
 
-        btnMenu.setAttribute('aria-expanded', 'false');
+            menuLateral.querySelectorAll("a").forEach((link) => {
+                link.addEventListener("click", fecharMenu);
+            });
 
-        iconeMenu.classList.replace('bx-x', 'bx-menu');
-
-    });
-
-});
-
-// Fecha o menu ao clicar fora dele
-document.addEventListener('click', (evento) => {
-
-    if (
-        !menuLateral.contains(evento.target) &&
-        !btnMenu.contains(evento.target)
-    ) {
-
-        menuLateral.classList.remove('menu-aberto');
-
-        btnMenu.setAttribute('aria-expanded', 'false');
-
-        iconeMenu.classList.replace('bx-x', 'bx-menu');
-
-    }
-
-});
-
+        });
     </script>
+
 </body>
 </html>

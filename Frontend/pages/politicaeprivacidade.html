@@ -1,94 +1,60 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Política de Privacidade | MOV Academy</title>
-
-    <link rel="shortcut icon"
-        href="/Frontend/Assets/IMG/android-chrome-512x512.png"
-        type="image/x-icon">
-
+    <link rel="shortcut icon" href="/Frontend/Assets/IMG/android-chrome-512x512.png" type="image/x-icon">
     <link rel="stylesheet" href="/Frontend/CSS/politica.css">
-
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-        rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <title>Sobre Nós</title>
 </head>
-
 <body>
+    
+   
+<header class="header-box">
+    <nav class="nav-bar">
 
-    <!-- CABEÇALHO -->
-    <header class="header-box">
+        <img src="/Frontend/Assets/IMG/logo.png"
+             alt="Logo MOV Academy"
+             class="logo-img">
 
-        <nav class="nav-bar">
+        <div class="menu-lateral" id="menuLateral">
+            <ul class="menu-principal">
+                <li class="lista-menu">
+                    <a href="/index.html">Início</a>
+                </li>
 
-            <!-- LOGO -->
-            <img src="/Frontend/Assets/IMG/logo.png"
-                alt="Logo MOV Academy"
-                class="logo-img">
+                <li class="lista-menu">
+                    <a href="/Frontend/pages/planos.html">Planos</a>
+                </li>
 
-            <!-- MENU LATERAL -->
-            <div class="menu-lateral" id="menuLateral">
+                <li class="lista-menu">
+                    <a href="/Frontend/pages/sobrenos.html">Sobre-nós</a>
+                </li>
 
-                <!-- MENU PRINCIPAL -->
-                <ul class="menu-principal" id="menuPrincipal">
+                <li class="lista-menu">
+                    <a href="/Frontend/pages/loja.html">Loja</a>
+                </li>
+            </ul>
 
-                    <li class="lista-menu1">
-                        <a href="/index.html">Início</a>
-                    </li>
-
-                    <li class="lista-menu">
-                        <a href="/Frontend/pages/planos.html">Planos</a>
-                    </li>
-
-                    <li class="lista-menu">
-                        <a href="/Frontend/pages/sobrenos.html">Sobre-nós</a>
-                    </li>
-
-                    <li class="lista-menu">
-                        <a href="/Frontend/pages/loja.html">Loja</a>
-                    </li>
-
-                      <div class="busca-Treino">
-
-                <input
-                    type="text"
-                    name="texto"
-                    id="textBusca"
-                    placeholder="Buscar treinos..."
-                >
-
+            <div class="busca-Treino">
+                <input type="text" name="texto" id="textBusca"
+                       placeholder="Buscar treinos...">
                 <div class="busca">
                     <i class='bx bx-search'></i>
                 </div>
-
             </div>
+        </div>
 
-                </ul>
-
-            </div>
-
-            <!-- PESQUISA -->
-          
-
-            <!-- BOTÃO MENU HAMBÚRGUER -->
-            <button
-                class="btn-menu"
-                id="btnMenu"
+        <button class="btn-menu" id="btnMenu"
                 type="button"
                 aria-label="Abrir menu"
-                aria-expanded="false"
-                aria-controls="menuLateral"
-            >
-                <i class='bx bx-menu'></i>
-            </button>
+                aria-expanded="false">
+            <i class='bx bx-menu'></i>
+        </button>
 
-        </nav>
-
-    </header>
+    </nav>
+</header>
 
 
     <!-- CONTEÚDO PRINCIPAL -->
