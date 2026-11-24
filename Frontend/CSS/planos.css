@@ -226,23 +226,14 @@ img {
 }
 
 .busca-Treino input {
-
     width: 100%;
-
     min-width: 0;
-
     padding: 14px 45px 14px 15px;
-
     background-color: #1a1025;
-
     border: 1px solid #8A2BE2;
-
     border-radius: 10px;
-
     color: #fff;
-
     font-family: 'Poppins', sans-serif;
-
     font-size: 14px;
 
 }
@@ -340,6 +331,8 @@ img {
     object-fit: cover;
 
     object-position: center;
+
+    position: relative;
 
 }
 
@@ -962,33 +955,27 @@ img {
 }
 
 .cancelar-button {
-
-    text-align: center;
-
+    border: none;
     margin-top: 20px;
-
+    text-align: center;
 }
 
 .cancelar-button button {
-
-    background-color: transparent;
-
-    color: #fff;
-
+    background-color: #E6FF00;
+    color: #000;
     font-size: 18px;
-
     font-weight: 600;
-
     cursor: pointer;
-
     transition: 0.3s ease;
-
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    transition: 0.5s ease;
 }
 
 .cancelar-button button:hover {
-
-    color: #E6FF00;
-
+    background-color: #000;
+    color: #fff;
 }
 
 /* =========================================
@@ -1556,11 +1543,8 @@ img {
     }
 
 .planos-text {
-
         width: 100%;
-
         justify-content: center;
-
     }
 
 .planos {

@@ -1,0 +1,680 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/Frontend/Assets/IMG/android-chrome-512x512.png" type="image/x-icon">
+    <link rel="stylesheet" href="/Frontend/CSS/equipamento.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Shorts Feminino - Loja</title>
+</head>
+
+<body>
+
+    <header class="header-box">
+        <nav class="nav-bar">
+            <img src="/Frontend/Assets/IMG/logo.png" alt="imagem principal" class="logo-img">
+
+            <!-- BOTÃO DO MENU HAMBÚRGUER -->
+            <button class="menu-hamburguer" id="menuHamburguer" aria-label="Abrir menu" aria-expanded="false" type="button">
+                <i class='bx bx-menu'></i>
+            </button>
+
+            <ul class="menu-principal">
+                <li class="lista-menu"><a href="/index.html">Inicio</a></li>
+                <li class="lista-menu"><a href="/Frontend/pages/planos.html">Planos</a></li>
+                <li class="lista-menu"><a href="/Frontend/pages/sobrenos.html">Sobre-nós</a></li>
+                <li class="lista-menu1"><a href="/Frontend/pages/loja.html">Loja</a></li>
+            </ul>
+
+            <div class="busca-Treino">
+                <input type="text" name="texto" id="textBusca" placeholder="Buscar treinos...">
+                <div class="busca"><i class='bx bx-search'></i></div>
+            </div>
+        </nav>
+    </header>
+
+  <aside class="menu-lateral">
+    <ul class="menu-plano">
+
+        <li class="lista-lateral1">
+            <a href="/Frontend/pages/equipamento.html">Equipamentos</a>
+        </li>
+
+        <li class="lista-lateral">
+            <a href="/Frontend/pages/acessorios.html">Acessórios</a>
+        </li>
+
+        <li class="lista-lateral">
+            <a href="/Frontend/pages/suplemento.html">Suplementos</a>
+        </li>
+
+        <!-- MENU ROUPAS -->
+        <li class="lista-lateral roupas-menu">
+
+            <a id="menu-Down">
+                Roupas
+                <i class='bx bx-chevron-right' id="icon-down"></i>
+            </a>
+
+            <ul class="roupas-itens">
+
+                <!-- CAMISETAS -->
+                <li class="lista-lateral roupas-menu">
+
+                    <a class="submenu-toggle">
+                        Camisetas
+                        <i class='bx bx-chevron-right'></i>
+                    </a>
+
+                    <ul class="roupas-itens">
+                        <li class="lista-lateral">
+                            <a href="/Frontend/pages/camiseta-feminina.html">Feminino</a>
+                        </li>
+
+                        <li class="lista-lateral">
+                            <a href="/Frontend/pages/camiseta-masculina.html">Masculino</a>
+                        </li>
+                    </ul>
+
+                </li>
+
+                <!-- SHORTS -->
+                <li class="lista-lateral roupas-menu">
+
+                    <a class="submenu-toggle">
+                        Shorts
+                        <i class='bx bx-chevron-right'></i>
+                    </a>
+
+                    <ul class="roupas-itens">
+                        <li class="lista-lateral">
+                            <a href="/Frontend/pages/shorts-femininos.html">Feminino</a>
+                        </li>
+
+                        <li class="lista-lateral">
+                            <a href="/Frontend/pages/shorts-masculino.html">Masculino</a>
+                        </li>
+                    </ul>
+
+                </li>
+
+                <!-- CALÇAS -->
+                <li class="lista-lateral roupas-menu">
+
+                    <a class="submenu-toggle">
+                        Calças
+                        <i class='bx bx-chevron-right'></i>
+                    </a>
+
+                    <ul class="roupas-itens">
+                        <li class="lista-lateral">
+                            <a href="/Frontend/pages/calcas-femininas.html">Feminino</a>
+                        </li>
+
+                        <li class="lista-lateral">
+                            <a href="/Frontend/pages/calcas-masculinas.html">Masculino</a>
+                        </li>
+                    </ul>
+
+                </li>
+
+            </ul>
+        </li>
+
+     
+    </ul>
+
+    <!-- PREMIUM -->
+    <div class="premium-lojamove">
+
+        <div class="loja-video">
+            <i class='bx bx-dumbbell icone-premium'></i>
+        </div>
+
+        <h3 class="loja-Premium">Seja Premium</h3>
+
+        <p class="acesso-premium">
+            Acesse as ofertas exclusivas e tenha seus benefícios!
+        </p>
+
+        <button class="botao-lojas">
+            <a href="/Frontend/pages/planos.html">
+                <i class='bx bx-crown'></i> Assine agora
+            </a>
+        </button>
+
+    </div>
+</aside>
+    <main class="content-principal">
+        <section>
+            <div class="equipamento-image"><img src="/Frontend/Assets/IMG/imagem-shorts.jpeg" alt="equipamento">
+            </div>
+            <div class="box-equipa">
+                <h1 class="equipamento">Shorts</h1>
+                <h1 class="equipamento"><span class="dest-equipa">Masculinos</span></h1>
+                <h3 class="melhor-Equipa">Liberdade Conforto</h3>
+                 <h3 class="melhor-Equipa">Desempenho em cada movimento!</h3>
+                <p class="garanta-equipa">Garanta já o seu <i class='bx bx-right-arrow-alt'></i></p>
+            </div>
+        </section>
+
+        <section >
+            <div class="benficios-content" id="card-content">
+                <div class="info-loja2">
+                    <div class="entregar">
+                        <div class="icone-entrega">
+                            <i class='bx bxs-truck'></i>
+                        </div>
+                        <div>
+                            <h3 class="entrega-local">Entrega Rápida</h3>
+                            <p class="local">Prazo curto até você!</p>
+                        </div>
+                    </div>
+                    <div class="entregar">
+                        <div class="icone-entrega">
+                            <i class='bx bx-check-shield'></i>
+                        </div>
+                        <div>
+                            <h3 class="entrega-local">Compra Segura</h3>
+                            <p class="local">Sua compra protegida.</p>
+                        </div>
+                    </div>
+                    <div class="entregar">
+                        <div class="icone-entrega">
+                            <i class='bx bx-credit-card'></i>
+                        </div>
+                        <div>
+                            <h3 class="entrega-local">Até 12x no cartão</h3>
+                            <p class="local">Sem juros.</p>
+                        </div>
+                    </div>
+                    <div class="entregar    ">
+                        <div class="icone-entrega">
+                            <i class='bx bx-headphone'></i>
+                        </div>
+                        <div>
+                            <h3 class="entrega-local">Suporte ao cliente</h3>
+                            <p class="local">Estamos aqui para ajudar.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="equipamento-card">
+                <div class="nossos-equipa">
+                    <div class="nossos-Itens">
+                        <h1>Nossos <span class="dest-equipa">Shorts Masculino</span></h1>
+                    </div>
+                    <div class="barra-verde"></div>
+                </div>
+
+                <div class="card-grid">
+                    <!--Card de Produto 1-->
+                    <div class="produto">
+                        <img src="/Frontend/Assets/IMG/nike-short-azul.png" alt="Shorts Nike Dry-Fit" class="item-produto">
+
+                        <div class="card-produto">
+                            <h2 class="nome-produto">Shorts Nike Dry-Fit</h2>
+                            <p class="cor-produto">Poliéster</p>
+                            <h3 class="preco-produto">R$104,49</h3>
+                        </div>
+
+                        <div class="comprar">
+                            <button type="submit" class="comprar-produto prod">
+                                <i class='bx bx-cart'></i> Comprar Produto
+                            </button>
+                        </div>
+
+                        <div class="card-compra prod1">
+
+                            <div class="icone-x">
+                                <i class='bx bx-x'></i>
+                            </div>
+                            <h2 class="nome-Adicionado">Produto adicionado!</h2>
+
+                            <div class="linha-prod">
+
+                                <div class="imagem-prod"><img src="/Frontend/Assets/IMG/nike-short-azul.png"
+                                        alt="Shorts Nike Dry-Fit"></div>
+
+                                <div>
+                                    <h3 class="nome-prod">Shorts Nike Dry-Fit</h3>
+
+                                    <div class="item-prod">
+                                        <p class="quantia">Quantidade: 1</p>
+                                        <p class="preco-produto">R$104,49</p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="continuar-but">
+                                <button type="submit">Continuar comprando</button>
+                            </div>
+
+                            <div class="carrinho-but"><button type="submit">Adicionar ao carrinho</button></div>
+
+                        </div>
+                    </div>
+
+                    <!--Card de Produto 2-->
+
+                    <div class="produto">
+                        <img src="/Frontend/Assets/IMG/short-azul-marinho.png" alt="Nike Challenger Run" class="item-produto">
+
+                        <div class="card-produto">
+                            <h2 class="nome-produto">Nike Challenger Run</h2>
+                            <p class="cor-produto">Poliéster / Elastano</p>
+                            <h3 class="preco-produto">R$161,49</h3>
+                        </div>
+
+                        <div class="comprar">
+                            <button type="submit" class="comprar-produto prod">
+                                <i class='bx bx-cart'></i> Comprar Produto
+                            </button>
+                        </div>
+
+                        <div class="card-compra prod2">
+
+                            <div class="icone-x">
+                                <i class='bx bx-x'></i>
+                            </div>
+                            <h2 class="nome-Adicionado">Produto adicionado!</h2>
+
+                            <div class="linha-prod">
+
+                                <div class="imagem-prod"><img src="/Frontend/Assets/IMG/short-azul-marinho.png"
+                                        alt="Nike Challenger Run"></div>
+
+                                <div>
+                                    <h3 class="nome-prod">Nike Challenger Run</h3>
+
+                                    <div class="item-prod">
+                                        <p class="quantia">Quantidade: 1</p>
+                                        <p class="preco-produto">R$161,49</p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="continuar-but">
+                                <button type="submit">Continuar comprando</button>
+                            </div>
+
+                            <div class="carrinho-but"><button type="submit">Adicionar ao carrinho</button></div>
+
+                        </div>
+                    </div>
+
+                    <!--Card de Produto 3-->
+                    <div class="produto">
+                        <img src="/Frontend/Assets/IMG/shorts-preto-Tech.png" alt="Under Armour Tech" class="item-produto">
+
+                        <div class="card-produto">
+                            <h2 class="nome-produto">Under Armour Tech</h2>
+                            <p class="cor-produto">100% Poliéster</p>
+                            <h3 class="preco-produto">R$62,99</h3>
+                        </div>
+
+                        <div class="comprar">
+                            <button type="submit" class="comprar-produto prod">
+                                <i class='bx bx-cart'></i> Comprar Produto
+                            </button>
+                        </div>
+
+                        <div class="card-compra prod3">
+
+                            <div class="icone-x">
+                                <i class='bx bx-x'></i>
+                            </div>
+                            <h2 class="nome-Adicionado">Produto adicionado!</h2>
+
+                            <div class="linha-prod">
+
+                                <div class="imagem-prod"><img src="/Frontend/Assets/IMG/shorts-preto-Tech.png"
+                                        alt="Under Armour Tech "></div>
+
+                                <div>
+                                    <h3 class="nome-prod">Under Armour Tech</h3>
+
+                                    <div class="item-prod">
+                                        <p class="quantia">Quantidade: 1</p>
+                                        <p class="preco-produto">R$62,99</p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="continuar-but">
+                                <button type="submit">Continuar comprando</button>
+                            </div>
+
+                            <div class="carrinho-but"><button type="submit">Adicionar ao carrinho</button></div>
+
+                        </div>
+                    </div>
+                    <!--Card de Produto 4-->
+                    <div class="produto">
+                        <img src="/Frontend/Assets/IMG/shorts-cinza-mesh.png" alt="Under Armour Tech" class="item-produto">
+
+                        <div class="card-produto">
+                            <h2 class="nome-produto">Under Armour Tech Mesh</h2>
+                            <p class="cor-produto">100% Poliéster</p>
+                            <h3 class="preco-produto">R$89,99</h3>
+                        </div>
+
+                        <div class="comprar">
+                            <button type="submit" class="comprar-produto prod">
+                                <i class='bx bx-cart'></i> Comprar Produto
+                            </button>
+                        </div>
+
+                        <div class="card-compra prod4">
+
+                            <div class="icone-x">
+                                <i class='bx bx-x'></i>
+                            </div>
+                            <h2 class="nome-Adicionado">Produto adicionado!</h2>
+
+                            <div class="linha-prod">
+
+                                <div class="imagem-prod"><img src="/Frontend/Assets/IMG/shorts-cinza-mesh.png" alt="Under Armour Tech">
+                                </div>
+
+                                <div>
+                                    <h3 class="nome-prod">Under Armour Tech Mesh</h3>
+
+                                    <div class="item-prod">
+                                        <p class="quantia">Quantidade: 1</p>
+                                        <p class="preco-produto">R$89,99</p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="continuar-but">
+                                <button type="submit">Continuar comprando</button>
+                            </div>
+
+                            <div class="carrinho-but"><button type="submit">Adicionar ao carrinho</button></div>
+
+                        </div>
+                    </div>
+                    <!--Card de Produto 5-->
+
+                    <div class="produto">
+                        <img src="/Frontend/Assets/IMG/short-azul-marinha.png" alt="Under Armour Tech Rival" class="item-produto">
+
+                        <div class="card-produto">
+                            <h2 class="nome-produto">Under Armour Tech Rival</h2>
+                            <p class="cor-produto">Algodão</p>
+                            <h3 class="preco-produto">R$129,90</h3>
+                        </div>
+
+                        <div class="comprar">
+                            <button type="submit" class="comprar-produto prod">
+                                <i class='bx bx-cart'></i> Comprar Produto
+                            </button>
+                        </div>
+
+                        <div class="card-compra prod5">
+
+                            <div class="icone-x">
+                                <i class='bx bx-x'></i>
+                            </div>
+                            <h2 class="nome-Adicionado">Produto adicionado!</h2>
+
+                            <div class="linha-prod">
+
+                                <div class="imagem-prod"><img src="/Frontend/Assets/IMG/short-azul-marinha.png"
+                                        alt="Under Armour Tech Rival"></div>
+
+                                <div>
+                                    <h3 class="nome-prod">Under Armour Tech Rival</h3>
+
+                                    <div class="item-prod">
+                                        <p class="quantia">Quantidade: 1</p>
+                                        <p class="preco-produto">R$129,90</p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="continuar-but">
+                                <button type="submit">Continuar comprando</button>
+                            </div>
+
+                            <div class="carrinho-but"><button type="submit">Adicionar ao carrinho</button></div>
+
+                        </div>
+                    </div>
+                    <!--Card de Produto 6-->
+
+                    <div class="produto">
+                        <img src="/Frontend/Assets/IMG/shorts-leg.png" alt="Shorts Adidas" class="item-produto">
+
+                        <div class="card-produto">
+                            <h2 class="nome-produto">Shorts Adidas</h2>
+                            <p class="cor-produto">Algodão</p>
+                            <h3 class="preco-produto">R$179,90</h3>
+                        </div>
+
+                        <div class="comprar">
+                            <button type="submit" class="comprar-produto prod">
+                                <i class='bx bx-cart'></i> Comprar Produto
+                            </button>
+                        </div>
+
+                        <div class="card-compra prod6">
+
+                            <div class="icone-x">
+                                <i class='bx bx-x'></i>
+                            </div>
+                            <h2 class="nome-Adicionado">Produto adicionado!</h2>
+
+                            <div class="linha-prod">
+
+                                <div class="imagem-prod"><img src="/Frontend/Assets/IMG/shorts-leg.png"
+                                        alt="Shorts Adidas"></div>
+
+                                <div>
+                                    <h3 class="nome-prod">Shorts Adidas</h3>
+
+                                    <div class="item-prod">
+                                        <p class="quantia">Quantidade: 1</p>
+                                        <p class="preco-produto">R$179,90</p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="continuar-but">
+                                <button type="submit">Continuar comprando</button>
+                            </div>
+
+                            <div class="carrinho-but"><button type="submit">Adicionar ao carrinho</button></div>
+
+                        </div>
+                    </div>
+
+                    <!--Card de Produto 7-->
+                    <div class="produto">
+                        <img src="/Frontend/Assets/IMG/shorts-file.jpg" alt=" Shorts Fila" class="item-produto">
+
+                        <div class="card-produto">
+                            <h2 class="nome-produto">Shorts Puma</h2>
+                            <p class="cor-produto">Algodão</p>
+                            <h3 class="preco-produto">R$179,90</h3>
+
+                        </div>
+
+                        <div class="comprar">
+                            <button type="submit" class="comprar-produto prod">
+                                <i class='bx bx-cart'></i> Comprar Produto
+                            </button>
+                        </div>
+
+                        <div class="card-compra prod7">
+
+                            <div class="icone-x">
+                                <i class='bx bx-x'></i>
+                            </div>
+                            <h2 class="nome-Adicionado">Produto adicionado!</h2>
+
+                            <div class="linha-prod">
+
+                                <div class="imagem-prod"><img src="/Frontend/Assets/IMG/shorts-file.jpg" alt="Shorts Puma">
+                                </div>
+
+                                <div>
+                                    <h3 class="nome-prod">Shorts Puma</h3>
+
+                                    <div class="item-prod">
+                                        <p class="quantia">Quantidade: 1</p>
+                                        <p class="preco-produto">R$179,90</p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="carrinho-but"><button type="submit">Adicionar ao carrinho</button></div>
+
+                        </div>
+                    </div>
+
+                    <!--Card de Produto 8-->
+
+                    <div class="produto">
+                        <img src="/Frontend/Assets/IMG/shorts-saiaBeige.png" alt="Shorts Diadoro" class="item-produto">
+
+                        <div class="card-produto">
+                            <h2 class="nome-produto">Shorts Diadoro</h2>
+                            <p class="cor-produto">Poliéster / DryCell</p>
+                            <h3 class="preco-produto">R$55,00</h3>
+                        </div>
+
+                        <div class="comprar">
+                            <button type="submit" class="comprar-produto prod">
+                                <i class='bx bx-cart'></i> Comprar Produto
+                            </button>
+                        </div>
+
+                        <div class="card-compra prod8">
+
+                            <div class="icone-x">
+                                <i class='bx bx-x'></i>
+                            </div>
+                            <h2 class="nome-Adicionado">Produto adicionado!</h2>
+
+                            <div class="linha-prod">
+
+                                <div class="imagem-prod"><img src="/Frontend/Assets/IMG/shorts-saiaBeige.png"
+                                        alt="Shorts Diadoro"></div>
+
+                                <div>
+                                    <h3 class="nome-prod">Shorts Diadoro</h3>
+
+                                    <div class="item-prod">
+                                        <p class="quantia">Quantidade: 1</p>
+                                        <p class="preco-produto">R$55,00</p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="continuar-but">
+                                <button type="submit">Continuar comprando</button>
+                            </div>
+
+                            <div class="carrinho-but"><button type="submit">Adicionar ao carrinho</button></div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="card-evolucao">
+
+                <div class="halteres-card">
+                    <img src="/Frontend/Assets/IMG/Shorts-masculinos.jpeg" alt="Halteres">
+                </div>
+
+                <div class="card-detalhe">
+
+                    <div class="card-itens-prod">
+                        <p class="equipe-move">Equipamentos Move Academy</p>
+
+                        <h1 class="titulo-evolua">
+                            Evolua em
+                        </h1>
+
+                        <h1 class="titulo-evolua">
+                            <span class="dest-evolua">cada detalhe</span>
+                        </h1>
+                    </div>
+
+                    <div class="conferir">
+                        <p class="conferir-equipamento">
+                        <a href="#card-content"> Confira todos os equipamentos</a>
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-box">
+
+        <img src="/Frontend/Assets/IMG/logo.png" alt="logo" class="logo-img">
+
+        <div class="rede-social">
+            <p class="icone-redes">
+                <a href="#"><i class='bx bxl-instagram'></i></a>
+            </p>
+
+            <p class="icone-redes">
+                <a href="#"><i class='bx bxl-facebook'></i></a>
+            </p>
+
+            <p class="icone-redes">
+                <a href="#"><i class='bx bxl-tiktok'></i></a>
+            </p>
+        </div>
+
+        <p class="politica">
+            <a href="#">Políticas de Privacidade</a>
+        </p>
+
+        <div class="direito-uso">
+            <p class="direitos">&copy; Todos os direitos reservados.</p>
+            <p class="direitos">Mov's Academia de Ginástica A/S CNPJ 455.796.890/0001</p>
+        </div>
+
+    </footer>
+
+    <script src="/Frontend/JS/produtotodos.js"></script>
+    <script src="/Frontend/JS/dropDown.js"></script>
+    <script src="/Frontend/JS/menu-Hamburguer.js"></script>
+    
+</body>
+</html>

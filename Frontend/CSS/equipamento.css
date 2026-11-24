@@ -1,1674 +1,1711 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&display=swap');
 
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&display=swap');
+/* =====================================================
+CONFIGURAÇÕES GERAIS
+===================================================== */
 
-    /* =====================================================
-    CONFIGURAÇÕES GERAIS
-    ===================================================== */
+:root {
+    --fundo-secao: #171519;
+    --fundo-card: #39363B;
+    --fundo-preco: #242226;
+    --amarelo-neon: #E6FF00;
+    --branco: #FFFFFF;
+    --cinza: #999999;
+}
 
-    :root {
-        --fundo-secao: #171519;
-        --fundo-card: #39363B;
-        --fundo-preco: #242226;
-        --amarelo-neon: #E6FF00;
-        --branco: #FFFFFF;
-        --cinza: #999999;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #000;
+    width: 100%;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: clip;
+    position: relative;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* =====================================================
+CABEÇALHO E MENU SUPERIOR
+===================================================== */
+
+.header-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    width: 100%;
+    padding: 10px 40px;
+    background-color: #000;
+    border-bottom: 1px solid #333;
+}
+
+.nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 30px;
+    position: relative;
+    max-width: 1440px;
+    margin: auto;
+}
+
+.logo-img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.menu-principal {
+    position: relative;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.lista-menu a,
+.lista-menu1 a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    transition: 0.3s ease;
+    text-transform: uppercase;
+}
+
+.lista-menu a:hover,
+.lista-menu1 a:hover {
+    transform: scale(1.1);
+}
+
+.lista-menu a::after,
+.lista-menu1 a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background-color: #D6F90B;
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.lista-menu a:hover::after,
+.lista-menu1 a:hover::after {
+    width: 100%;
+}
+
+.lista-menu1 a::after {
+    width: 100%;
+}
+
+/* =====================================================
+CAMPO DE BUSCA
+===================================================== */
+
+.busca-Treino {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.busca-Treino input {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 15px 60px;
+    background-color: #1a1025;
+    border: 1px solid #8A2BE2;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.busca-Treino input::placeholder {
+    color: #afafaf;
+}
+
+#textBusca {
+    color: #fff;
+    border: none;
+}
+
+#textBusca:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.busca i {
+    color: #A855F7;
+    font-size: 20px;
+    display: block;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* =====================================================
+BOTÃO MENU HAMBÚRGUER
+===================================================== */
+
+.menu-hamburguer {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    color: #E6FF00;
+    font-size: 35px;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 10001;
+    transition: 0.3s ease;
+}
+
+.menu-hamburguer:hover {
+    color: #D6F90B;
+    transform: scale(1.08);
+}
+
+.menu-hamburguer i {
+    display: block;
+}
+
+/* =====================================================
+MENU LATERAL
+===================================================== */
+
+.menu-lateral {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    padding: 10rem 4rem;
+    background-color: #000;
+    height: 100vh;
+    height: 100dvh;
+    border-right: 1px solid #333;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.menu-plano {
+    position: relative;
+}
+
+.lista-lateral {
+    text-align: left;
+    list-style: none;
+    padding: 8px 0;
+}
+
+.roupas-itens {
+    position: relative;
+    display: none;
+}
+
+.roupas-itens.ativo {
+    display: block;
+}
+
+.lista-lateral1 a {
+    display: flex;
+    color: #000;
+    text-decoration: none;
+    outline: none;
+    font-size: 20px;
+    background-color: #E6FF00;
+    padding: 10px 22px;
+    border-radius: 10px;
+    transition: 0.3s ease;
+}
+
+.lista-lateral a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+    text-decoration: none;
+    outline: none;
+    font-size: 20px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.lista-lateral a:hover {
+    transform: scale(1.05);
+    color: #000;
+    background-color: #E6FF00;
+}
+
+#icone-dow,
+#icon-down {
+    transition: transform 0.5s ease;
+}
+
+/* =====================================================
+CARD PREMIUM DO MENU
+===================================================== */
+
+.premium-lojamove {
+    width: 100%;
+    max-width: 230px;
+    border: 1px solid #E6FF00;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.loja-video i {
+    color: #E6FF00;
+    font-size: 50px;
+}
+
+.loja-Premium {
+    color: #E6FF00;
+}
+
+.acesso-premium {
+    color: #fff;
+}
+
+.botao-lojas {
+    border: none;
+    border-radius: 10px;
+    background-color: #E6FF00;
+    padding: 8px 20px;
+    margin-top: 10px;
+    transition: 0.5s ease;
+}
+
+.botao-lojas a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.botao-lojas a:focus {
+    outline: none;
+    border: none;
+}
+
+.botao-lojas:hover {
+    transform: scale(1.1);
+}
+
+/* =====================================================
+CONTEÚDO PRINCIPAL
+===================================================== */
+
+.content-principal {
+    text-align: center;
+    margin-left: 24rem;
+    margin-right: 20px;
+    margin-top: 9rem;
+    width: auto;
+    min-width: 0;
+}
+
+.equipamento-image {
+    position: relative;
+}
+
+.equipamento-image img {
+    display: block;
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border: 1px solid #39363B;
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.box-equipa {
+    position: absolute;
+    top: 8%;
+    left: 5%;
+    z-index: 100;
+    max-width: 85%;
+}
+
+.equipamento {
+    color: #fff;
+    text-transform: uppercase;
+    text-align: left;
+    font-size: 45px;
+    line-height: 1.1;
+}
+
+.dest-equipa {
+    color: #D6F90B;
+    text-align: left;
+}
+
+.melhor-Equipa {
+    color: #fff;
+    text-transform: uppercase;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.garanta-equipa {
+    max-width: 200px;
+    border-radius: 10px;
+    border: 1px solid #D6F90B;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #D6F90B;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+/* =====================================================
+BENEFÍCIOS DA LOJA
+===================================================== */
+
+.info-loja2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #242226;
+    padding: 30px 15px;
+    width: 100%;
+    max-width: 90%;
+    border-radius: 10px;
+    margin: 20px auto;
+    border: 1px solid #6b6a6a;
+    gap: 15px;
+}
+
+.entregar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-right: 15px;
+    border-right: 2px solid #39363B;
+}
+
+.entregar:last-child {
+    border-right: none;
+}
+
+.icone-entrega i {
+    color: #E6FF00;
+    font-size: 40px;
+}
+
+.entrega-local {
+    color: #fff;
+    font-size: 16px;
+    text-align: left;
+}
+
+.local {
+    color: #fff;
+    font-weight: 600;
+    font-size: 13px;
+    text-align: left;
+}
+
+/* =====================================================
+SEÇÃO DOS EQUIPAMENTOS
+===================================================== */
+
+.equipamento-card {
+    margin-left: 0;
+    margin-top: 30px;
+    position: relative;
+    width: 100%;
+}
+
+.nossos-equipa {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.nossos-Itens {
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.barra-verde {
+    width: 100%;
+    max-width: 700px;
+    height: 3px;
+    background-color: #D6F90B;
+}
+
+/* =====================================================
+GRID DE PRODUTOS
+===================================================== */
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+    width: 100%;
+}
+
+.produto {
+    width: 100%;
+    max-width: 300px;
+    min-width: 0;
+    background-color: #39363B;
+    height: 400px;
+    border-radius: 10px;
+    border: 1px solid #39363B;
+    position: relative;
+    text-align: center;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.item-produto {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.card-produto {
+    text-align: left;
+    padding: 0 15px;
+    font-size: 14px;
+}
+
+.nome-produto {
+    color: #fff;
+}
+
+.cor-produto {
+    color: #ccc;
+}
+
+.preco-produto {
+    color: #fff;
+}
+
+.comprar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 16px;
+}
+
+.comprar-produto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #E6FF00;
+    color: #000;
+    cursor: pointer;
+    gap: 10px;
+    padding: 10px 14px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 10px;
+    transition: 0.5s ease;
+}
+
+.comprar .comprar-produto:hover {
+    transform: scale(1.05);
+}
+
+/* =====================================================
+MODAL DE COMPRA (ESTILO LOJA - CENTRALIZADO E COMPACTO NO CARD)
+===================================================== */
+
+.card-compra {
+    width: calc(100% - 16px);
+    max-width: 335px;
+    height: auto;
+    max-height: calc(100% - 16px);
+    overflow-y: auto;
+
+    border: 1px solid #E6FF00;
+    padding: 12px;
+    border-radius: 10px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    z-index: 20;
+    background-color: #2b2a2a;
+    display: none;
+}
+
+.card-compra.ativo {
+    display: block;
+}
+
+.nome-Adicionado {
+    color: #fff;
+    text-align: left;
+    margin-bottom: 12px;
+    padding-right: 28px;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+.icone-x i {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    color: #ccc;
+    font-size: 18px;
+    border: 1px solid #D6F90B;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 2px;
+}
+
+.linha-prod {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.imagem-prod {
+    flex-shrink: 0;
+}
+
+.imagem-prod img {
+    width: 66px;
+    height: 76px;
+    object-fit: contain;
+    background-color: #fff;
+    padding: 4px;
+    border-radius: 8px;
+}
+
+.item-prod {
+    text-align: left;
+    min-width: 0;
+}
+
+.nome-prod {
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: left;
+    line-height: 1.25;
+}
+
+.quantia {
+    color: #ccc;
+    font-size: 12px;
+    line-height: 1.35;
+}
+
+.continuar-but button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 14px;
+    background-color: #D6F90B;
+    color: #000;
+    padding: 9px 8px;
+    border-radius: 8px;
+    border: none;
+    width: 100%;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.carrinho-but button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #A3F000;
+    background-color: transparent;
+    font-weight: 600;
+    font-size: 12px;
+    margin-top: 10px;
+    padding: 4px;
+    cursor: pointer;
+    border: none;
+    width: 100%;
+}
+
+/* =====================================================
+BANNER DE EVOLUÇÃO
+===================================================== */
+
+.card-evolucao {
+    width: 100%;
+    height: 300px;
+    border: 1px solid #39363B;
+    border-radius: 10px;
+    margin: 50px auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.halteres-card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.halteres-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.card-detalhe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 85%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 2;
+}
+
+.card-itens-prod {
+    text-align: left;
+}
+
+.equipe-move {
+    color: #E6FF00;
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.titulo-evolua {
+    color: #fff;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 40px;
+    margin: 0;
+}
+
+.dest-evolua {
+    color: #E6FF00;
+}
+
+.conferir {
+    border: 1px solid #E6FF00;
+    border-radius: 10px;
+    padding: 12px 20px;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.conferir:hover {
+    background-color: #E6FF00;
+}
+
+.conferir-equipamento {
+    margin: 0;
+}
+
+.conferir-equipamento a {
+    color: #E6FF00;
+    font-weight: 600;
+    text-decoration: none;
+    background: transparent;
+    text-transform: uppercase;
+    transition: 0.5s ease;
+}
+
+.conferir:hover .conferir-equipamento a {
+    color: #000;
+}
+
+/* =====================================================
+RODAPÉ
+===================================================== */
+
+.footer-box {
+    width: 100%;
+    text-align: center;
+    margin-top: 80px;
+    border-top: 1px solid #2b2a2a;
+    margin-left: 0;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.footer-box .logo-img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.rede-social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    border-bottom: 1px solid #2b2a2a;
+    width: 100%;
+    padding: 25px 0;
+    box-sizing: border-box;
+}
+
+.icone-redes {
+    margin: 0;
+}
+
+.icone-redes a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    outline: none;
+}
+
+.icone-redes a i {
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    transition: 0.5s ease, transform 0.3s ease;
+}
+
+.icone-redes a:hover {
+    background: transparent;
+    box-shadow: none;
+}
+
+.icone-redes a:hover i {
+    color: #D6F90B;
+    transform: scale(1.1);
+    background: transparent;
+    box-shadow: none;
+}
+
+.politica {
+    border-bottom: 1px solid #2b2a2a;
+    width: 100%;
+    padding: 20px 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.politica a {
+    display: inline-block;
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+    transition: 0.5s ease;
+    background: transparent;
+}
+
+.politica a:hover {
+    color: #D6F90B;
+    background: transparent;
+}
+
+.direito-uso {
+    padding: 20px 0;
+    text-align: center;
+}
+
+.direitos {
+    color: #ccc;
+    margin: 5px 0;
+}
+
+/* =====================================================
+MONITORES ULTRAWIDE E TELAS GRANDES
+===================================================== */
+
+@media (min-width: 1600px) {
+
+    .nav-bar {
+        max-width: 1800px;
     }
 
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        border: 0;
-        border-radius: 0;
+    .content-principal {
+        margin-left: 26rem;
+        margin-right: 50px;
     }
 
-    html {
-        scroll-behavior: smooth;
+    .equipamento-image img {
+        height: clamp(500px, 32vw, 700px);
     }
 
-    body {
-        background-color: #000;
-        width: 100%;
-        min-height: 100vh;
-        font-family: 'Poppins', sans-serif;
-        overflow-x: clip;
-        position: relative;
+    .equipamento {
+        font-size: clamp(45px, 3vw, 65px);
     }
 
-    img {
+    .card-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 25px;
+    }
+
+    .produto {
+        max-width: none;
+        height: auto;
+        min-height: 420px;
+    }
+
+    .item-produto {
+        height: 230px;
+    }
+
+    .nome-produto,
+    .preco-produto {
+        font-size: 18px;
+    }
+
+    .info-loja2 {
         max-width: 100%;
     }
+}
 
-    /* =====================================================
-    CABEÇALHO E MENU SUPERIOR
-    ===================================================== */
+/* =====================================================
+NOTEBOOKS
+===================================================== */
+
+@media (min-width: 1201px) and (max-width: 1599px) {
 
     .header-box {
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 9999;
-        width: 100%;
-        padding: 10px 40px;
-        background-color: #000;
-        border-bottom: 1px solid #333;
+        padding: 10px 20px;
     }
 
     .nav-bar {
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        gap: 30px;
-        position: relative;
-        max-width: 1440px;
-        margin: auto;
+        gap: 20px;
     }
 
     .logo-img {
-        width: 100px;
-        height: 100px;
-        object-fit: contain;
+        width: 85px;
+        height: 85px;
     }
 
     .menu-principal {
-        position: relative;
-        list-style: none;
-        display: flex;
-        align-items: center;
-        gap: 40px;
+        gap: 22px;
     }
 
     .lista-menu a,
     .lista-menu1 a {
-        color: #fff;
-        text-decoration: none;
-        font-size: 24px;
-        cursor: pointer;
-        position: relative;
-        display: inline-block;
-        transition: 0.3s ease;
-        text-transform: uppercase;
+        font-size: 18px;
     }
 
-    .lista-menu a:hover,
-    .lista-menu1 a:hover {
-        transform: scale(1.1);
+    .busca-Treino input {
+        padding: 13px 35px;
+    }
+
+    .menu-lateral {
+        padding: 9rem 2rem;
+    }
+
+    .content-principal {
+        margin-left: 21rem;
+        margin-right: 20px;
+    }
+
+    .equipamento-image img {
+        height: 420px;
+    }
+
+    .equipamento {
+        font-size: 38px;
+    }
+
+    .card-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .produto {
+        max-width: none;
+        height: auto;
+        min-height: 390px;
+    }
+
+    .item-produto {
+        height: 190px;
+    }
+
+    .card-produto {
+        padding: 0 15px;
+    }
+}
+
+/* =====================================================
+TABLETS E IPADS
+===================================================== */
+
+@media (min-width: 769px) and (max-width: 1200px) {
+
+    .header-box {
+        padding: 10px 15px;
+    }
+
+    .nav-bar {
+        gap: 15px;
+        justify-content: space-between;
+    }
+
+    .logo-img {
+        width: 75px;
+        height: 75px;
+    }
+
+    .menu-principal {
+        gap: 15px;
+    }
+
+    .lista-menu a,
+    .lista-menu1 a {
+        font-size: 15px;
+    }
+
+    .busca-Treino input {
+        width: 180px;
+        padding: 12px 35px 12px 12px;
+    }
+
+    .menu-lateral {
+        width: 210px;
+        padding: 8rem 12px 20px;
+        overflow-y: auto;
+    }
+
+    .lista-lateral a,
+    .lista-lateral1 a {
+        font-size: 15px;
+        padding: 10px;
+    }
+
+    .premium-lojamove {
+        padding: 10px;
+    }
+
+    .content-principal {
+        margin-left: 225px;
+        margin-right: 15px;
+        margin-top: 8rem;
+    }
+
+    .equipamento-image img {
+        height: 350px;
+    }
+
+    .box-equipa {
+        top: 10%;
+        left: 5%;
+    }
+
+    .equipamento {
+        font-size: 32px;
+    }
+
+    .melhor-Equipa {
+        font-size: 15px;
+    }
+
+    .info-loja2 {
+        max-width: 100%;
+        padding: 20px 10px;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .entregar {
+        width: 45%;
+        border-right: none;
+        justify-content: center;
+    }
+
+    .card-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    .produto {
+        max-width: none;
+        height: auto;
+        min-height: 390px;
+    }
+
+    .item-produto {
+        height: 200px;
+    }
+
+    .card-evolucao {
+        width: 100%;
+    }
+
+    .titulo-evolua {
+        font-size: 32px;
+    }
+}
+
+/* =====================================================
+CELULARES GRANDES E TELAS ATÉ 900PX
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .header-box {
+        padding: 8px 18px;
+    }
+
+    .nav-bar {
+        justify-content: space-between;
+        gap: 15px;
+    }
+
+    .header-box .logo-img {
+        width: 75px;
+        height: 75px;
+    }
+
+    .menu-hamburguer {
+        display: flex;
+        margin-left: auto;
+    }
+
+    /* Navegação superior */
+    .menu-principal {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 5px;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .lista-menu a,
+    .lista-menu1 a {
+        display: flex;
+        width: 100%;
+        font-size: 17px;
+        padding: 10px 15px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #39363B;
     }
 
     .lista-menu a::after,
     .lista-menu1 a::after {
-        content: '';
-        width: 0;
-        height: 3px;
-        background-color: #D6F90B;
-        position: absolute;
-        bottom: -8px;
-        left: 0;
-        transition: width 0.3s ease;
+        display: none;
     }
 
-    .lista-menu a:hover::after,
-    .lista-menu1 a:hover::after {
-        width: 100%;
+    /* MENU LATERAL EM PAINEL À DIREITA */
+    .menu-lateral {
+        position: fixed;
+        top: 80px;
+        right: 30px;
+        left: auto;
+        z-index: 10000;
+
+        width: min(320px, calc(100vw - 30px));
+        height: calc(100dvh - 100px);
+
+        padding: 20px 15px 30px;
+
+        background-color: #111;
+        border: 1px solid #39363B;
+        border-radius: 12px;
+
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        transform: translateY(-10px);
+        transition: opacity 0.3s ease,
+                    transform 0.3s ease,
+                    visibility 0.3s ease;
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+
+        box-shadow: 0 10px 35px rgba(0, 0, 0, 0.7);
     }
 
-    .lista-menu1 a::after {
-        width: 100%;
+    .menu-lateral.menu-aberto {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
     }
 
-    /* =====================================================
-    CAMPO DE BUSCA
-    ===================================================== */
+    .menu-lateral::-webkit-scrollbar {
+        width: 7px;
+    }
+
+    .menu-lateral::-webkit-scrollbar-thumb {
+        background-color: #777;
+        border-radius: 10px;
+    }
+
+    .menu-lateral::-webkit-scrollbar-track {
+        background-color: #222;
+    }
+
+    .lista-lateral a,
+    .lista-lateral1 a {
+        font-size: 16px;
+        padding: 11px 15px;
+    }
+
+    .premium-lojamove {
+        max-width: 100%;
+    }
 
     .busca-Treino {
-        display: flex;
-        align-items: center;
-        position: relative;
+        width: 100%;
+        margin-top: 15px;
     }
 
     .busca-Treino input {
-        display: flex;
-        align-items: center;
-        position: relative;
-        padding: 15px 60px;
-        background-color: #1a1025;
-        border: 1px solid #8A2BE2;
-        border-radius: 10px;
-        cursor: pointer;
-    }
-
-    .busca-Treino input::placeholder {
-        color: #afafaf;
-    }
-
-    #textBusca {
-        color: #fff;
-        border: none;
-    }
-
-    #textBusca:focus {
-        outline: none;
-        box-shadow: none;
-    }
-
-    .busca i {
-        color: #A855F7;
-        font-size: 20px;
-        display: block;
-        position: absolute;
-        right: 15px;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-
-    /* =====================================================
-    BOTÃO MENU HAMBÚRGUER
-    ===================================================== */
-
-    .menu-hamburguer {
-        display: none;
-        align-items: center;
-        justify-content: center;
-        background: transparent;
-        color: #E6FF00;
-        font-size: 35px;
-        cursor: pointer;
-        padding: 5px;
-        z-index: 10001;
-        transition: 0.3s ease;
-    }
-
-    .menu-hamburguer:hover {
-        color: #D6F90B;
-        transform: scale(1.08);
-    }
-
-    .menu-hamburguer i {
-        display: block;
-    }
-
-    /* =====================================================
-    MENU LATERAL
-    ===================================================== */
-
-    .menu-lateral {
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 999;
-        padding: 10rem 4rem;
-        background-color: #000;
-        height: 100vh;
-        height: 100dvh;
-        border-right: 1px solid #333;
-        overflow-y: auto;
-        overflow-x: hidden;
-    }
-
-    .menu-plano {
-        position: relative;
-    }
-
-    .lista-lateral {
-        text-align: left;
-        list-style: none;
-        padding: 8px 0;
-    }
-
-    .roupas-itens {
-        position: relative;
-        display: none;
-    }
-
-    .roupas-itens.ativo {
-        display: block;
-    }
-
-    .lista-lateral1 a {
-        display: flex;
-        color: #000;
-        text-decoration: none;
-        outline: none;
-        font-size: 20px;
-        background-color: #E6FF00;
-        padding: 10px 22px;
-        border-radius: 10px;
-        transition: 0.3s ease;
-    }
-
-    .lista-lateral a {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        color: #fff;
-        text-decoration: none;
-        outline: none;
-        font-size: 20px;
-        padding: 10px 20px;
-        border-radius: 10px;
-        transition: 0.3s ease;
-        cursor: pointer;
-    }
-
-    .lista-lateral a:hover {
-        transform: scale(1.05);
-        color: #000;
-        background-color: #E6FF00;
-    }
-
-    #icone-dow,
-    #icon-down {
-        transition: transform 0.5s ease;
-    }
-
-    /* =====================================================
-    CARD PREMIUM DO MENU
-    ===================================================== */
-
-    .premium-lojamove {
         width: 100%;
-        max-width: 230px;
-        border: 1px solid #E6FF00;
-        padding: 10px 20px;
-        border-radius: 10px;
-        text-align: center;
-        margin-top: 20px;
+        padding: 13px 45px 13px 15px;
     }
 
-    .loja-video i {
-        color: #E6FF00;
-        font-size: 50px;
-    }
-
-    .loja-Premium {
-        color: #E6FF00;
-    }
-
-    .acesso-premium {
-        color: #fff;
-    }
-
-    .botao-lojas {
-        border: none;
-        border-radius: 10px;
-        background-color: #E6FF00;
-        padding: 8px 20px;
-        margin-top: 10px;
-        transition: 0.5s ease;
-    }
-
-    .botao-lojas a {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        font-size: 18px;
-        color: #000;
-        text-decoration: none;
-        cursor: pointer;
-    }
-
-    .botao-lojas a:focus {
-        outline: none;
-        border: none;
-    }
-
-    .botao-lojas:hover {
-        transform: scale(1.1);
-    }
-
-    /* =====================================================
-    CONTEÚDO PRINCIPAL
-    ===================================================== */
-
+    /* Conteúdo principal */
     .content-principal {
-        text-align: center;
-        margin-left: 24rem;
-        margin-right: 20px;
-        margin-top: 9rem;
+        margin: 105px 20px 0;
         width: auto;
-        min-width: 0;
     }
 
     .equipamento-image img {
-        width: 100%;
-        height: 500px;
-        object-fit: cover;
-        border: 1px solid #39363B;
         max-width: 100%;
-        border-radius: 10px;
-        position: relative;
+        width: 100%;
+        height: clamp(260px, 45vw, 400px);
     }
 
     .box-equipa {
-        position: absolute;
-        top: 8%;
-        left: 27%;
-        z-index: 100;
+        left: 6%;
+        top: 6%;
+        max-width: 85%;
     }
 
     .equipamento {
-        color: #fff;
-        text-transform: uppercase;
-        text-align: left;
-        font-size: 45px;
-    }
-
-    .dest-equipa {
-        color: #D6F90B;
-        text-align: left;
+        font-size: clamp(26px, 4vw, 40px);
     }
 
     .melhor-Equipa {
-        color: #fff;
-        text-transform: uppercase;
-        width: 100%;
-        text-align: left;
-        margin-bottom: 20px;
-        margin-top: 20px;
+        font-size: 14px;
     }
 
     .garanta-equipa {
-        max-width: 200px;
-        border-radius: 10px;
-        border: 1px solid #D6F90B;
-        padding: 10px;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        color: #D6F90B;
-        text-transform: uppercase;
-        text-align: left;
+        font-size: 12px;
     }
 
-    /* =====================================================
-    BENEFÍCIOS DA LOJA
-    ===================================================== */
-
+    /* Benefícios */
     .info-loja2 {
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        background-color: #242226;
-        padding: 30px 15px;
         width: 100%;
-        max-width: 90%;
-        border-radius: 10px;
+        max-width: 100%;
         margin: 20px auto;
-        border: 1px solid #6b6a6a;
-        gap: 15px;
+        padding: 20px 10px;
+        flex-wrap: wrap;
+        gap: 20px;
     }
 
     .entregar {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        padding-right: 15px;
-        border-right: 2px solid #39363B;
+        width: 45%;
+        padding: 5px;
+        border: none;
+        justify-content: flex-start;
     }
 
-    .entregar:last-child {
-        border-right: none;
-    }
-
-    .icone-entrega i {
-        color: #E6FF00;
-        font-size: 40px;
-    }
-
-    .entrega-local {
-        color: #fff;
-        font-size: 16px;
-    }
-
-    .local {
-        color: #fff;
-        font-weight: 600;
-        font-size: 13px;
-    }
-
-    /* =====================================================
-    SEÇÃO DOS EQUIPAMENTOS
-    ===================================================== */
-
+    /* Produtos */
     .equipamento-card {
-        margin-left: 0;
-        margin-top: 30px;
-        position: relative;
-        width: 100%;
+        margin: 30px 0;
     }
-
-    .nossos-equipa {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-    }
-
-    .nossos-Itens {
-        color: #fff;
-        text-transform: uppercase;
-    }
-
-    .barra-verde {
-        width: 100%;
-        max-width: 700px;
-        height: 3px;
-        background-color: #D6F90B;
-    }
-
-    /* =====================================================
-    GRID DE PRODUTOS
-    ===================================================== */
 
     .card-grid {
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 20px;
-        width: 100%;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
     }
 
     .produto {
         width: 100%;
-        max-width: 300px;
-        min-width: 0;
-        background-color: #39363B;
-        height: 400px;
-        border-radius: 10px;
-        border: 1px solid #39363B;
-        position: relative;
-        text-align: center;
-        padding: 10px;
+        max-width: none;
+        height: auto;
+        min-height: 370px;
     }
 
     .item-produto {
-        width: 100%;
-        height: 200px;
-        object-fit: contain;
-        background-color: #fff;
-        padding: 10px;
-        border-radius: 10px;
+        height: 190px;
     }
 
     .card-produto {
-        text-align: left;
-        padding: 0 30px;
-        font-size: 14px;
+        padding: 0 10px;
     }
 
     .nome-produto {
-        color: #fff;
+        font-size: 16px;
     }
 
     .cor-produto {
-        color: #ccc;
+        font-size: 13px;
     }
 
     .preco-produto {
-        color: #fff;
+        font-size: 17px;
     }
 
     .comprar {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: 30px;
+        margin-top: 20px;
     }
 
     .comprar-produto {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: #E6FF00;
-        cursor: pointer;
-        gap: 10px;
-        padding: 10px;
-        font-size: 18px;
-        border-radius: 10px;
-        transition: 0.5s ease;
+        font-size: 14px;
     }
 
-    .comprar .comprar-produto:hover {
-        transform: scale(1.05);
-    }
-
-    /* =====================================================
-    MODAL DE COMPRA
-    ===================================================== */
-
-    .card-compra {
-        width: 100%;
-        max-width: 500px;
-        height: 300px;
-        border: 1px solid #E6FF00;
-        padding: 10px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 1000;
-        border-radius: 10px;
-        background-color: #2b2a2a;
-        display: none;
-    }
-
-    .card-compra.ativo {
-        display: block;
-    }
-
-    .nome-Adicionado {
-        color: #fff;
-        text-align: left;
-        margin-bottom: 20px;
-        font-size: 20px;
-    }
-
-    .icone-x i {
-        position: absolute;
-        top: 5%;
-        right: 5%;
-        color: #ccc;
-        font-size: 25px;
-        border: 1px solid #D6F90B;
-        border-radius: 20px;
-        cursor: pointer;
-    }
-
-    .linha-prod {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .imagem-prod img {
-        width: 120px;
-        height: 100px;
-        object-fit: cover;
-        background-color: #fff;
-        padding: 5px;
-        border-radius: 10px;
-    }
-
-    .item-prod {
-        text-align: left;
-    }
-
-    .nome-prod {
-        color: #fff;
-        font-size: 15px;
-        text-align: left;
-    }
-
-    .quantia {
-        color: #ccc;
-    }
-
-    .continuar-but button {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 20px;
-        background-color: #D6F90B;
-        padding: 10px;
-        border-radius: 10px;
-        border: none;
-        width: 100%;
-        font-size: 18px;
-        font-weight: 600;
-        cursor: pointer;
-    }
-
-    .carrinho-but button {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: #A3F000;
-        background-color: transparent;
-        font-weight: 600;
-        font-size: 18px;
-        margin-top: 20px;
-        cursor: pointer;
-        width: 100%;
-    }
-
-    /* =====================================================
-    BANNER DE EVOLUÇÃO
-    ===================================================== */
-
+    /* Banner */
     .card-evolucao {
-        width: 90%;
+        width: 100%;
         height: 300px;
-        border: 1px solid #39363B;
-        border-radius: 10px;
-        margin: 50px auto;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .halteres-card {
-        width: 100%;
-        height: 100%;
-        position: relative;
-    }
-
-    .halteres-card img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 10px;
     }
 
     .card-detalhe {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 85%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        z-index: 2;
-    }
-
-    .card-itens-prod {
-        text-align: left;
-    }
-
-    .equipe-move {
-        color: #E6FF00;
-        font-weight: 600;
-        font-size: 20px;
-        margin-bottom: 10px;
-        text-transform: uppercase;
+        width: 90%;
     }
 
     .titulo-evolua {
-        color: #fff;
-        font-weight: 800;
-        text-transform: uppercase;
-        font-size: 40px;
-        margin: 0;
+        font-size: 28px;
     }
 
-    .dest-evolua {
-        color: #E6FF00;
+    .equipe-move {
+        font-size: 15px;
+    }
+
+    /* Rodapé */
+    .footer-box {
+        margin-top: 50px;
+        margin-left: 0;
+    }
+}
+
+/* =====================================================
+CELULARES MÉDIOS
+===================================================== */
+
+@media (min-width: 400px) and (max-width: 700px) {
+
+    .header-box {
+        padding: 8px 12px;
+    }
+
+    .header-box .logo-img {
+        width: 65px;
+        height: 65px;
+    }
+
+    .menu-hamburguer {
+        font-size: 32px;
+    }
+
+    .menu-lateral {
+        top: 72px;
+        right: 12px;
+        width: min(300px, calc(100vw - 24px));
+        height: calc(100dvh - 85px);
+    }
+
+    .content-principal {
+        margin: 90px 12px 0;
+    }
+
+    .equipamento-image img {
+        height: 280px;
+        object-position: center;
+    }
+
+    .box-equipa {
+        top: 3%;
+        left: 6%;
+        max-width: 85%;
+    }
+
+    .equipamento {
+        font-size: clamp(20px, 6vw, 22px);
+    }
+
+    .melhor-Equipa {
+        font-size: 12px;
+        margin-top: 12px;
+        margin-bottom: 12px;
+    }
+
+    .garanta-equipa {
+        padding: 8px;
+        font-size: 10px;
+        max-width: 165px;
+    }
+
+    .nossos-equipa {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .nossos-Itens h1 {
+        font-size: 23px;
+    }
+
+    .barra-verde {
+        max-width: 100%;
+    }
+
+    /* Benefícios */
+    .info-loja2 {
+        gap: 15px 5px;
+        padding: 15px 5px;
+    }
+
+    .entregar {
+        width: 48%;
+        gap: 7px;
+    }
+
+    .icone-entrega i {
+        font-size: 29px;
+    }
+
+    .entrega-local {
+        font-size: 12px;
+    }
+
+    .local {
+        font-size: 10px;
+        font-weight: 400;
+    }
+
+    /* Produtos */
+    .card-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .produto {
+        min-height: 315px;
+        padding: 7px;
+    }
+
+    .item-produto {
+        height: 145px;
+        padding: 5px;
+    }
+
+    .card-produto {
+        padding: 0 5px;
+    }
+
+    .nome-produto {
+        font-size: 13px;
+    }
+
+    .cor-produto {
+        font-size: 11px;
+    }
+
+    .preco-produto {
+        font-size: 14px;
+    }
+
+    .comprar {
+        margin-top: 15px;
+    }
+
+    .comprar-produto {
+        padding: 8px 5px;
+        font-size: 11px;
+        gap: 4px;
+    }
+
+    /* Modal */
+    .card-compra {
+        width: calc(100% - 10px);
+        max-width: 100%;
+        height: auto;
+        max-height: calc(100% - 10px);
+        padding: 9px;
+        z-index: 20;
+    }
+
+    .nome-Adicionado {
+        font-size: 12px;
+        margin-bottom: 8px;
+        padding-right: 22px;
+    }
+
+    .icone-x i {
+        font-size: 16px;
+        top: 6px;
+        right: 6px;
+    }
+
+    .linha-prod {
+        gap: 6px;
+    }
+
+    .imagem-prod img {
+        width: 48px;
+        height: 58px;
+        padding: 3px;
+    }
+
+    .nome-prod {
+        font-size: 11px;
+    }
+
+    .quantia {
+        font-size: 10px;
+    }
+
+    .continuar-but button {
+        font-size: 10px;
+        padding: 7px 4px;
+        margin-top: 9px;
+    }
+
+    .carrinho-but button {
+        font-size: 10px;
+        margin-top: 6px;
+    }
+
+    /* Banner */
+    .card-evolucao {
+        height: 280px;
+        margin: 35px auto;
+    }
+
+    .card-detalhe {
+        width: 85%;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .equipe-move {
+        font-size: 12px;
+    }
+
+    .titulo-evolua {
+        font-size: 25px;
     }
 
     .conferir {
-        border: 1px solid #E6FF00;
-        border-radius: 10px;
-        padding: 12px 20px;
-        transition: 0.3s ease;
-        cursor: pointer;
-    }
-
-    .conferir:hover {
-        background-color: #E6FF00;
-    }
-
-    .conferir-equipamento {
-        margin: 0;
+        padding: 10px;
     }
 
     .conferir-equipamento a {
-        color: #E6FF00;
-        font-weight: 600;
-        text-decoration: none;
-        background: transparent;
-        text-transform: uppercase;
-        transition: 0.5s ease;
+        font-size: 11px;
     }
 
-    .conferir:hover .conferir-equipamento a {
-        color: #000;
-    }
-
-    /* =====================================================
-    RODAPÉ
-    ===================================================== */
-
+    /* Rodapé */
     .footer-box {
-        width: 100%;
-        text-align: center;
-        margin-top: 80px;
-        border-top: 1px solid #2b2a2a;
-        margin-left: 100px;
-        padding: 0 20px;
-        box-sizing: border-box;
-    }
-
-    .footer-box .logo-img {
-        width: 100px;
-        height: 100px;
-        object-fit: contain;
-    }
-
-    .rede-social {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 30px;
-        border-bottom: 1px solid #2b2a2a;
-        width: 100%;
-        padding: 25px 0;
-        box-sizing: border-box;
-    }
-
-    .icone-redes {
-        margin: 0;
-    }
-
-    .icone-redes a {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        text-decoration: none;
-        background: transparent;
-        border: none;
-        box-shadow: none;
-        outline: none;
-    }
-
-    .icone-redes a i {
-        color: #fff;
-        font-size: 30px;
-        cursor: pointer;
-        background: transparent;
-        border: none;
-        box-shadow: none;
-        transition: 0.5s ease, transform 0.3s ease;
-    }
-
-    .icone-redes a:hover {
-        background: transparent;
-        box-shadow: none;
-    }
-
-    .icone-redes a:hover i {
-        color: #D6F90B;
-        transform: scale(1.1);
-        background: transparent;
-        box-shadow: none;
-    }
-
-    .politica {
-        border-bottom: 1px solid #2b2a2a;
-        width: 100%;
-        padding: 20px 0;
-        margin: 0;
-        box-sizing: border-box;
-    }
-
-    .politica a {
-        display: inline-block;
-        color: #fff;
-        font-size: 16px;
-        text-decoration: none;
-        transition: 0.5s ease;
-        background: transparent;
-    }
-
-    .politica a:hover {
-        color: #D6F90B;
-        background: transparent;
-    }
-
-    .direito-uso {
-        padding: 20px 0;
-        text-align: center;
+        padding: 0 12px;
     }
 
     .direitos {
-        color: #ccc;
-        margin: 5px 0;
+        font-size: 11px;
     }
 
-    /* =====================================================
-    MONITORES ULTRAWIDE E TELAS GRANDES
-    ===================================================== */
+    .politica a {
+        font-size: 13px;
+    }
+}
 
-    @media (min-width: 1600px) {
+/* =====================================================
+CELULARES PEQUENOS
+===================================================== */
 
-        .nav-bar {
-            max-width: 1800px;
-        }
+@media (max-width: 380px) {
 
-        .content-principal {
-            margin-left: 26rem;
-            margin-right: 50px;
-        }
-
-        .equipamento-image img {
-            height: clamp(500px, 32vw, 700px);
-        }
-
-        .box-equipa {
-            left: 28%;
-        }
-
-        .equipamento {
-            font-size: clamp(45px, 3vw, 65px);
-        }
-
-        .card-grid {
-            grid-template-columns: repeat(4, minmax(0, 1fr));
-            gap: 25px;
-        }
-
-        .produto {
-            max-width: none;
-            height: auto;
-            min-height: 420px;
-        }
-
-        .item-produto {
-            height: 230px;
-        }
-
-        .nome-produto,
-        .preco-produto {
-            font-size: 18px;
-        }
-
-        .info-loja2 {
-            max-width: 100%;
-        }
+    .header-box .logo-img {
+        width: 55px;
+        height: 55px;
     }
 
-    /* =====================================================
-    NOTEBOOKS
-    ===================================================== */
-
-    @media (min-width: 1201px) and (max-width: 1599px) {
-
-        .header-box {
-            padding: 10px 20px;
-        }
-
-        .nav-bar {
-            gap: 20px;
-        }
-
-        .logo-img {
-            width: 85px;
-            height: 85px;
-        }
-
-        .menu-principal {
-            gap: 22px;
-        }
-
-        .lista-menu a,
-        .lista-menu1 a {
-            font-size: 18px;
-        }
-
-        .busca-Treino input {
-            padding: 13px 35px;
-        }
-
-        .menu-lateral {
-            padding: 9rem 2rem;
-        }
-
-        .content-principal {
-            margin-left: 21rem;
-            margin-right: 20px;
-        }
-
-        .equipamento-image img {
-            height: 420px;
-        }
-
-        .box-equipa {
-            left: 25%;
-        }
-
-        .equipamento {
-            font-size: 38px;
-        }
-
-        .card-grid {
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-        }
-
-        .produto {
-            max-width: none;
-            height: auto;
-            min-height: 390px;
-        }
-
-        .item-produto {
-            height: 190px;
-        }
-
-        .card-produto {
-            padding: 0 15px;
-        }
+    .menu-hamburguer {
+        font-size: 29px;
     }
 
-    /* =====================================================
-    TABLETS E IPADS
-    ===================================================== */
-
-    @media (min-width: 769px) and (max-width: 1200px) {
-
-        .header-box {
-            padding: 10px 15px;
-        }
-
-        .nav-bar {
-            gap: 15px;
-            justify-content: space-between;
-        }
-
-        .logo-img {
-            width: 75px;
-            height: 75px;
-        }
-
-        .menu-principal {
-            gap: 15px;
-        }
-
-        .lista-menu a,
-        .lista-menu1 a {
-            font-size: 15px;
-        }
-
-        .busca-Treino input {
-            width: 180px;
-            padding: 12px 35px 12px 12px;
-        }
-
-        .menu-lateral {
-            width: 210px;
-            padding: 8rem 12px 20px;
-            overflow-y: auto;
-        }
-
-        .lista-lateral a,
-        .lista-lateral1 a {
-            font-size: 15px;
-            padding: 10px;
-        }
-
-        .premium-lojamove {
-            padding: 10px;
-        }
-
-        .content-principal {
-            margin-left: 225px;
-            margin-right: 15px;
-            margin-top: 8rem;
-        }
-
-        .equipamento-image img {
-            height: 350px;
-        }
-
-        .box-equipa {
-            top: 25%;
-            left: 23%;
-        }
-
-        .equipamento {
-            font-size: 32px;
-        }
-
-        .melhor-Equipa {
-            font-size: 15px;
-        }
-
-        .info-loja2 {
-            max-width: 100%;
-            padding: 20px 10px;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .entregar {
-            width: 45%;
-            border-right: none;
-            justify-content: center;
-        }
-
-        .card-grid {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 18px;
-        }
-
-        .produto {
-            max-width: none;
-            height: auto;
-            min-height: 390px;
-        }
-
-        .item-produto {
-            height: 200px;
-        }
-
-        .card-evolucao {
-            width: 100%;
-        }
-
-        .titulo-evolua {
-            font-size: 32px;
-        }
+    .menu-lateral {
+        top: 65px;
+        right: 12px;
+        width: min(280px, calc(100vw - 24px));
+        height: calc(100dvh - 75px);
     }
 
-    /* =====================================================
-    CELULARES GRANDES E TELAS ATÉ 900PX
-    ===================================================== */
-
-    @media (max-width: 1550px) {
-        .box-equipa {
-            position: absolute;
-            top: 2%;
-            left: 30%;
-        }
+    .content-principal {
+        margin-left: 8px;
+        margin-right: 8px;
     }
 
-    @media (max-width: 900px) {
-
-        .header-box {
-            padding: 8px 18px;
-        }
-
-        .nav-bar {
-            justify-content: space-between;
-            gap: 15px;
-        }
-
-        .header-box .logo-img {
-            width: 75px;
-            height: 75px;
-        }
-
-        .menu-hamburguer {
-            display: flex;
-            margin-left: auto;
-        }
-
-        /* Navegação superior */
-        .menu-principal {
-            display: flex;
-            flex-direction: column;
-            align-items: stretch;
-            gap: 5px;
-            width: 100%;
-            margin-bottom: 20px;
-            
-        }
-
-        .lista-menu a,
-        .lista-menu1 a {
-            display: flex;
-            width: 100%;
-            font-size: 17px;
-            padding: 10px 15px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid #39363B;
-        }
-
-        .lista-menu a::after,
-        .lista-menu1 a::after {
-            display: none;
-        }
-
-        /* MENU LATERAL EM PAINEL À DIREITA */
-        .menu-lateral {
-            position: fixed;
-            top: 80px;
-            right: 30px;
-            left: auto;
-            z-index: 10000;
-
-            width: min(320px, calc(100vw - 30px));
-            height: calc(100dvh - 100px);
-
-            padding: 20px 15px 30px;
-
-            background-color: #111;
-            border: 1px solid #39363B;
-            border-radius: 12px;
-
-            overflow-y: auto;
-            overflow-x: hidden;
-
-            transform: translateY(-10px);
-            transition: opacity 0.3s ease,
-                        transform 0.3s ease,
-                        visibility 0.3s ease;
-
-            opacity: 0;
-            visibility: hidden;
-            pointer-events: none;
-
-            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.7);
-        }
-
-        .menu-lateral.menu-aberto {
-            transform: translateY(0);
-            opacity: 1;
-            visibility: visible;
-            pointer-events: auto;
-        }
-
-        .menu-lateral::-webkit-scrollbar {
-            width: 7px;
-        }
-
-        .menu-lateral::-webkit-scrollbar-thumb {
-            background-color: #777;
-            border-radius: 10px;
-        }
-
-        .menu-lateral::-webkit-scrollbar-track {
-            background-color: #222;
-        }
-
-        .lista-lateral a,
-        .lista-lateral1 a {
-            font-size: 16px;
-            padding: 11px 15px;
-        }
-
-        .premium-lojamove {
-            max-width: 100%;
-        }
-
-        .busca-Treino {
-            width: 100%;
-            margin-top: 15px;
-        }
-
-        .busca-Treino input {
-            width: 100%;
-            padding: 13px 45px 13px 15px;
-        }
-
-        /* Conteúdo principal */
-        .content-principal {
-            margin: 105px 20px 0;
-            width: auto;
-        }
-
-        .equipamento-image img {
-            max-width: 100%;
-            width: 100%;
-            height: clamp(260px, 45vw, 400px);
-        }
-
-        .box-equipa {
-            left: 8%;
-            top: 3%;
-            max-width: 80%;
-        }
-
-        .equipamento {
-            font-size: clamp(26px, 4vw, 40px);
-        }
-
-        .melhor-Equipa {
-            font-size: 14px;
-        }
-
-        .garanta-equipa {
-            font-size: 12px;
-        }
-
-        /* Benefícios */
-        .info-loja2 {
-            width: 100%;
-            max-width: 100%;
-            margin: 20px auto;
-            padding: 20px 10px;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .entregar {
-            width: 45%;
-            padding: 5px;
-            border: none;
-            justify-content: flex-start;
-        }
-
-        /* Produtos */
-        .equipamento-card {
-            margin: 30px 0;
-        }
-
-        .card-grid {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 15px;
-        }
-
-        .produto {
-            width: 100%;
-            max-width: none;
-            height: auto;
-            min-height: 370px;
-        }
-
-        .item-produto {
-            height: 190px;
-        }
-
-        .card-produto {
-            padding: 0 10px;
-        }
-
-        .nome-produto {
-            font-size: 16px;
-        }
-
-        .cor-produto {
-            font-size: 13px;
-        }
-
-        .preco-produto {
-            font-size: 17px;
-        }
-
-        .comprar {
-            margin-top: 20px;
-        }
-
-        .comprar-produto {
-            font-size: 14px;
-        }
-
-        /* Banner */
-        .card-evolucao {
-            width: 100%;
-            height: 300px;
-        }
-
-        .card-detalhe {
-            width: 90%;
-        }
-
-        .titulo-evolua {
-            font-size: 28px;
-        }
-
-        .equipe-move {
-            font-size: 15px;
-        }
-
-        /* Rodapé */
-        .footer-box {
-            margin-top: 50px;
-            margin-left: 0;
-        }
+    .equipamento-image img {
+        height: 240px;
     }
 
-    /* =====================================================
-    CELULARES MÉDIOS
-    ===================================================== */
-
-    @media (min-width: 400px) and (max-width: 700px) {
-
-        .header-box {
-            padding: 8px 12px;
-        }
-
-        .header-box .logo-img {
-            width: 65px;
-            height: 65px;
-        }
-
-        .menu-hamburguer {
-            font-size: 32px;
-        }
-
-        .menu-lateral {
-            top: 72px;
-            right: 12px;
-            width: min(300px, calc(100vw - 24px));
-            height: calc(100dvh - 85px);
-        }
-
-        .content-principal {
-            margin: 90px 12px 0;
-        }
-
-        .equipamento-image img {
-            height: 280px;
-            object-position: center;
-        }
-
-        .box-equipa {
-            top: 2%;
-            left: 7%;
-            max-width: 85%;
-        }
-
-        .equipamento {
-            font-size: clamp(20px, 6vw, 22px);
-        }
-
-        .melhor-Equipa {
-            font-size: 12px;
-            margin-top: 12px;
-            margin-bottom: 12px;
-        }
-
-        .garanta-equipa {
-            padding: 8px;
-            font-size: 10px;
-            max-width: 165px;
-        }
-
-        .nossos-equipa {
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .nossos-Itens h1 {
-            font-size: 23px;
-        }
-
-        .barra-verde {
-            max-width: 100%;
-        }
-
-        /* Benefícios */
-        .info-loja2 {
-            gap: 15px 5px;
-            padding: 15px 5px;
-        }
-
-        .entregar {
-            width: 48%;
-            gap: 7px;
-        }
-
-        .icone-entrega i {
-            font-size: 29px;
-        }
-
-        .entrega-local {
-            font-size: 12px;
-        }
-
-        .local {
-            font-size: 10px;
-            font-weight: 400;
-        }
-
-        /* Produtos */
-        .card-grid {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 10px;
-        }
-
-        .produto {
-            min-height: 315px;
-            padding: 7px;
-        }
-
-        .item-produto {
-            height: 145px;
-            padding: 5px;
-        }
-
-        .card-produto {
-            padding: 0 5px;
-        }
-
-        .nome-produto {
-            font-size: 13px;
-        }
-
-        .cor-produto {
-            font-size: 11px;
-        }
-
-        .preco-produto {
-            font-size: 14px;
-        }
-
-        .comprar {
-            margin-top: 15px;
-        }
-
-        .comprar-produto {
-            padding: 8px 5px;
-            font-size: 11px;
-            gap: 4px;
-        }
-
-        /* Modal */
-        .card-compra {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            width: min(92vw, 420px);
-            max-width: 92vw;
-            height: auto;
-            min-height: 280px;
-            padding: 15px;
-            z-index: 10002;
-        }
-
-        .nome-Adicionado {
-            font-size: 17px;
-        }
-
-        .imagem-prod img {
-            width: 90px;
-            height: 85px;
-        }
-
-        .nome-prod {
-            font-size: 13px;
-        }
-
-        .continuar-but button,
-        .carrinho-but button {
-            font-size: 14px;
-        }
-
-        /* Banner */
-        .card-evolucao {
-            height: 280px;
-            margin: 35px auto;
-        }
-
-        .card-detalhe {
-            width: 85%;
-            align-items: flex-start;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .equipe-move {
-            font-size: 12px;
-        }
-
-        .titulo-evolua {
-            font-size: 25px;
-        }
-
-        .conferir {
-            padding: 10px;
-        }
-
-        .conferir-equipamento a {
-            font-size: 11px;
-        }
-
-        /* Rodapé */
-        .footer-box {
-            padding: 0 12px;
-        }
-
-        .direitos {
-            font-size: 11px;
-        }
-
-        .politica a {
-            font-size: 13px;
-        }
+    .box-equipa {
+        top: 5%;
+        left: 6%;
     }
 
-    /* =====================================================
-    CELULARES PEQUENOS
-    ===================================================== */
-
-    @media (max-width: 380px) {
-
-        .header-box .logo-img {
-            width: 55px;
-            height: 55px;
-        }
-
-        .menu-hamburguer {
-            font-size: 29px;
-        }
-
-        .menu-lateral {
-            top: 65px;
-            right: 12px;
-            width: min(280px, calc(100vw - 24px));
-            height: calc(100dvh - 75px);
-        }
-
-        .content-principal {
-            margin-left: 8px;
-            margin-right: 8px;
-        }
-
-        .equipamento-image img {
-            height: 240px;
-        }
-
-        .box-equipa {
-            top: 1%;
-            left: 6%;
-        }
-
-        .equipamento {
-            font-size: 18px;
-        }
-
-        .melhor-Equipa {
-            font-size: 10px;
-        }
-
-        .entrega-local {
-            font-size: 10px;
-        }
-
-        .local {
-            font-size: 9px;
-        }
-
-        .icone-entrega i {
-            font-size: 25px;
-        }
-
-        .card-grid {
-            gap: 8px;
-        }
-
-        .produto {
-            min-height: 290px;
-            padding: 5px;
-        }
-
-        .item-produto {
-            height: 125px;
-        }
-
-        .nome-produto {
-            font-size: 12px;
-        }
-
-        .preco-produto {
-            font-size: 13px;
-        }
-
-        .comprar-produto {
-            font-size: 10px;
-        }
-
-        .titulo-evolua {
-            font-size: 22px;
-        }
-
-        .card-evolucao {
-            height: 250px;
-        }
+    .equipamento {
+        font-size: 18px;
     }
 
-    /* =====================================================
-    CELULARES MUITO ESTREITOS
-    ===================================================== */
-
-    @media (max-width: 320px) {
-
-        .card-grid {
-            grid-template-columns: 1fr;
-        }
-
-        .produto {
-            min-height: 340px;
-        }
-
-        .item-produto {
-            height: 180px;
-        }
-
-        .nome-produto {
-            font-size: 16px;
-        }
-
-        .preco-produto {
-            font-size: 16px;
-        }
-
-        .comprar-produto {
-            font-size: 14px;
-        }
-
-        .entregar {
-            width: 100%;
-        }
+    .melhor-Equipa {
+        font-size: 10px;
     }
 
-    /* =====================================================
-    TELAS HORIZONTAIS COM POUCA ALTURA
-    ===================================================== */
-
-    @media (max-height: 500px) and (max-width: 900px) {
-
-        .menu-lateral {
-            padding-top: 15px;
-        }
-
-        .premium-lojamove {
-            margin-bottom: 20px;
-        }
-
-        .content-principal {
-            margin-top: 90px;
-        }
+    .entrega-local {
+        font-size: 10px;
     }
 
-    /* =====================================================
-    ACESSIBILIDADE
-    ===================================================== */
-
-    @media (prefers-reduced-motion: reduce) {
-
-        *,
-        *::before,
-        *::after {
-            scroll-behavior: auto !important;
-            transition-duration: 0.01ms !important;
-            animation-duration: 0.01ms !important;
-        }
+    .local {
+        font-size: 9px;
     }
+
+    .icone-entrega i {
+        font-size: 25px;
+    }
+
+    .card-grid {
+        gap: 8px;
+    }
+
+    .produto {
+        min-height: 290px;
+        padding: 5px;
+    }
+
+    .item-produto {
+        height: 125px;
+    }
+
+    .nome-produto {
+        font-size: 12px;
+    }
+
+    .preco-produto {
+        font-size: 13px;
+    }
+
+    .comprar-produto {
+        font-size: 10px;
+    }
+
+    .titulo-evolua {
+        font-size: 22px;
+    }
+
+    .card-evolucao {
+        height: 250px;
+    }
+}
+
+/* =====================================================
+CELULARES MUITO ESTREITOS
+===================================================== */
+
+@media (max-width: 320px) {
+
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .produto {
+        min-height: 340px;
+    }
+
+    .item-produto {
+        height: 180px;
+    }
+
+    .nome-produto {
+        font-size: 16px;
+    }
+
+    .preco-produto {
+        font-size: 16px;
+    }
+
+    .comprar-produto {
+        font-size: 14px;
+    }
+
+    .entregar {
+        width: 100%;
+    }
+}
+
+/* =====================================================
+TELAS HORIZONTAIS COM POUCA ALTURA
+===================================================== */
+
+@media (max-height: 500px) and (max-width: 900px) {
+
+    .menu-lateral {
+        padding-top: 15px;
+    }
+
+    .premium-lojamove {
+        margin-bottom: 20px;
+    }
+
+    .content-principal {
+        margin-top: 90px;
+    }
+}
+
+/* =====================================================
+ACESSIBILIDADE
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}

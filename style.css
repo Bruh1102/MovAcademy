@@ -1950,8 +1950,7 @@ img {
 
 ========================================= */
 
-@media screen and (max-width: 480px) {
-
+@media screen and (min-width: 200px) and (max-width: 550px) {
     main {
 
         padding-top: 74px;
@@ -2012,7 +2011,7 @@ img {
 
 .motivacao-text {
 
-        top: 16%;
+        top: 20%;
 
         left: 6%;
 
@@ -2023,8 +2022,7 @@ img {
 .titulo-motivacao {
 
         width: 230px;
-
-        font-size: 25px;
+        font-size: 26px;
 
     }
 
@@ -2072,7 +2070,7 @@ img {
 
 .modal-imagem {
 
-        height: 145px;
+        height: 100%;
 
         min-height: 145px;
 
@@ -2080,7 +2078,7 @@ img {
 
 .text-modal {
 
-        top: 8px;
+        bottom: 8px;
 
         left: 12px;
 
@@ -2088,21 +2086,21 @@ img {
 
 .modal-logo img {
 
-        width: 45px;
+        width: 70px;
 
-        height: 45px;
+        height: 70px;
 
     }
 
 .matricula-titulo {
 
-        font-size: 19px;
+        font-size: 25px;
 
     }
 
 .matri-para {
 
-        font-size: 10px;
+        font-size: 13px;
 
     }
 
@@ -2649,6 +2647,8 @@ img {
         height: 50px;
 
     }
+
+
 
     /* PAINEL DO MENU */
 
