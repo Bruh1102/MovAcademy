@@ -1583,7 +1583,7 @@ CELULARES PEQUENOS
     }
 
     .box-equipa {
-        top: 5%;
+        top: 2%;
         left: 6%;
     }
 
@@ -1593,8 +1593,17 @@ CELULARES PEQUENOS
 
     .melhor-Equipa {
         font-size: 10px;
+        margin-bottom: 5px;
+        margin-top: 0;
+    }
+     
+    .nossos-Itens{
+        font-size: 8px;
     }
 
+    .barra-verde{
+        width: 60px;
+    }
     .entrega-local {
         font-size: 10px;
     }
@@ -1639,13 +1648,53 @@ CELULARES PEQUENOS
     .card-evolucao {
         height: 250px;
     }
+
+     .card-compra{
+        width: 150px;
+        height: 150px;
+    }
+
+    .imagem-prod img{
+        width: 50px;
+        height: 50px;
+    }
+    .nome-Adicionado{
+        font-size: 8px;
+    }
+
+    .nome-prod{
+        font-size: 8px;
+    }
+
+    .icone-x i{
+        font-size: 10px;
+    }
+
+    .quantia{
+        font-size: 8px;
+    }
+
+    .preco-produto{
+        font-size: 8px;
+    }
+
+    .continuar-but button{
+        font-size: 8px;
+        padding: 5px;
+        margin-bottom: 0;
+    }
+
+    .carrinho-but button{
+         font-size: 8px;
+         margin-top: 0;
+    }
 }
 
 /* =====================================================
 CELULARES MUITO ESTREITOS
 ===================================================== */
 
-@media (max-width: 320px) {
+@media (max-width: 330px) {
 
     .card-grid {
         grid-template-columns: 1fr;
@@ -1660,20 +1709,22 @@ CELULARES MUITO ESTREITOS
     }
 
     .nome-produto {
-        font-size: 16px;
+        font-size: 14px;
     }
 
     .preco-produto {
-        font-size: 16px;
+        font-size: 14px;
     }
 
     .comprar-produto {
-        font-size: 14px;
+        font-size: 12px;
     }
 
     .entregar {
         width: 100%;
     }
+
+   
 }
 
 /* =====================================================
