@@ -478,7 +478,6 @@ img {
     min-height: 125px;
     border-radius: 8px;
     padding: clamp(14px, 2vw, 22px) 10px;
-    cursor: pointer;
     transition: 0.4s ease;
     position: relative;
     display: flex;
@@ -487,9 +486,6 @@ img {
     justify-content: center;
 }
 
-.card-loja:hover {
-    transform: scale(1.05);
-}
 
 /* =========================================
    TÍTULO E CARDS DOS PRODUTOS
