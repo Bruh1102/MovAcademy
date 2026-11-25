@@ -2,6 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&display=swap');
 
+/* =========================================
+   CONFIGURAÇÕES GERAIS
+========================================= */
+
 :root {
     --fundo-secao: #171519;
     --fundo-card: #39363B;
@@ -36,6 +40,7 @@ body {
 
 img {
     max-width: 100%;
+    display: block;
 }
 
 /* =========================================
@@ -59,7 +64,6 @@ img {
     align-items: center;
     justify-content: space-around;
     gap: 25px;
-
     position: relative;
     max-width: 1440px;
     width: 100%;
@@ -217,26 +221,21 @@ img {
     display: contents;
 }
 
-/* =====================================================
+/* =========================================
    MENU LATERAL DESKTOP
-===================================================== */
+========================================= */
 
 .menu-lateral {
     position: fixed;
     top: var(--altura-header);
     left: 0;
     z-index: 999;
-
     width: 22rem;
-
     height: calc(100vh - var(--altura-header));
     height: calc(100dvh - var(--altura-header));
-
     padding: 2rem 3.5rem;
-
     background-color: #000;
     border-right: 1px solid #333;
-
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -297,9 +296,9 @@ img {
     transition: transform 0.5s ease;
 }
 
-/* =====================================================
+/* =========================================
    CARD PREMIUM DO MENU
-===================================================== */
+========================================= */
 
 .premium-lojamove {
     width: 100%;
@@ -352,9 +351,9 @@ img {
     transform: scale(1.1);
 }
 
-/* ====================================
+/* =========================================
    CONTEÚDO DA LOJA
-==================================== */
+========================================= */
 
 .loja-content {
     text-align: center;
@@ -368,6 +367,7 @@ img {
 
 .loja-box {
     position: relative;
+    width: 100%;
 }
 
 .imagem-logo {
@@ -415,7 +415,6 @@ img {
     width: clamp(48px, 6vw, 85px);
     height: clamp(48px, 6vw, 85px);
     object-fit: contain;
-    text-align: left;
 }
 
 .disciplina-loja {
@@ -479,9 +478,9 @@ img {
     transform: scale(1.05);
 }
 
-/* ===============================================
-   CARD DOS PRODUTOS
-=============================================== */
+/* =========================================
+   TÍTULO E CARDS DOS PRODUTOS
+========================================= */
 
 .cardes-lojas {
     margin-left: 0;
@@ -579,28 +578,33 @@ img {
     transform: scale(1.06);
 }
 
-/* ===========================================
-   MODAL COMPRAR PRODUTO
-=========================================== */
+/* =========================================
+   MODAL DE COMPRA DOS PRODUTOS
+========================================= */
 
 .card-compra {
-    width: min(80vw, 335px);
+    width: min(88vw, 335px);
+    max-width: 335px;
     height: auto;
-    min-height: auto;
+    min-height: 0;
     max-height: 85vh;
+    max-height: 85dvh;
     overflow-y: auto;
 
     border: 1px solid #E6FF00;
-    padding: 16px;
-    border-radius: 10px;
+    padding: 18px;
+    border-radius: 12px;
 
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 
-    z-index: 10002;
+    z-index: 10020;
     background-color: #2b2a2a;
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.72),
+                0 12px 40px rgba(0, 0, 0, 0.5);
+
     display: none;
 }
 
@@ -626,6 +630,12 @@ img {
     border-radius: 20px;
     cursor: pointer;
     padding: 2px;
+    transition: 0.2s ease;
+}
+
+.icone-x i:hover {
+    color: #E6FF00;
+    transform: scale(1.08);
 }
 
 .linha-prod {
@@ -670,9 +680,15 @@ img {
     border-radius: 10px;
     border: none;
     width: 100%;
+    font-family: 'Poppins', sans-serif;
     font-size: clamp(13px, 1.2vw, 17px);
     font-weight: 600;
     cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.continuar-but button:hover {
+    background-color: #c6e800;
 }
 
 .carrinho-but button {
@@ -681,6 +697,7 @@ img {
     align-items: center;
     color: #A3F000;
     background-color: transparent;
+    font-family: 'Poppins', sans-serif;
     font-weight: 600;
     font-size: clamp(13px, 1.2vw, 17px);
     margin-top: 14px;
@@ -1056,6 +1073,7 @@ input:active {
     width: clamp(72px, 8vw, 100px);
     height: clamp(72px, 8vw, 100px);
     object-fit: contain;
+    margin: 0 auto;
 }
 
 .rede-social {
@@ -1125,7 +1143,7 @@ input:active {
 }
 
 /* =====================================================
-   NOTEBOOKS E TELAS MÉDIAS (<= 1200PX)
+   NOTEBOOKS E TELAS MÉDIAS (ATÉ 1200PX)
 ===================================================== */
 
 @media screen and (max-width: 1200px) {
@@ -1183,7 +1201,7 @@ input:active {
 }
 
 /* =====================================================
-   TABLETS E TELAS MENORES (<= 992PX)
+   TABLETS E TELAS MENORES (ATÉ 992PX)
 ===================================================== */
 
 @media screen and (max-width: 992px) {
@@ -1250,7 +1268,7 @@ input:active {
 }
 
 /* =====================================================
-   MENU HAMBÚRGUER E MOBILE (<= 900PX)
+   MENU HAMBÚRGUER E MOBILE (ATÉ 900PX)
 ===================================================== */
 
 @media screen and (max-width: 900px) {
@@ -1284,30 +1302,23 @@ input:active {
         flex-direction: column;
         align-items: stretch;
         position: fixed;
-        top: calc(var(--altura-header) + 0px);
+        top: var(--altura-header);
         right: 15px;
         left: auto;
         z-index: 10000;
-
         width: min(320px, calc(100vw - 30px));
         max-height: calc(100dvh - var(--altura-header) - 15px);
-
         padding: 18px;
         gap: 12px;
-
         background-color: #080808;
         border: 1px solid #39363B;
         border-radius: 12px;
-
         overflow-y: auto;
         overflow-x: hidden;
-
         opacity: 0;
         visibility: hidden;
         pointer-events: none;
-
         transform: translateY(-10px);
-
         transition:
             opacity 0.25s ease,
             transform 0.25s ease,
@@ -1378,21 +1389,16 @@ input:active {
         top: auto;
         left: auto;
         right: auto;
-
         width: 100%;
         height: auto;
         max-height: none;
-
         padding: 0;
         margin: 0;
-
         background: transparent;
         border: none;
         border-radius: 0;
-
         overflow: visible;
         box-shadow: none;
-
         opacity: 1;
         visibility: visible;
         pointer-events: auto;
@@ -1421,6 +1427,7 @@ input:active {
         padding-right: 14px;
     }
 
+    /* BANNER */
     .imagem-logo img {
         height: 230px;
     }
@@ -1430,7 +1437,6 @@ input:active {
         left: 4%;
         max-width: 68%;
         padding: 8px 10px;
-        background: transparent;
     }
 
     .loja-logo img {
@@ -1455,22 +1461,32 @@ input:active {
         font-size: 10px;
     }
 
+    /* CATEGORIAS */
     .cards-loja-bene {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 10px;
     }
 
     .card-loja {
-        min-height: 100px;
+        min-height: 90px;
         padding: 10px 6px;
     }
 
+    .card-loja .loja-icone i {
+        font-size: 24px;
+    }
+
+    .card-loja .informaçao-loja {
+        font-size: 11px;
+    }
+
+    /* PRODUTOS */
     .produtos-content {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 10px;
     }
 
-    .produto {  
+    .produto {
         min-height: 300px;
         padding: 7px;
     }
@@ -1491,11 +1507,6 @@ input:active {
     .cor-produto {
         font-size: 11px;
     }
-     
-    .card-compra{
-        max-width: 235px;
-        height: auto;
-    }
 
     .preco-produto {
         font-size: 14px;
@@ -1511,17 +1522,28 @@ input:active {
         gap: 5px;
     }
 
+    /* MODAL */
+    .card-compra {
+        width: min(88vw, 300px);
+        max-width: 300px;
+        padding: 15px;
+    }
+
+    .imagem-prod img {
+        width: 85px;
+        height: 75px;
+    }
+
+    /* BENEFÍCIOS */
     .halter-loja img {
         height: 160px;
     }
 
     .info-loja2 {
-        position: absolute;
-        top: 80%;
+        top: 50%;
         gap: 6px;
         padding: 10px 8px;
         width: 96%;
-        background: transparent;
     }
 
     .entregar {
@@ -1541,10 +1563,16 @@ input:active {
         font-size: 8px;
     }
 
+    /* SOBRE NÓS E CONTATO */
     .container-cardSobre {
         flex-direction: column;
         align-items: stretch;
-        }
+    }
+
+    .sobreNos-box {
+        flex-direction: row;
+        align-items: center;
+    }
 
     .content-contato {
         max-width: 100%;
@@ -1552,6 +1580,7 @@ input:active {
         min-height: auto;
     }
 
+    /* RODAPÉ */
     .footer-box {
         margin-top: 45px;
         padding: 25px 15px 0;
@@ -1576,77 +1605,164 @@ input:active {
 }
 
 /* =====================================================
-   CELULARES PEQUENOS (<= 480PX)
+   CELULARES (ATÉ 600PX)
 ===================================================== */
 
-@media screen and (max-width: 480px) {
-
-    :root {
-        --altura-header: 74px;
-    }
+@media screen and (max-width: 600px) {
 
     .loja-content {
-        padding-top: calc(var(--altura-header) + 1px);
+        padding-left: 12px;
+        padding-right: 12px;
     }
 
-    .header-box {
-        padding: 7px 15px;
-    }
-
-    .nav-bar {
-        gap: 12px;
-    }
-
-    .nav-bar > .logo-img {
-        width: 60px;
-        height: 60px;
-    }
-
-    .btn-menu,
-    .menu-hamburguer {
-        font-size: 29px;
-    }
-
-    .painel-menu-mobile {
-        top: var(--altura-header);
-        right: 12px;
-        width: min(280px, calc(100vw - 24px));
-        max-height: calc(100dvh - var(--altura-header) - 12px);
-        padding: 13px;
-    }
-
+    /* BANNER */
     .imagem-logo img {
-        height: 195px;
+        height: 210px;
+        object-position: center;
     }
 
     .informa-loja {
         left: 3%;
-        max-width: 72%;
+        max-width: 75%;
         padding: 6px 8px;
-        background: transparent;
     }
 
     .loja-logo img {
-        width: 32px;
-        height: 32px;
+        width: 34px;
+        height: 34px;
     }
 
     .disciplina-loja {
-        font-size: 13px;
+        font-size: clamp(12px, 3.2vw, 16px);
     }
 
-    .informaçao-loja {
+    .bene-loja {
+        gap: 9px;
+        margin-top: 8px;
+    }
+
+    .bene-loja .loja-icone i {
+        font-size: 17px;
+    }
+
+    .bene-loja .informaçao-loja {
         font-size: 9px;
     }
 
+    /* CATEGORIAS MENORES */
+    .cards-loja-bene {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 8px;
+        margin-top: 18px;
+    }
+
+    .card-loja {
+        min-height: 78px;
+        padding: 8px 4px;
+    }
+
+    .card-loja .loja-icone i {
+        font-size: 21px;
+    }
+
+    .card-loja .informaçao-loja {
+        font-size: 9px;
+        line-height: 1.3;
+    }
+
+    /* PRODUTOS */
+    .produtos-content {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 9px;
+        margin-top: 16px;
+    }
+
+    .produto {
+        min-height: 275px;
+        padding: 7px;
+    }
+
+    .item-produto {
+        height: 115px;
+    }
+
+    .nome-produto {
+        font-size: 12px;
+    }
+
+    .cor-produto {
+        font-size: 10px;
+    }
+
+    .preco-produto {
+        font-size: 13px;
+    }
+
+    .comprar-produto {
+        width: 100%;
+        padding: 8px 4px;
+        font-size: 10px;
+    }
+
+    /* MODAL DE COMPRA */
+    .card-compra {
+        width: min(88vw, 285px);
+        max-width: 285px;
+        padding: 14px;
+        max-height: 80dvh;
+    }
+
+    .nome-Adicionado {
+        font-size: 15px;
+        margin-bottom: 12px;
+    }
+
+    .linha-prod {
+        gap: 9px;
+    }
+
+    .imagem-prod img {
+        width: 75px;
+        height: 70px;
+    }
+
+    .nome-prod {
+        font-size: 12px;
+    }
+
+    .quantia {
+        font-size: 11px;
+    }
+
+    .continuar-but button {
+        margin-top: 14px;
+        padding: 9px;
+        font-size: 12px;
+    }
+
+    .carrinho-but button {
+        font-size: 12px;
+        margin-top: 10px;
+    }
+
+    /* BENEFÍCIOS */
     .halter-loja img {
-        height: 140px;
+        height: 145px;
     }
 
     .info-loja2 {
-        background: #535353;
-        padding: 10px;
-        border-radius: 10px;
+        width: 98%;
+        gap: 5px;
+        padding: 8px 5px;
+    }
+
+    .entregar {
+        gap: 4px;
+        padding-right: 5px;
+    }
+
+    .icone-entrega i {
+        font-size: 16px;
     }
 
     .entrega-local {
@@ -1657,6 +1773,32 @@ input:active {
         display: none;
     }
 
+    /* SOBRE NÓS */
+    .sobreNos-box {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 14px;
+    }
+
+    .image-content-treino img {
+        height: 220px;
+    }
+
+    .texto-card {
+        margin-top: 0;
+    }
+
+    .estilo-vida,
+    .sobre-Move {
+        max-width: 100%;
+    }
+
+    /* CONTATO */
+    .content-contato {
+        padding: 15px;
+    }
+
+    /* RODAPÉ */
     .footer-box {
         margin-top: 30px;
         padding: 20px 12px 0;
@@ -1696,7 +1838,7 @@ input:active {
 }
 
 /* =====================================================
-   CELULARES MUITO PEQUENOS (<= 360PX)
+   CELULARES MUITO PEQUENOS (ATÉ 360PX)
 ===================================================== */
 
 @media screen and (max-width: 360px) {
@@ -1732,12 +1874,58 @@ input:active {
         width: min(270px, calc(100vw - 24px));
     }
 
+    .imagem-logo img {
+        height: 180px;
+    }
+
+    .informa-loja {
+        max-width: 78%;
+    }
+
     .disciplina-loja {
         font-size: 11px;
     }
 
+    .bene-loja {
+        gap: 6px;
+    }
+
+    .bene-loja .informaçao-loja {
+        font-size: 8px;
+    }
+
+    .cards-loja-bene {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    .card-loja {
+        min-height: 75px;
+    }
+
     .produtos-content {
         grid-template-columns: 1fr;
+    }
+
+    .produto {
+        min-height: 300px;
+    }
+
+    .item-produto {
+        height: 150px;
+    }
+
+    .card-compra {
+        width: min(90vw, 270px);
+    }
+
+    .info-loja2 {
+        gap: 3px;
+        padding: 6px 3px;
+    }
+
+    .entrega-local {
+        font-size: 7px;
     }
 
     .footer-box > .logo-img {
@@ -1757,6 +1945,12 @@ input:active {
 
     .nav-bar {
         max-width: 1600px;
+    }
+
+    .loja-content {
+        max-width: 1900px;
+        margin-left: 22rem;
+        margin-right: auto;
     }
 }
 
