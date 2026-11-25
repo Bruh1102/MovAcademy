@@ -1,6 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,13 +28,15 @@
                 id="btnHamburguer"
                 aria-label="Abrir menu"
                 aria-expanded="false"
-                aria-controls="painelMenu"
-            >
+                aria-controls="painelMenu">
                 <i class='bx bx-menu'></i>
             </button>
 
             <!-- PAINEL DOS MENUS -->
-            <div class="painel-menu-mobile" id="painelMenu">
+            <div
+                class="painel-menu-mobile"
+                id="painelMenu"
+                aria-hidden="false">
 
                 <!-- MENU PRINCIPAL -->
                 <ul class="menu-principal">
@@ -61,7 +64,7 @@
                         name="texto"
                         id="textBusca"
                         placeholder="Buscar treinos..."
-                    >
+                        aria-label="Buscar treinos">
 
                     <div class="busca">
                         <i class='bx bx-search'></i>
@@ -86,7 +89,7 @@
 
                         <!-- MENU ROUPAS -->
                         <li class="lista-lateral roupas-menu">
-                            <a id="menu-Down">
+                            <a id="menu-Down" href="#" aria-expanded="false">
                                 Roupas
                                 <i class='bx bx-chevron-right' id="icon-down"></i>
                             </a>
@@ -95,7 +98,7 @@
 
                                 <!-- CAMISETAS -->
                                 <li class="lista-lateral roupas-menu">
-                                    <a class="submenu-toggle">
+                                    <a class="submenu-toggle" href="#" aria-expanded="false">
                                         Camisetas
                                         <i class='bx bx-chevron-right'></i>
                                     </a>
@@ -113,7 +116,7 @@
 
                                 <!-- SHORTS -->
                                 <li class="lista-lateral roupas-menu">
-                                    <a class="submenu-toggle">
+                                    <a class="submenu-toggle" href="#" aria-expanded="false">
                                         Shorts
                                         <i class='bx bx-chevron-right'></i>
                                     </a>
@@ -131,7 +134,7 @@
 
                                 <!-- CALÇAS -->
                                 <li class="lista-lateral roupas-menu">
-                                    <a class="submenu-toggle">
+                                    <a class="submenu-toggle" href="#" aria-expanded="false">
                                         Calças
                                         <i class='bx bx-chevron-right'></i>
                                     </a>
@@ -164,11 +167,11 @@
                             Acesse as ofertas exclusivas e tenha seus benefícios!
                         </p>
 
-                        <button type="button" class="botao-lojas">
+                        <div class="botao-lojas">
                             <a href="/Frontend/pages/planos.html">
                                 <i class='bx bx-crown'></i> Assine agora
                             </a>
-                        </button>
+                        </div>
 
                     </div>
                 </aside>
@@ -186,8 +189,7 @@
             <div class="imagem-logo">
                 <img
                     src="/Frontend/Assets/IMG/mulher-treinando.png"
-                    alt="Mulher treinando"
-                >
+                    alt="Mulher treinando">
             </div>
 
             <div class="informa-loja">
@@ -298,8 +300,7 @@
                     <img
                         src="/Frontend/Assets/IMG/Garrafa-produto.png"
                         alt="Garrafa"
-                        class="item-produto"
-                    >
+                        class="item-produto">
 
                     <div class="card-produto">
                         <h2 class="nome-produto">Garrafa Stanley</h2>
@@ -407,8 +408,7 @@
                     <img
                         src="/Frontend/Assets/IMG/tapete-loja.png"
                         alt="Tapete"
-                        class="item-produto"
-                    >
+                        class="item-produto">
 
                     <div class="card-produto">
                         <h2 class="nome-produto">Tapete Acadêmico</h2>
@@ -462,8 +462,7 @@
                     <img
                         src="/Frontend/Assets/IMG/suplemento-loja.png"
                         alt="Pré-treino"
-                        class="item-produto"
-                    >
+                        class="item-produto">
 
                     <div class="card-produto">
                         <h2 class="nome-produto">Pré-Treino</h2>
@@ -663,8 +662,7 @@
                             name="email"
                             id="emailLoja"
                             placeholder="Seu email"
-                            required
-                        >
+                            required>
 
                         <i class='bx bx-send' id="envio"></i>
                     </div>
@@ -698,15 +696,15 @@
         <div class="rede-social">
 
             <p class="icone-redes">
-                <a href="#" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
+                <a href="https://www.instagram.com/mov_academy_mov?fqnt=cDljaDJ4eG1rY2Q4" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
             </p>
 
             <p class="icone-redes">
-                <a href="#" aria-label="Facebook"><i class='bx bxl-facebook'></i></a>
+                <a href="https://www.facebook.com/profile.php?id=61563498178251" aria-label="Facebook"><i class='bx bxl-facebook'></i></a>
             </p>
 
             <p class="icone-redes">
-                <a href="#" aria-label="TikTok"><i class='bx bxl-tiktok'></i></a>
+                <a href="https://www.tiktok.com/@mov_academy.mov?_r=1&_t=ZS-9BgaMMv0l85" aria-label="TikTok"><i class='bx bxl-tiktok'></i></a>
             </p>
 
         </div>
@@ -735,11 +733,15 @@
 
             const btnHamburguer = document.getElementById("btnHamburguer");
             const painelMenu = document.getElementById("painelMenu");
+            const mediaMobile = window.matchMedia("(max-width: 900px)");
 
             if (!btnHamburguer || !painelMenu) return;
 
             function abrirMenu() {
                 painelMenu.classList.add("menu-aberto");
+
+                painelMenu.inert = false;
+                painelMenu.setAttribute("aria-hidden", "false");
 
                 btnHamburguer.setAttribute("aria-expanded", "true");
                 btnHamburguer.setAttribute("aria-label", "Fechar menu");
@@ -749,9 +751,31 @@
             function fecharMenu() {
                 painelMenu.classList.remove("menu-aberto");
 
+                if (mediaMobile.matches) {
+                    painelMenu.inert = true;
+                    painelMenu.setAttribute("aria-hidden", "true");
+                } else {
+                    painelMenu.inert = false;
+                    painelMenu.setAttribute("aria-hidden", "false");
+                }
+
                 btnHamburguer.setAttribute("aria-expanded", "false");
                 btnHamburguer.setAttribute("aria-label", "Abrir menu");
                 btnHamburguer.innerHTML = "<i class='bx bx-menu'></i>";
+            }
+
+            function atualizarMenu() {
+                if (mediaMobile.matches) {
+                    fecharMenu();
+                } else {
+                    painelMenu.classList.remove("menu-aberto");
+                    painelMenu.inert = false;
+                    painelMenu.setAttribute("aria-hidden", "false");
+
+                    btnHamburguer.setAttribute("aria-expanded", "false");
+                    btnHamburguer.setAttribute("aria-label", "Abrir menu");
+                    btnHamburguer.innerHTML = "<i class='bx bx-menu'></i>";
+                }
             }
 
             btnHamburguer.addEventListener("click", (event) => {
@@ -769,7 +793,9 @@
             });
 
             document.addEventListener("click", () => {
-                fecharMenu();
+                if (mediaMobile.matches) {
+                    fecharMenu();
+                }
             });
 
             document.addEventListener("keydown", (event) => {
@@ -780,11 +806,23 @@
 
             painelMenu.querySelectorAll("a").forEach((link) => {
                 link.addEventListener("click", () => {
-                    if (link.getAttribute("href") && link.getAttribute("href") !== "#") {
+                    if (
+                        mediaMobile.matches &&
+                        link.getAttribute("href") &&
+                        link.getAttribute("href") !== "#"
+                    ) {
                         fecharMenu();
                     }
                 });
             });
+
+            atualizarMenu();
+
+            if (mediaMobile.addEventListener) {
+                mediaMobile.addEventListener("change", atualizarMenu);
+            } else {
+                mediaMobile.addListener(atualizarMenu);
+            }
 
         });
     </script>

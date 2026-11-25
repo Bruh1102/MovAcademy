@@ -153,7 +153,7 @@ img {
     color: #fff;
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
-    cursor: pointer;
+    cursor: text;
 }
 
 .busca-Treino input::placeholder {
@@ -199,7 +199,8 @@ img {
     font-size: 30px;
     cursor: pointer;
     flex-shrink: 0;
-    z-index: 10002;
+    position: relative;
+    z-index: 10006;
     transition: 0.3s ease;
 }
 
@@ -211,6 +212,7 @@ img {
 
 .menu-hamburguer i {
     display: block;
+    pointer-events: none;
 }
 
 /* =========================================
@@ -324,12 +326,16 @@ img {
 }
 
 .botao-lojas {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     border: none;
     border-radius: 10px;
     background-color: #E6FF00;
     padding: 8px 20px;
     margin-top: 10px;
     transition: 0.5s ease;
+    cursor: pointer;
 }
 
 .botao-lojas a {
@@ -340,6 +346,9 @@ img {
     color: #000;
     text-decoration: none;
     cursor: pointer;
+    position: relative;
+    z-index: 1;
+    pointer-events: auto;
 }
 
 .botao-lojas a:focus {
@@ -363,6 +372,10 @@ img {
     padding-right: clamp(14px, 2.5vw, 32px);
     width: auto;
     min-width: 0;
+
+    /* Não cria uma camada que prenda os modais */
+    position: relative;
+    z-index: auto;
 }
 
 .loja-box {
@@ -503,6 +516,7 @@ img {
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: clamp(14px, 2vw, 26px);
     position: relative;
+    z-index: auto;
     margin-top: 24px;
     width: 100%;
 }
@@ -515,7 +529,10 @@ img {
     min-height: 370px;
     border-radius: 10px;
     border: 1px solid #39363B;
+
     position: relative;
+    z-index: auto;
+
     text-align: center;
     padding: 10px;
     display: flex;
@@ -559,9 +576,13 @@ img {
     align-items: center;
     justify-content: center;
     margin-top: 18px;
+    position: relative;
+    z-index: 2;
 }
 
 .comprar-produto {
+    position: relative;
+    z-index: 3;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -572,6 +593,11 @@ img {
     font-size: clamp(12px, 1.1vw, 16px);
     border-radius: 10px;
     transition: 0.4s ease;
+    pointer-events: auto;
+}
+
+.comprar-produto i {
+    pointer-events: none;
 }
 
 .comprar .comprar-produto:hover {
@@ -600,16 +626,33 @@ img {
     left: 50%;
     transform: translate(-50%, -50%);
 
-    z-index: 10020;
+    /* Fica acima dos cards e do cabeçalho */
+    z-index: 10020 !important;
+
     background-color: #2b2a2a;
-    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.72),
-                0 12px 40px rgba(0, 0, 0, 0.5);
+
+    box-shadow:
+        0 0 0 100vmax rgba(0, 0, 0, 0.72),
+        0 12px 40px rgba(0, 0, 0, 0.5);
 
     display: none;
+    visibility: hidden;
+    pointer-events: none;
 }
 
+/* Modal fechado */
+.card-compra:not(.ativo) {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+
+/* Modal aberto */
 .card-compra.ativo {
-    display: block;
+    display: block !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    z-index: 10020 !important;
 }
 
 .nome-Adicionado {
@@ -712,7 +755,7 @@ img {
 
 .loja-sobre {
     position: relative;
-    margin-top: clamp(32px, 5vw, 55px);
+    margin-top: clamp(40px, 8vw, 65px);
 }
 
 .halter-loja {
@@ -930,7 +973,7 @@ img {
     padding: 10px 44px 10px 12px;
     border-radius: 6px;
     border: 1px solid #39363B;
-    cursor: pointer;
+    cursor: text;
     background-color: #242226;
     color: #ccc;
     font-size: clamp(12px, 1.1vw, 14px);
@@ -1315,10 +1358,13 @@ input:active {
         border-radius: 12px;
         overflow-y: auto;
         overflow-x: hidden;
+
         opacity: 0;
         visibility: hidden;
         pointer-events: none;
+
         transform: translateY(-10px);
+
         transition:
             opacity 0.25s ease,
             transform 0.25s ease,
@@ -1753,7 +1799,10 @@ input:active {
     .info-loja2 {
         width: 98%;
         gap: 5px;
-        padding: 8px 5px;
+        padding: 8px 10px;
+        top: 85%;
+        background-color: #39363B;
+        border-radius: 5px;
     }
 
     .entregar {
@@ -1772,7 +1821,7 @@ input:active {
     .local {
         display: none;
     }
-
+    
     /* SOBRE NÓS */
     .sobreNos-box {
         flex-direction: column;
@@ -1782,6 +1831,7 @@ input:active {
 
     .image-content-treino img {
         height: 220px;
+        position: relative;
     }
 
     .texto-card {
@@ -1959,6 +2009,77 @@ input:active {
     .nav-bar {
         max-width: 1800px;
     }
+}
+
+/* =====================================================
+   PROTEÇÃO CONTRA CLIQUES INVISÍVEIS
+===================================================== */
+
+/* Painel mobile fechado */
+@media screen and (max-width: 900px) {
+
+    .painel-menu-mobile:not(.menu-aberto) {
+        pointer-events: none !important;
+        visibility: hidden !important;
+    }
+
+    .painel-menu-mobile.menu-aberto {
+        pointer-events: auto !important;
+        visibility: visible !important;
+    }
+}
+
+/* Área dos produtos */
+.produtos-content {
+    position: relative;
+    z-index: auto;
+}
+
+/* Cards individuais */
+.produto {
+    position: relative;
+    z-index: auto;
+}
+
+/* Área do botão */
+.comprar {
+    position: relative;
+    z-index: 2;
+    pointer-events: auto;
+}
+
+/* Botões de compra */
+.comprar-produto {
+    position: relative;
+    z-index: 3;
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+/* Ícone não interfere no clique do botão */
+.comprar-produto i {
+    pointer-events: none;
+}
+
+/* Modais fechados */
+.card-compra:not(.ativo) {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+
+/* Modal ativo */
+.card-compra.ativo {
+    display: block !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    z-index: 10020 !important;
+}
+
+/* Link Premium */
+.botao-lojas a {
+    position: relative;
+    pointer-events: auto;
 }
 
 /* =====================================================

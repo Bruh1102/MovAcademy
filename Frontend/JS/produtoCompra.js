@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const cardsCompra = document.querySelectorAll('.card-compra');
 
     // =========================================
-    // FUNÇÃO PARA FECHAR TODOS OS MODAIS
+    // FECHAR TODOS OS MODAIS
     // =========================================
 
     function fecharTodosModais() {
@@ -29,23 +29,18 @@ document.addEventListener('DOMContentLoaded', () => {
             event.preventDefault();
             event.stopPropagation();
 
-            // Identifica o produto pelo nome da classe:
-            // prod1, prod2, prod3 ou prod4
             const classeProduto = [...botao.classList].find((classe) => {
                 return /^prod[1-4]$/.test(classe);
             });
 
             if (!classeProduto) return;
 
-            // Fecha qualquer modal que já esteja aberto
             fecharTodosModais();
 
-            // Encontra o modal correspondente
             const modal = document.querySelector(
                 `.card-compra.${classeProduto}`
             );
 
-            // Abre o modal correspondente
             if (modal) {
                 modal.classList.add('ativo');
             }
@@ -60,13 +55,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.addEventListener('click', (event) => {
 
-        // Se o clique foi dentro de um modal, não fecha
-        if (event.target.closest('.card-compra')) {
-            return;
-        }
+        const clicouDentroModal = event.target.closest('.card-compra');
+        const clicouComprar = event.target.closest('.comprar-produto');
 
-        // Se o clique foi em um botão de compra, não fecha
-        if (event.target.closest('.comprar-produto')) {
+        if (clicouDentroModal || clicouComprar) {
             return;
         }
 
@@ -85,8 +77,6 @@ document.addEventListener('DOMContentLoaded', () => {
             event.preventDefault();
             event.stopPropagation();
 
-            alert('Você pode continuar navegando pela nossa loja!');
-
             const card = botao.closest('.card-compra');
 
             if (card) {
@@ -101,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // FECHAR PELO ÍCONE X
     // =========================================
 
-    document.querySelectorAll('.icone-x i').forEach((icone) => {
+    document.querySelectorAll('.icone-x').forEach((icone) => {
 
         icone.addEventListener('click', (event) => {
 
