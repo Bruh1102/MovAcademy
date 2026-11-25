@@ -1,56 +1,55 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    const btnHamburguer = document.querySelector('#btnHamburguer');
-    const painelMenu = document.querySelector('#painelMenu');
+    // ELEMENTOS DO MENU
+    const btnHamburguer = document.getElementById('btnHamburguer');
+    const painelMenu = document.getElementById('painelMenu');
+    const iconeHamburguer = btnHamburguer?.querySelector('i');
 
-    const mobile = window.matchMedia('(max-width: 900px)');
+    // VERIFICA SE OS ELEMENTOS EXISTEM
+    if (!btnHamburguer || !painelMenu || !iconeHamburguer) {
+        console.error('Elementos do menu hambúrguer não encontrados.');
+        return;
+    }
 
-    if (!btnHamburguer || !painelMenu) return;
+    // IDENTIFICA O TAMANHO DA TELA
+    const telaMobile = window.matchMedia('(max-width: 900px)');
 
+    // ABRIR MENU
     function abrirMenu() {
-        painelMenu.classList.add('menu-aberto');
 
-        painelMenu.inert = false;
-        painelMenu.setAttribute('aria-hidden', 'false');
+        painelMenu.classList.add('menu-aberto');
 
         btnHamburguer.setAttribute('aria-expanded', 'true');
         btnHamburguer.setAttribute('aria-label', 'Fechar menu');
 
-        btnHamburguer.innerHTML = "<i class='bx bx-x'></i>";
+        painelMenu.setAttribute('aria-hidden', 'false');
+        painelMenu.removeAttribute('inert');
+
+        iconeHamburguer.classList.remove('bx-menu');
+        iconeHamburguer.classList.add('bx-x');
+
     }
 
+    // FECHAR MENU
     function fecharMenu() {
-        painelMenu.classList.remove('menu-aberto');
 
-        painelMenu.inert = mobile.matches;
-        painelMenu.setAttribute(
-            'aria-hidden',
-            mobile.matches ? 'true' : 'false'
-        );
+        painelMenu.classList.remove('menu-aberto');
 
         btnHamburguer.setAttribute('aria-expanded', 'false');
         btnHamburguer.setAttribute('aria-label', 'Abrir menu');
 
-        btnHamburguer.innerHTML = "<i class='bx bx-menu'></i>";
+        painelMenu.setAttribute('aria-hidden', 'true');
+        painelMenu.setAttribute('inert', '');
+
+        iconeHamburguer.classList.remove('bx-x');
+        iconeHamburguer.classList.add('bx-menu');
+
     }
 
-    function atualizarMenu() {
-        if (mobile.matches) {
-            fecharMenu();
-        } else {
-            painelMenu.classList.remove('menu-aberto');
-            painelMenu.inert = false;
-            painelMenu.setAttribute('aria-hidden', 'false');
+    // ALTERNAR MENU
+    function alternarMenu() {
 
-            btnHamburguer.setAttribute('aria-expanded', 'false');
-            btnHamburguer.setAttribute('aria-label', 'Abrir menu');
-
-            btnHamburguer.innerHTML = "<i class='bx bx-menu'></i>";
-        }
-    }
-
-    btnHamburguer.addEventListener('click', () => {
         const menuAberto = painelMenu.classList.contains('menu-aberto');
 
         if (menuAberto) {
@@ -58,41 +57,84 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             abrirMenu();
         }
+
+    }
+
+    // CLIQUE NO BOTÃO HAMBÚRGUER
+    btnHamburguer.addEventListener('click', () => {
+
+        if (!telaMobile.matches) return;
+
+        alternarMenu();
+
     });
 
-    // Fecha ao clicar fora do painel
+    // FECHAR AO CLICAR FORA DO MENU
     document.addEventListener('click', (event) => {
-        if (!mobile.matches) return;
 
-        const clicouNoPainel = painelMenu.contains(event.target);
+        if (!telaMobile.matches) return;
+
+        const clicouNoMenu = painelMenu.contains(event.target);
         const clicouNoBotao = btnHamburguer.contains(event.target);
 
-        if (!clicouNoPainel && !clicouNoBotao) {
+        if (!clicouNoMenu && !clicouNoBotao) {
             fecharMenu();
         }
+
     });
 
-    // Fecha ao pressionar ESC
-    document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape' && mobile.matches) {
-            fecharMenu();
-        }
-    });
+    // FECHAR AO CLICAR EM UM LINK
+    painelMenu.querySelectorAll('a').forEach((link) => {
 
-    // Fecha ao selecionar um link de navegação
-    painelMenu.querySelectorAll('a[href]').forEach((link) => {
         link.addEventListener('click', () => {
-            if (
-                mobile.matches &&
-                link.getAttribute('href') !== '#'
-            ) {
+
+            if (link.getAttribute('href') === '#') return;
+
+            if (telaMobile.matches) {
                 fecharMenu();
             }
+
         });
+
     });
 
-    // Atualiza o comportamento ao mudar o tamanho da tela
-    mobile.addEventListener('change', atualizarMenu);
+    // FECHAR COM A TECLA ESC
+    document.addEventListener('keydown', (event) => {
 
-    atualizarMenu();
+        if (event.key === 'Escape' && telaMobile.matches) {
+            fecharMenu();
+        }
+
+    });
+
+    // AJUSTAR O MENU QUANDO A TELA MUDAR DE TAMANHO
+    function ajustarMenu() {
+
+        if (telaMobile.matches) {
+
+            fecharMenu();
+
+        } else {
+
+            painelMenu.classList.remove('menu-aberto');
+
+            btnHamburguer.setAttribute('aria-expanded', 'false');
+            btnHamburguer.setAttribute('aria-label', 'Abrir menu');
+
+            painelMenu.setAttribute('aria-hidden', 'false');
+            painelMenu.removeAttribute('inert');
+
+            iconeHamburguer.classList.remove('bx-x');
+            iconeHamburguer.classList.add('bx-menu');
+
+        }
+
+    }
+
+    // OBSERVAR ALTERAÇÕES NO TAMANHO DA TELA
+    telaMobile.addEventListener('change', ajustarMenu);
+
+    // ESTADO INICIAL
+    ajustarMenu();
+
 });

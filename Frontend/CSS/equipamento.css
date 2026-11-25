@@ -13,9 +13,6 @@ CONFIGURAÇÕES GERAIS
     --amarelo-neon: #E6FF00;
     --branco: #FFFFFF;
     --cinza: #999999;
-
-    /* ALTURA DO CABEÇALHO */
-    --altura-header-equipamento: 120px;
 }
 
 * {
@@ -74,6 +71,14 @@ CABEÇALHO E MENU SUPERIOR
     object-fit: contain;
 }
 
+/* =====================================================
+PAINEL UNIFICADO - DESKTOP
+===================================================== */
+
+.painel-menu-mobile {
+    display: contents;
+}
+
 .menu-principal {
     position: relative;
     list-style: none;
@@ -128,6 +133,8 @@ CAMPO DE BUSCA
     display: flex;
     align-items: center;
     position: relative;
+    border: 1px solid #8A2BE2;
+    border-radius: 10px;
 }
 
 .busca-Treino input {
@@ -138,7 +145,9 @@ CAMPO DE BUSCA
     background-color: #1a1025;
     border: 1px solid #8A2BE2;
     border-radius: 10px;
-    cursor: pointer;
+    cursor: text;
+    width: 100%;
+    
 }
 
 .busca-Treino input::placeholder {
@@ -155,14 +164,18 @@ CAMPO DE BUSCA
     box-shadow: none;
 }
 
-.busca i {
-    color: #A855F7;
-    font-size: 20px;
-    display: block;
+.busca {
     position: absolute;
     right: 15px;
     top: 50%;
     transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.busca i {
+    color: #A855F7;
+    font-size: 20px;
+    display: block;
 }
 
 /* =====================================================
@@ -180,6 +193,8 @@ BOTÃO MENU HAMBÚRGUER
     padding: 5px;
     z-index: 10001;
     transition: 0.3s ease;
+    border: 1px solid #8A2BE2;
+    border-radius: 10px;
 }
 
 .menu-hamburguer:hover {
@@ -192,28 +207,18 @@ BOTÃO MENU HAMBÚRGUER
 }
 
 /* =====================================================
-PAINEL UNIFICADO DO MENU MOBILE
-===================================================== */
-
-/* No desktop, os elementos continuam separados no cabeçalho. */
-
-.painel-menu-mobile {
-    display: contents;
-}
-
-/* =====================================================
-MENU LATERAL
+MENU LATERAL - DESKTOP
 ===================================================== */
 
 .menu-lateral {
     position: fixed;
-    top: var(--altura-header-equipamento);
+    top: 0;
     left: 0;
     z-index: 999;
-    width: 22rem;
-    height: calc(100dvh - var(--altura-header-equipamento));
-    padding: 2rem 3rem;
+    padding: 10rem 4rem;
     background-color: #000;
+    height: 100vh;
+    height: 100dvh;
     border-right: 1px solid #333;
     overflow-y: auto;
     overflow-x: hidden;
@@ -221,6 +226,7 @@ MENU LATERAL
 
 .menu-plano {
     position: relative;
+    list-style: none;
 }
 
 .lista-lateral {
@@ -303,31 +309,31 @@ CARD PREMIUM DO MENU
 }
 
 .botao-lojas {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #000;
+    text-decoration: none;
     border: none;
     border-radius: 10px;
     background-color: #E6FF00;
     padding: 8px 20px;
     margin-top: 10px;
     transition: 0.5s ease;
-}
-
-.botao-lojas a {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 18px;
-    color: #000;
-    text-decoration: none;
     cursor: pointer;
 }
 
-.botao-lojas a:focus {
+.botao-lojas i {
+    font-size: 18px;
+}
+
+.botao-lojas:focus {
     outline: none;
-    border: none;
 }
 
 .botao-lojas:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 /* =====================================================
@@ -560,7 +566,6 @@ GRID DE PRODUTOS
 
 /* =====================================================
 MODAL DE COMPRA
-CENTRALIZADO NA TELA INTEIRA
 ===================================================== */
 
 .card-compra {
@@ -599,6 +604,7 @@ CENTRALIZADO NA TELA INTEIRA
     position: absolute;
     top: 10px;
     right: 10px;
+    cursor: pointer;
 }
 
 .icone-x i {
@@ -876,7 +882,6 @@ RODAPÉ
     display: inline-block;
     color: #fff;
     font-size: 16px;
-    text-decoration: none;
     transition: 0.5s ease;
     background: transparent;
 }
@@ -977,7 +982,7 @@ NOTEBOOKS
     }
 
     .menu-lateral {
-        padding: 2rem 2rem;
+        padding: 9rem 2rem;
     }
 
     .content-principal {
@@ -1048,7 +1053,7 @@ TABLETS E IPADS
 
     .menu-lateral {
         width: 210px;
-        padding: 2rem 12px 20px;
+        padding: 8rem 12px 20px;
         overflow-y: auto;
     }
 
@@ -1127,7 +1132,8 @@ TABLETS E IPADS
 }
 
 /* =====================================================
-CELULARES GRANDES E TELAS ATÉ 900PX
+CELULARES E TELAS ATÉ 900PX
+MENU HAMBÚRGUER CORRIGIDO
 ===================================================== */
 
 @media (max-width: 900px) {
@@ -1146,10 +1152,56 @@ CELULARES GRANDES E TELAS ATÉ 900PX
         height: 75px;
     }
 
+    /* BOTÃO HAMBÚRGUER VISÍVEL */
+
     .menu-hamburguer {
         display: flex;
         margin-left: auto;
     }
+
+    /* =================================================
+    PAINEL COMPLETO FECHADO
+
+    DISPLAY NONE REMOVE O PAINEL DA ÁREA DE INTERAÇÃO.
+    NÃO FICA TRANSPARENTE SOBRE OS PRODUTOS.
+    ================================================= */
+
+    .painel-menu-mobile {
+        display: none;
+    }
+
+    /* =================================================
+    PAINEL COMPLETO ABERTO
+    ================================================= */
+
+    .painel-menu-mobile.menu-aberto {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+
+        position: fixed;
+        top: 91px;
+        right: 12px;
+
+        width: min(360px, calc(100vw - 24px));
+        max-height: calc(100dvh - 105px);
+
+        padding: 20px 15px 25px;
+
+        background-color: #080808;
+        border: 1px solid #39363B;
+        border-radius: 12px;
+
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        z-index: 10000;
+
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.8);
+    }
+
+    /* MENU PRINCIPAL DENTRO DO PAINEL */
 
     .menu-principal {
         display: flex;
@@ -1157,22 +1209,106 @@ CELULARES GRANDES E TELAS ATÉ 900PX
         align-items: stretch;
         gap: 5px;
         width: 100%;
-        margin-bottom: 20px;
+        margin-bottom: 0;
+        list-style: none;
     }
 
     .lista-menu a,
     .lista-menu1 a {
         display: flex;
+        align-items: center;
         width: 100%;
         font-size: 17px;
         padding: 10px 15px;
-        padding-bottom: 15px;
         border-bottom: 1px solid #39363B;
     }
 
     .lista-menu a::after,
     .lista-menu1 a::after {
         display: none;
+    }
+
+    /* CAMPO DE BUSCA */
+
+    .busca-Treino {
+        width: 100%;
+        margin-top: 0;
+    }
+
+    .busca-Treino input {
+        width: 100%;
+        padding: 13px 45px 13px 15px;
+        
+        
+    }
+
+    /* =================================================
+    MENU LATERAL DENTRO DO PAINEL
+
+    IMPORTANTE:
+    ELE NÃO É MAIS FIXO NO CELULAR.
+    FICA NO FLUXO DO PAINEL E NÃO COBRE OS PRODUTOS.
+    ================================================= */
+
+    .painel-menu-mobile .menu-lateral {
+        position: relative;
+        top: auto;
+        right: auto;
+        left: auto;
+
+        width: 100%;
+        height: auto;
+        max-height: none;
+
+        padding: 10px 0 15px;
+
+        background-color: transparent;
+        border: none;
+        
+        border-radius: 0;
+
+        overflow: visible;
+
+        z-index: auto;
+        box-shadow: none;
+    }
+
+    .menu-plano {
+        width: 100%;
+    }
+
+    .lista-lateral {
+        padding: 5px 0;
+    }
+
+    .lista-lateral a,
+    .lista-lateral1 a {
+        font-size: 16px;
+        padding: 11px 15px;
+    }
+
+    .lista-lateral1 a {
+        justify-content: flex-start;
+    }
+
+    .premium-lojamove {
+        max-width: 100%;
+        margin-top: 15px;
+    }
+
+    /* ROLAGEM DO PAINEL */
+
+    .painel-menu-mobile.menu-aberto::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .painel-menu-mobile.menu-aberto::-webkit-scrollbar-thumb {
+        background-color: #666;
+        border-radius: 10px;
+    }
+
+    .painel-menu-mobile.menu-aberto::-webkit-scrollbar-track {
+        background-color: #171519;
     }
 
     /* CONTEÚDO PRINCIPAL */
@@ -1270,6 +1406,12 @@ CELULARES GRANDES E TELAS ATÉ 900PX
         font-size: 14px;
     }
 
+    /* MODAIS */
+
+    .card-compra {
+        width: min(380px, calc(100vw - 30px));
+    }
+
     /* BANNER */
 
     .card-evolucao {
@@ -1318,6 +1460,13 @@ CELULARES MÉDIOS
 
     .menu-hamburguer {
         font-size: 32px;
+    }
+
+    .painel-menu-mobile.menu-aberto {
+        top: 81px;
+        right: 12px;
+        width: min(340px, calc(100vw - 24px));
+        max-height: calc(100dvh - 95px);
     }
 
     .content-principal {
@@ -1547,6 +1696,13 @@ CELULARES PEQUENOS
 
     .menu-hamburguer {
         font-size: 29px;
+    }
+
+    .painel-menu-mobile.menu-aberto {
+        top: 71px;
+        right: 12px;
+        width: min(300px, calc(100vw - 24px));
+        max-height: calc(100dvh - 85px);
     }
 
     .content-principal {
@@ -1803,437 +1959,17 @@ TELAS HORIZONTAIS COM POUCA ALTURA
 
 @media (max-height: 500px) and (max-width: 900px) {
 
-    .content-principal {
-        margin-top: 90px;
-    }
-
-    .card-compra {
-        max-height: 90dvh;
-    }
-}
-
-/* =====================================================
-AJUSTES FINAIS DO MENU UNIFICADO
-===================================================== */
-
-/* DESKTOP E NOTEBOOKS */
-
-@media (min-width: 901px) {
-
-    .painel-menu-mobile {
-        display: contents;
-    }
-
-    .menu-hamburguer {
-        display: none;
-    }
-
-    .menu-lateral {
-        position: fixed;
-        top: var(--altura-header-equipamento);
-        left: 0;
-        right: auto;
-        width: 22rem;
-        height: calc(100dvh - var(--altura-header-equipamento));
-        padding: 2rem 3rem;
-        border-radius: 0;
-        opacity: 1;
-        visibility: visible;
-        pointer-events: auto;
-        transform: none;
-        box-shadow: none;
-    }
-
-    .content-principal {
-        margin-left: 24rem;
-    }
-}
-
-/* NOTEBOOKS */
-
-@media (min-width: 1201px) and (max-width: 1599px) {
-
-    .menu-lateral {
-        width: 19rem;
-        padding: 2rem;
-    }
-
-    .content-principal {
-        margin-left: 21rem;
-    }
-}
-
-/* TABLETS */
-
-@media (min-width: 769px) and (max-width: 1200px) {
-
-    .menu-lateral {
-        width: 210px;
-        padding: 2rem 12px;
-    }
-
-    .content-principal {
-        margin-left: 225px;
-    }
-}
-
-/* =====================================================
-MENU MOBILE UNIFICADO
-===================================================== */
-
-@media (max-width: 900px) {
-
-    :root {
-        --altura-header-equipamento: 91px;
-    }
-
-    .header-box {
-        padding: 8px 18px;
-    }
-
-    .nav-bar {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 15px;
-    }
-
-    .header-box .logo-img {
-        width: 75px;
-        height: 75px;
-    }
-
-    .menu-hamburguer {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-left: auto;
-        position: relative;
-        z-index: 10002;
-    }
-
-    /* PAINEL QUE REÚNE TODOS OS MENUS */
-
-    .painel-menu-mobile {
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 15px;
-
-        position: fixed;
-        top: 100px;
-        right: 15px;
-        left: auto;
-        z-index: 10000;
-
-        width: min(320px, calc(100vw - 30px));
-        max-height: calc(100dvh - 115px);
-
-        padding: 18px 15px 22px;
-
-        background-color: #111;
-        border: 1px solid #39363B;
-        border-radius: 12px;
-
-        overflow-y: auto;
-        overflow-x: hidden;
-
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
-
-        transform: translateY(-10px);
-
-        transition:
-            opacity 0.3s ease,
-            transform 0.3s ease,
-            visibility 0.3s ease;
-
-        box-shadow: 0 10px 35px rgba(0, 0, 0, 0.7);
-    }
-
     .painel-menu-mobile.menu-aberto {
-        opacity: 1;
-        visibility: visible;
-        pointer-events: auto;
-        transform: translateY(0);
+        max-height: calc(100dvh - 80px);
+        overflow-y: auto;
     }
-
-    .painel-menu-mobile::-webkit-scrollbar {
-        width: 6px;
-    }
-
-    .painel-menu-mobile::-webkit-scrollbar-thumb {
-        background-color: #777;
-        border-radius: 10px;
-    }
-
-    .painel-menu-mobile::-webkit-scrollbar-track {
-        background-color: #222;
-    }
-
-    /* MENU PRINCIPAL DENTRO DO PAINEL */
-
-    .painel-menu-mobile .menu-principal {
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 5px;
-
-        width: 100%;
-        margin: 0;
-        padding: 0;
-
-        list-style: none;
-    }
-
-    .painel-menu-mobile .lista-menu,
-    .painel-menu-mobile .lista-menu1 {
-        width: 100%;
-    }
-
-    .painel-menu-mobile .lista-menu a,
-    .painel-menu-mobile .lista-menu1 a {
-        display: flex;
-        align-items: center;
-
-        width: 100%;
-        padding: 10px 12px;
-
-        color: #fff;
-        font-size: 15px;
-        text-align: left;
-
-        border-bottom: 1px solid #39363B;
-    }
-
-    .painel-menu-mobile .lista-menu a::after,
-    .painel-menu-mobile .lista-menu1 a::after {
-        display: none;
-    }
-
-    .painel-menu-mobile .lista-menu a:hover,
-    .painel-menu-mobile .lista-menu1 a:hover {
-        color: #E6FF00;
-        background-color: transparent;
-        transform: none;
-    }
-
-    /* BUSCA DENTRO DO PAINEL */
-
-    .painel-menu-mobile .busca-Treino {
-        display: flex;
-        width: 100%;
-        margin: 0;
-    }
-
-    .painel-menu-mobile .busca-Treino input {
-        width: 100%;
-        min-width: 0;
-        padding: 12px 42px 12px 14px;
-        font-size: 13px;
-        cursor: text;
-    }
-
-    .painel-menu-mobile .busca i {
-        right: 14px;
-    }
-
-    /* MENU LATERAL DENTRO DO PAINEL */
 
     .painel-menu-mobile .menu-lateral {
-        display: block;
-
-        position: relative;
-        top: auto;
-        right: auto;
-        bottom: auto;
-        left: auto;
-
-        width: 100%;
-        height: auto;
-        min-height: 0;
-        max-height: none;
-
-        padding: 5px 0 0;
-
-        background-color: transparent;
-        border: none;
-        border-top: 1px solid #39363B;
-        border-radius: 0;
-
-        overflow: visible;
-
-        opacity: 1;
-        visibility: visible;
-        pointer-events: auto;
-
-        transform: none;
-        transition: none;
-
-        box-shadow: none;
+        padding-top: 15px;
     }
 
-    .painel-menu-mobile .lista-lateral {
-        width: 100%;
-        padding: 5px 0;
-    }
-
-    .painel-menu-mobile .lista-lateral a,
-    .painel-menu-mobile .lista-lateral1 a {
-        display: flex;
-        align-items: center;
-
-        width: 100%;
-        padding: 10px 12px;
-
-        font-size: 15px;
-    }
-
-    .painel-menu-mobile .lista-lateral a:hover {
-        transform: none;
-    }
-
-    /* CARD PREMIUM */
-
-    .painel-menu-mobile .premium-lojamove {
-        width: 100%;
-        max-width: none;
-        margin-top: 15px;
-        padding: 12px;
-    }
-
-    .painel-menu-mobile .loja-video i {
-        font-size: 40px;
-    }
-
-    .painel-menu-mobile .botao-lojas {
-        margin-top: 12px;
-    }
-
-    .painel-menu-mobile .botao-lojas a {
-        justify-content: center;
-        font-size: 15px;
-    }
-
-    /* CONTEÚDO DA PÁGINA */
-
-    .content-principal {
-        margin: 105px 20px 0;
-        width: auto;
-    }
-}
-
-/* =====================================================
-CELULARES MÉDIOS
-===================================================== */
-
-@media (min-width: 400px) and (max-width: 700px) {
-
-    :root {
-        --altura-header-equipamento: 81px;
-    }
-
-    .header-box {
-        padding: 8px 12px;
-    }
-
-    .header-box .logo-img {
-        width: 65px;
-        height: 65px;
-    }
-
-    .menu-hamburguer {
-        font-size: 32px;
-    }
-
-    .painel-menu-mobile {
-        top: 90px;
-        right: 12px;
-        width: min(300px, calc(100vw - 24px));
-        max-height: calc(100dvh - 105px);
-        padding: 15px 12px 20px;
-    }
-
-    .content-principal {
-        margin: 90px 12px 0;
-    }
-}
-
-/* =====================================================
-CELULARES PEQUENOS
-===================================================== */
-
-@media (max-width: 399px) {
-
-    :root {
-        --altura-header-equipamento: 71px;
-    }
-
-    .header-box {
-        padding: 8px 12px;
-    }
-
-    .header-box .logo-img {
-        width: 55px;
-        height: 55px;
-    }
-
-    .menu-hamburguer {
-        font-size: 29px;
-    }
-
-    .painel-menu-mobile {
-        top: 80px;
-        right: 12px;
-        width: min(280px, calc(100vw - 24px));
-        max-height: calc(100dvh - 95px);
-        padding: 13px 10px 18px;
-    }
-
-    .painel-menu-mobile .lista-menu a,
-    .painel-menu-mobile .lista-menu1 a {
-        font-size: 14px;
-        padding: 9px 10px;
-    }
-
-    .painel-menu-mobile .lista-lateral a,
-    .painel-menu-mobile .lista-lateral1 a {
-        font-size: 14px;
-        padding: 9px 10px;
-    }
-
-    .content-principal {
-        margin: 85px 8px 0;
-    }
-}
-
-/* =====================================================
-CELULARES MUITO ESTREITOS
-===================================================== */
-
-@media (max-width: 330px) {
-
-    .painel-menu-mobile {
-        right: 8px;
-        width: calc(100vw - 16px);
-        max-height: calc(100dvh - 90px);
-    }
-}
-
-/* =====================================================
-TELAS HORIZONTAIS COM POUCA ALTURA
-===================================================== */
-
-@media (max-height: 500px) and (max-width: 900px) {
-
-    .painel-menu-mobile {
-        max-height: calc(100dvh - 90px);
-        padding-top: 12px;
-    }
-
-    .painel-menu-mobile .premium-lojamove {
-        margin-bottom: 10px;
+    .premium-lojamove {
+        margin-bottom: 20px;
     }
 
     .content-principal {

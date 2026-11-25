@@ -13,141 +13,238 @@
 
 <body>
 
+     <!-- CABEÇALHO -->
     <header class="header-box">
-        <nav class="nav-bar">
-            <img src="/Frontend/Assets/IMG/logo.png" alt="imagem principal" class="logo-img">
 
-            <!-- BOTÃO DO MENU HAMBÚRGUER -->
-            <button class="menu-hamburguer" id="menuHamburguer" aria-label="Abrir menu" aria-expanded="false" type="button">
-                <i class='bx bx-menu'></i>
+        <nav class="nav-bar">
+
+            <img
+                src="/Frontend/Assets/IMG/logo.png"
+                alt="Logo MOVA Academy"
+                class="logo-img"
+            >
+
+            <!-- BOTÃO HAMBÚRGUER -->
+            <button
+                type="button"
+                class="menu-hamburguer"
+                id="btnHamburguer"
+                aria-label="Abrir menu"
+                aria-expanded="false"
+                aria-controls="painelMenu"
+            >
+                <i class="bx bx-menu"></i>
             </button>
 
-            <ul class="menu-principal">
-                <li class="lista-menu"><a href="/index.html">Inicio</a></li>
-                <li class="lista-menu"><a href="/Frontend/pages/planos.html">Planos</a></li>
-                <li class="lista-menu"><a href="/Frontend/pages/sobrenos.html">Sobre-nós</a></li>
-                <li class="lista-menu1"><a href="/Frontend/pages/loja.html">Loja</a></li>
-            </ul>
+            <!-- PAINEL UNIFICADO -->
+            <div
+                class="painel-menu-mobile"
+                id="painelMenu"
+                aria-hidden="true"
+                inert
+            >
 
-            <div class="busca-Treino">
-                <input type="text" name="texto" id="textBusca" placeholder="Buscar treinos...">
-                <div class="busca"><i class='bx bx-search'></i></div>
+                <!-- MENU PRINCIPAL -->
+                <ul class="menu-principal">
+
+                    <li class="lista-menu">
+                        <a href="/index.html">Início</a>
+                    </li>
+
+                    <li class="lista-menu">
+                        <a href="/Frontend/pages/planos.html">Planos</a>
+                    </li>
+
+                    <li class="lista-menu">
+                        <a href="/Frontend/pages/sobrenos.html">Sobre-nós</a>
+                    </li>
+
+                    <li class="lista-menu1">
+                        <a href="/Frontend/pages/loja.html">Loja</a>
+                    </li>
+
+                </ul>
+
+                <!-- CAMPO DE BUSCA -->
+                <div class="busca-Treino">
+
+                    <input
+                        type="text"
+                        name="texto"
+                        id="textBusca"
+                        placeholder="Buscar treinos..."
+                        aria-label="Buscar treinos"
+                    >
+
+                    <div class="busca">
+                        <i class="bx bx-search"></i>
+                    </div>
+
+                </div>
+
+                <!-- MENU LATERAL -->
+                <aside class="menu-lateral">
+
+                    <ul class="menu-plano">
+
+                        <li class="lista-lateral">
+                            <a href="/Frontend/pages/equipamento.html">
+                                Equipamentos
+                            </a>
+                        </li>
+
+                        <li class="lista-lateral">
+                            <a href="/Frontend/pages/acessorios.html">
+                                Acessórios
+                            </a>
+                        </li>
+
+                        <li class="lista-lateral">
+                            <a href="/Frontend/pages/suplemento.html">
+                                Suplementos
+                            </a>
+                        </li>
+
+                        <!-- ROUPAS -->
+                        <li class="lista-lateral roupas-menu">
+
+                            <a
+                                id="menu-Down"
+                                href="#"
+                                aria-expanded="false"
+                            >
+                                Roupas
+                                <i class="bx bx-chevron-right" id="icon-down"></i>
+                            </a>
+
+                            <ul class="roupas-itens">
+
+                                <!-- CAMISETAS -->
+                                <li class="lista-lateral roupas-menu">
+
+                                    <a
+                                        class="submenu-toggle"
+                                        href="#"
+                                        aria-expanded="false"
+                                    >
+                                        Camisetas
+                                        <i class="bx bx-chevron-right"></i>
+                                    </a>
+
+                                    <ul class="roupas-itens">
+
+                                        <li class="lista-lateral">
+                                            <a href="/Frontend/pages/camiseta-feminina.html">
+                                                Feminino
+                                            </a>
+                                        </li>
+
+                                        <li class="lista-lateral">
+                                            <a href="/Frontend/pages/camiseta-masculina.html">
+                                                Masculino
+                                            </a>
+                                        </li>
+
+                                    </ul>
+
+                                </li>
+
+                                <!-- SHORTS -->
+                                <li class="lista-lateral roupas-menu">
+
+                                    <a
+                                        class="submenu-toggle"
+                                        href="#"
+                                        aria-expanded="false"
+                                    >
+                                        Shorts
+                                        <i class="bx bx-chevron-right"></i>
+                                    </a>
+
+                                    <ul class="roupas-itens">
+
+                                        <li class="lista-lateral">
+                                            <a href="/Frontend/pages/shorts-feminino.html">
+                                                Feminino
+                                            </a>
+                                        </li>
+
+                                        <li class="lista-lateral">
+                                            <a href="/Frontend/pages/shorts-masculino.html">
+                                                Masculino
+                                            </a>
+                                        </li>
+
+                                    </ul>
+
+                                </li>
+
+                                <!-- CALÇAS -->
+                                <li class="lista-lateral roupas-menu">
+
+                                    <a
+                                        class="submenu-toggle"
+                                        href="#"
+                                        aria-expanded="false"
+                                    >
+                                        Calças
+                                        <i class="bx bx-chevron-right"></i>
+                                    </a>
+
+                                    <ul class="roupas-itens">
+
+                                        <li class="lista-lateral">
+                                            <a href="/Frontend/pages/calcas-femininas.html">
+                                                Feminino
+                                            </a>
+                                        </li>
+
+                                        <li class="lista-lateral">
+                                            <a href="/Frontend/pages/calcas-masculinas.html">
+                                                Masculino
+                                            </a>
+                                        </li>
+
+                                    </ul>
+
+                                </li>
+
+                            </ul>
+
+                        </li>
+
+                    </ul>
+
+                    <!-- CARD PREMIUM -->
+                    <div class="premium-lojamove">
+
+                        <div class="loja-video">
+                            <i class="bx bx-dumbbell icone-premium"></i>
+                        </div>
+
+                        <h3 class="loja-Premium">Seja Premium</h3>
+
+                        <p class="acesso-premium">
+                            Acesse as ofertas exclusivas e tenha seus benefícios!
+                        </p>
+
+                        <a
+                            class="botao-lojas"
+                            href="/Frontend/pages/planos.html"
+                        >
+                            <i class="bx bx-crown"></i>
+                            Assine agora
+                        </a>
+
+                    </div>
+
+                </aside>
+
             </div>
+
         </nav>
+
     </header>
-
-  <aside class="menu-lateral">
-    <ul class="menu-plano">
-
-        <li class="lista-lateral1">
-            <a href="/Frontend/pages/equipamento.html">Equipamentos</a>
-        </li>
-
-        <li class="lista-lateral">
-            <a href="/Frontend/pages/acessorios.html">Acessórios</a>
-        </li>
-
-        <li class="lista-lateral">
-            <a href="/Frontend/pages/suplemento.html">Suplementos</a>
-        </li>
-
-        <!-- MENU ROUPAS -->
-        <li class="lista-lateral roupas-menu">
-
-            <a id="menu-Down">
-                Roupas
-                <i class='bx bx-chevron-right' id="icon-down"></i>
-            </a>
-
-            <ul class="roupas-itens">
-
-                <!-- CAMISETAS -->
-                <li class="lista-lateral roupas-menu">
-
-                    <a class="submenu-toggle">
-                        Camisetas
-                        <i class='bx bx-chevron-right'></i>
-                    </a>
-
-                    <ul class="roupas-itens">
-                        <li class="lista-lateral">
-                            <a href="/Frontend/pages/camiseta-feminina.html">Feminino</a>
-                        </li>
-
-                        <li class="lista-lateral">
-                            <a href="/Frontend/pages/camiseta-masculina.html">Masculino</a>
-                        </li>
-                    </ul>
-
-                </li>
-
-                <!-- SHORTS -->
-                <li class="lista-lateral roupas-menu">
-
-                    <a class="submenu-toggle">
-                        Shorts
-                        <i class='bx bx-chevron-right'></i>
-                    </a>
-
-                    <ul class="roupas-itens">
-                        <li class="lista-lateral">
-                            <a href="/Frontend/pages/shorts-femininos.html">Feminino</a>
-                        </li>
-
-                        <li class="lista-lateral">
-                            <a href="/Frontend/pages/shorts-masculino.html">Masculino</a>
-                        </li>
-                    </ul>
-
-                </li>
-
-                <!-- CALÇAS -->
-                <li class="lista-lateral roupas-menu">
-
-                    <a class="submenu-toggle">
-                        Calças
-                        <i class='bx bx-chevron-right'></i>
-                    </a>
-
-                    <ul class="roupas-itens">
-                        <li class="lista-lateral">
-                            <a href="/Frontend/pages/calcas-femininas.html">Feminino</a>
-                        </li>
-
-                        <li class="lista-lateral">
-                            <a href="/Frontend/pages/calcas-masculinas.html">Masculino</a>
-                        </li>
-                    </ul>
-
-                </li>
-
-            </ul>
-        </li>
-
-     
-    </ul>
-
-    <!-- PREMIUM -->
-    <div class="premium-lojamove">
-
-        <div class="loja-video">
-            <i class='bx bx-dumbbell icone-premium'></i>
-        </div>
-
-        <h3 class="loja-Premium">Seja Premium</h3>
-
-        <p class="acesso-premium">
-            Acesse as ofertas exclusivas e tenha seus benefícios!
-        </p>
-
-        <button class="botao-lojas">
-            <a href="/Frontend/pages/planos.html">
-                <i class='bx bx-crown'></i> Assine agora
-            </a>
-        </button>
-
-    </div>
-</aside>
     <main class="content-principal">
         <section>
             <div class="equipamento-image"><img src="/Frontend/Assets/IMG/calcas-imagem.jpeg" alt="equipamento">
@@ -222,7 +319,7 @@
 
                         <div class="card-produto">
                             <h2 class="nome-produto">Shorts Nike Dry-Fit</h2>
-                            <p class="cor-produto">Poliéster</p>
+                            <p class="cor-produto">Tecido: Poliéster</p>
                             <h3 class="preco-produto">R$104,49</h3>
                         </div>
 
@@ -272,7 +369,7 @@
 
                         <div class="card-produto">
                             <h2 class="nome-produto">Nike Challenger Run</h2>
-                            <p class="cor-produto">Poliéster / Elastano</p>
+                            <p class="cor-produto">Tecido: Poliéster / Elastano</p>
                             <h3 class="preco-produto">R$161,49</h3>
                         </div>
 
@@ -321,7 +418,7 @@
 
                         <div class="card-produto">
                             <h2 class="nome-produto">Under Armour Tech</h2>
-                            <p class="cor-produto">100% Poliéster</p>
+                            <p class="cor-produto">Tecido: 100% Poliéster</p>
                             <h3 class="preco-produto">R$62,99</h3>
                         </div>
 
@@ -369,7 +466,7 @@
 
                         <div class="card-produto">
                             <h2 class="nome-produto">Under Armour Tech Mesh</h2>
-                            <p class="cor-produto">100% Poliéster</p>
+                            <p class="cor-produto">Tecido: 100% Poliéster</p>
                             <h3 class="preco-produto">R$89,99</h3>
                         </div>
 
@@ -418,7 +515,7 @@
 
                         <div class="card-produto">
                             <h2 class="nome-produto">Under Armour Tech Rival</h2>
-                            <p class="cor-produto">Algodão</p>
+                            <p class="cor-produto">Tecido: Algodão</p>
                             <h3 class="preco-produto">R$129,90</h3>
                         </div>
 
@@ -467,7 +564,7 @@
 
                         <div class="card-produto">
                             <h2 class="nome-produto">Shorts Adidas</h2>
-                            <p class="cor-produto">Algodão</p>
+                            <p class="cor-produto">Tecido: Algodão</p>
                             <h3 class="preco-produto">R$179,90</h3>
                         </div>
 
@@ -516,7 +613,7 @@
 
                         <div class="card-produto">
                             <h2 class="nome-produto">Shorts Puma</h2>
-                            <p class="cor-produto">Algodão</p>
+                            <p class="cor-produto">Tecido: Algodão</p>
                             <h3 class="preco-produto">R$179,90</h3>
 
                         </div>
@@ -562,7 +659,7 @@
 
                         <div class="card-produto">
                             <h2 class="nome-produto">Shorts Diadoro</h2>
-                            <p class="cor-produto">Poliéster / DryCell</p>
+                            <p class="cor-produto">Tecido: Poliéster / DryCell</p>
                             <h3 class="preco-produto">R$55,00</h3>
                         </div>
 
@@ -642,35 +739,53 @@
         </section>
     </main>
 
-    <footer class="footer-box">
+   <footer class="footer-box">
 
-        <img src="/Frontend/Assets/IMG/logo.png" alt="logo" class="logo-img">
+        <img
+            src="/Frontend/Assets/IMG/logo.png"
+            alt="Logo MOVA Academy"
+            class="logo-img"
+        >
 
         <div class="rede-social">
+
             <p class="icone-redes">
-                <a href="#"><i class='bx bxl-instagram'></i></a>
+                <a href="https://www.instagram.com/mov_academy_mov?fqnt=cDljaDJ4eG1rY2Q4" aria-label="Instagram">
+                    <i class="bx bxl-instagram"></i>
+                </a>
             </p>
 
             <p class="icone-redes">
-                <a href="#"><i class='bx bxl-facebook'></i></a>
+                <a href="https://www.facebook.com/profile.php?id=61563498178251" aria-label="Facebook">
+                    <i class="bx bxl-facebook"></i>
+                </a>
             </p>
 
             <p class="icone-redes">
-                <a href="#"><i class='bx bxl-tiktok'></i></a>
+                <a href="https://www.instagram.com/mov_academy_mov?fqnt=cDljaDJ4eG1rY2Q4" aria-label="TikTok">
+                    <i class="bx bxl-tiktok"></i>
+                </a>
             </p>
+
         </div>
 
         <p class="politica">
-            <a href="#">Políticas de Privacidade</a>
+            <a href="/Frontend/pages/politicaeprivacidade.html">Políticas de Privacidade</a>
         </p>
 
         <div class="direito-uso">
-            <p class="direitos">&copy; Todos os direitos reservados.</p>
-            <p class="direitos">Mov's Academia de Ginástica A/S CNPJ 455.796.890/0001</p>
+
+            <p class="direitos">
+                © Todos os direitos reservados.
+            </p>
+
+            <p class="direitos">
+                Mov's Academia de Ginástica A/S CNPJ 455.796.890/0001
+            </p>
+
         </div>
 
     </footer>
-
     <script src="/Frontend/JS/produtotodos.js"></script>
     <script src="/Frontend/JS/dropDown.js"></script>
     <script src="/Frontend/JS/menu-Hamburguer.js"></script>

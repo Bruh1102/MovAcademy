@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -14,183 +15,265 @@
 
 <body>
 
-<header class="header-box">
-    <nav class="nav-bar">
+    <!-- CABEÇALHO -->
+    <header class="header-box">
 
-        <img src="/Frontend/Assets/IMG/logo.png"
-            alt="Logo MOVA Academy" class="logo-img">
+        <nav class="nav-bar">
 
-        <button type="button" class="menu-hamburguer" id="btnHamburguer"
-            aria-label="Abrir menu" aria-expanded="false"
-            aria-controls="painelMenu">
-            <i class="bx bx-menu"></i>
-        </button>
+            <img
+                src="/Frontend/Assets/IMG/logo.png"
+                alt="Logo MOVA Academy"
+                class="logo-img"
+            >
 
-        <div class="painel-menu-mobile" id="painelMenu" aria-hidden="false">
+            <!-- BOTÃO HAMBÚRGUER -->
+            <button
+                type="button"
+                class="menu-hamburguer"
+                id="btnHamburguer"
+                aria-label="Abrir menu"
+                aria-expanded="false"
+                aria-controls="painelMenu"
+            >
+                <i class="bx bx-menu"></i>
+            </button>
 
-            <!-- MENU PRINCIPAL -->
-            <ul class="menu-principal">
-                <li class="lista-menu">
-                    <a href="/index.html">Início</a>
-                </li>
-                <li class="lista-menu">
-                    <a href="/Frontend/pages/planos.html">Planos</a>
-                </li>
-                <li class="lista-menu">
-                    <a href="/Frontend/pages/sobrenos.html">Sobre-nós</a>
-                </li>
-                <li class="lista-menu1">
-                    <a href="/Frontend/pages/loja.html">Loja</a>
-                </li>
-            </ul>
+            <!-- PAINEL UNIFICADO -->
+            <div
+                class="painel-menu-mobile"
+                id="painelMenu"
+                aria-hidden="true"
+                inert
+            >
 
-            <!-- CAMPO DE BUSCA -->
-            <div class="busca-Treino">
-                <input type="text" name="texto" id="textBusca"
-                    placeholder="Buscar treinos..."
-                    aria-label="Buscar treinos">
-                <div class="busca">
-                    <i class="bx bx-search"></i>
-                </div>
-            </div>
+                <!-- MENU PRINCIPAL -->
+                <ul class="menu-principal">
 
-            <!-- MENU LATERAL -->
-            <aside class="menu-lateral">
-
-                <ul class="menu-plano">
-
-                    <li class="lista-lateral1">
-                        <a href="/Frontend/pages/equipamento.html">
-                            Equipamentos
-                        </a>
+                    <li class="lista-menu">
+                        <a href="/index.html">Início</a>
                     </li>
 
-                    <li class="lista-lateral">
-                        <a href="/Frontend/pages/acessorios.html">
-                            Acessórios
-                        </a>
+                    <li class="lista-menu">
+                        <a href="/Frontend/pages/planos.html">Planos</a>
                     </li>
 
-                    <li class="lista-lateral">
-                        <a href="/Frontend/pages/suplemento.html">
-                            Suplementos
-                        </a>
+                    <li class="lista-menu">
+                        <a href="/Frontend/pages/sobrenos.html">Sobre-nós</a>
                     </li>
 
-                    <li class="lista-lateral roupas-menu">
-                        <a id="menu-Down" href="#" aria-expanded="false">
-                            Roupas
-                            <i class="bx bx-chevron-right" id="icon-down"></i>
-                        </a>
-
-                        <ul class="roupas-itens">
-
-                            <li class="lista-lateral roupas-menu">
-                                <a class="submenu-toggle" href="#" aria-expanded="false">
-                                    Camisetas
-                                    <i class="bx bx-chevron-right"></i>
-                                </a>
-
-                                <ul class="roupas-itens">
-                                    <li class="lista-lateral">
-                                        <a href="/Frontend/pages/camiseta-feminina.html">
-                                            Feminino
-                                        </a>
-                                    </li>
-                                    <li class="lista-lateral">
-                                        <a href="/Frontend/pages/camiseta-masculina.html">
-                                            Masculino
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-
-                            <li class="lista-lateral roupas-menu">
-                                <a class="submenu-toggle" href="#" aria-expanded="false">
-                                    Shorts
-                                    <i class="bx bx-chevron-right"></i>
-                                </a>
-
-                                <ul class="roupas-itens">
-                                    <li class="lista-lateral">
-                                        <a href="/Frontend/pages/shorts-feminino.html">
-                                            Feminino
-                                        </a>
-                                    </li>
-                                    <li class="lista-lateral">
-                                        <a href="/Frontend/pages/shorts-masculino.html">
-                                            Masculino
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-
-                            <li class="lista-lateral roupas-menu">
-                                <a class="submenu-toggle" href="#" aria-expanded="false">
-                                    Calças
-                                    <i class="bx bx-chevron-right"></i>
-                                </a>
-
-                                <ul class="roupas-itens">
-                                    <li class="lista-lateral">
-                                        <a href="/Frontend/pages/calcas-femininas.html">
-                                            Feminino
-                                        </a>
-                                    </li>
-                                    <li class="lista-lateral">
-                                        <a href="/Frontend/pages/calcas-masculinas.html">
-                                            Masculino
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-
-                        </ul>
+                    <li class="lista-menu1">
+                        <a href="/Frontend/pages/loja.html">Loja</a>
                     </li>
 
                 </ul>
 
-                <!-- CARD PREMIUM -->
-                <div class="premium-lojamove">
+                <!-- CAMPO DE BUSCA -->
+                <div class="busca-Treino">
 
-                    <div class="loja-video">
-                        <i class="bx bx-dumbbell icone-premium"></i>
+                    <input
+                        type="text"
+                        name="texto"
+                        id="textBusca"
+                        placeholder="Buscar treinos..."
+                        aria-label="Buscar treinos"
+                    >
+
+                    <div class="busca">
+                        <i class="bx bx-search"></i>
                     </div>
-
-                    <h3 class="loja-Premium">Seja Premium</h3>
-
-                    <p class="acesso-premium">
-                        Acesse as ofertas exclusivas e tenha seus benefícios!
-                    </p>
-
-                    <button class="botao-lojas" type="button">
-                        <a href="/Frontend/pages/planos.html">
-                            <i class="bx bx-crown"></i> Assine agora
-                        </a>
-                    </button>
 
                 </div>
 
-            </aside>
+                <!-- MENU LATERAL -->
+                <aside class="menu-lateral">
 
-        </div>
-    </nav>
-</header>
+                    <ul class="menu-plano">
+
+                        <li class="lista-lateral1">
+                            <a href="/Frontend/pages/equipamento.html">
+                                Equipamentos
+                            </a>
+                        </li>
+
+                        <li class="lista-lateral">
+                            <a href="/Frontend/pages/acessorios.html">
+                                Acessórios
+                            </a>
+                        </li>
+
+                        <li class="lista-lateral">
+                            <a href="/Frontend/pages/suplemento.html">
+                                Suplementos
+                            </a>
+                        </li>
+
+                        <!-- ROUPAS -->
+                        <li class="lista-lateral roupas-menu">
+
+                            <a
+                                id="menu-Down"
+                                href="#"
+                                aria-expanded="false"
+                            >
+                                Roupas
+                                <i class="bx bx-chevron-right" id="icon-down"></i>
+                            </a>
+
+                            <ul class="roupas-itens">
+
+                                <!-- CAMISETAS -->
+                                <li class="lista-lateral roupas-menu">
+
+                                    <a
+                                        class="submenu-toggle"
+                                        href="#"
+                                        aria-expanded="false"
+                                    >
+                                        Camisetas
+                                        <i class="bx bx-chevron-right"></i>
+                                    </a>
+
+                                    <ul class="roupas-itens">
+
+                                        <li class="lista-lateral">
+                                            <a href="/Frontend/pages/camiseta-feminina.html">
+                                                Feminino
+                                            </a>
+                                        </li>
+
+                                        <li class="lista-lateral">
+                                            <a href="/Frontend/pages/camiseta-masculina.html">
+                                                Masculino
+                                            </a>
+                                        </li>
+
+                                    </ul>
+
+                                </li>
+
+                                <!-- SHORTS -->
+                                <li class="lista-lateral roupas-menu">
+
+                                    <a
+                                        class="submenu-toggle"
+                                        href="#"
+                                        aria-expanded="false"
+                                    >
+                                        Shorts
+                                        <i class="bx bx-chevron-right"></i>
+                                    </a>
+
+                                    <ul class="roupas-itens">
+
+                                        <li class="lista-lateral">
+                                            <a href="/Frontend/pages/shorts-feminino.html">
+                                                Feminino
+                                            </a>
+                                        </li>
+
+                                        <li class="lista-lateral">
+                                            <a href="/Frontend/pages/shorts-masculino.html">
+                                                Masculino
+                                            </a>
+                                        </li>
+
+                                    </ul>
+
+                                </li>
+
+                                <!-- CALÇAS -->
+                                <li class="lista-lateral roupas-menu">
+
+                                    <a
+                                        class="submenu-toggle"
+                                        href="#"
+                                        aria-expanded="false"
+                                    >
+                                        Calças
+                                        <i class="bx bx-chevron-right"></i>
+                                    </a>
+
+                                    <ul class="roupas-itens">
+
+                                        <li class="lista-lateral">
+                                            <a href="/Frontend/pages/calcas-femininas.html">
+                                                Feminino
+                                            </a>
+                                        </li>
+
+                                        <li class="lista-lateral">
+                                            <a href="/Frontend/pages/calcas-masculinas.html">
+                                                Masculino
+                                            </a>
+                                        </li>
+
+                                    </ul>
+
+                                </li>
+
+                            </ul>
+
+                        </li>
+
+                    </ul>
+
+                    <!-- CARD PREMIUM -->
+                    <div class="premium-lojamove">
+
+                        <div class="loja-video">
+                            <i class="bx bx-dumbbell icone-premium"></i>
+                        </div>
+
+                        <h3 class="loja-Premium">Seja Premium</h3>
+
+                        <p class="acesso-premium">
+                            Acesse as ofertas exclusivas e tenha seus benefícios!
+                        </p>
+
+                        <a
+                            class="botao-lojas"
+                            href="/Frontend/pages/planos.html"
+                        >
+                            <i class="bx bx-crown"></i>
+                            Assine agora
+                        </a>
+
+                    </div>
+
+                </aside>
+
+            </div>
+
+        </nav>
+
+    </header>
 
 
+    <!-- CONTEÚDO PRINCIPAL -->
     <main class="content-principal">
 
         <!-- BANNER PRINCIPAL -->
         <section>
 
             <div class="equipamento-image">
-                <img src="/Frontend/Assets/IMG/equipamento-imagem.jpeg" alt="Equipamentos de academia">
+
+                <img
+                    src="/Frontend/Assets/IMG/equipamento-imagem.jpeg"
+                    alt="Equipamentos de academia"
+                >
+
             </div>
 
             <div class="box-equipa">
-                <h1 class="equipamento">Equipamentos</h1>
+
                 <h1 class="equipamento">
-                    <span class="dest-equipa">de alta qualidade</span>
+                    Equipamentos
+                </h1>
+
+                <h1 class="equipamento">
+                    <span class="dest-equipa">
+                        de alta qualidade
+                    </span>
                 </h1>
 
                 <h3 class="melhor-Equipa">
@@ -201,9 +284,11 @@
                     Garanta já o seu
                     <i class="bx bx-right-arrow-alt"></i>
                 </p>
+
             </div>
 
         </section>
+
 
         <!-- BENEFÍCIOS -->
         <section>
@@ -213,43 +298,55 @@
                 <div class="info-loja2">
 
                     <div class="entregar">
+
                         <div class="icone-entrega">
                             <i class="bx bxs-truck"></i>
                         </div>
+
                         <div>
                             <h3 class="entrega-local">Entrega Rápida</h3>
                             <p class="local">Prazo curto até você!</p>
                         </div>
+
                     </div>
 
                     <div class="entregar">
+
                         <div class="icone-entrega">
                             <i class="bx bx-check-shield"></i>
                         </div>
+
                         <div>
                             <h3 class="entrega-local">Compra Segura</h3>
                             <p class="local">Sua compra protegida.</p>
                         </div>
+
                     </div>
 
                     <div class="entregar">
+
                         <div class="icone-entrega">
                             <i class="bx bx-credit-card"></i>
                         </div>
+
                         <div>
                             <h3 class="entrega-local">Até 12x no cartão</h3>
                             <p class="local">Sem juros.</p>
                         </div>
+
                     </div>
 
                     <div class="entregar">
+
                         <div class="icone-entrega">
                             <i class="bx bx-headphone"></i>
                         </div>
+
                         <div>
                             <h3 class="entrega-local">Suporte ao cliente</h3>
                             <p class="local">Estamos aqui para ajudar.</p>
                         </div>
+
                     </div>
 
                 </div>
@@ -258,25 +355,39 @@
 
         </section>
 
+
         <!-- PRODUTOS -->
         <section>
 
             <div class="equipamento-card">
 
                 <div class="nossos-equipa">
+
                     <div class="nossos-Itens">
-                        <h1>Nossos <span class="dest-equipa">Equipamentos</span></h1>
+
+                        <h1>
+                            Nossos
+                            <span class="dest-equipa">Equipamentos</span>
+                        </h1>
+
                     </div>
+
                     <div class="barra-verde"></div>
+
                 </div>
 
+
                 <div class="card-grid">
+
 
                     <!-- PRODUTO 1 -->
                     <div class="produto">
 
-                        <img src="/Frontend/Assets/IMG/BancoAjustavel.png"
-                            alt="Banco Ajustável" class="item-produto">
+                        <img
+                            src="/Frontend/Assets/IMG/BancoAjustavel.png"
+                            alt="Banco Ajustável"
+                            class="item-produto"
+                        >
 
                         <div class="card-produto">
                             <h2 class="nome-produto">Banco Ajustável</h2>
@@ -285,30 +396,40 @@
                         </div>
 
                         <div class="comprar">
-                            <button type="button" class="comprar-produto prod">
-                                <i class="bx bx-cart"></i> Comprar Produto
+                            <button type="button" class="comprar-produto">
+                                <i class="bx bx-cart"></i>
+                                Comprar Produto
                             </button>
                         </div>
 
                         <div class="card-compra prod1">
+
                             <div class="icone-x">
                                 <i class="bx bx-x"></i>
                             </div>
 
-                            <h2 class="nome-Adicionado">Produto adicionado!</h2>
+                            <h2 class="nome-Adicionado">
+                                Produto adicionado!
+                            </h2>
 
                             <div class="linha-prod">
+
                                 <div class="imagem-prod">
-                                    <img src="/Frontend/Assets/IMG/BancoAjustavel.png" alt="Banco ajustável">
+                                    <img
+                                        src="/Frontend/Assets/IMG/BancoAjustavel.png"
+                                        alt="Banco ajustável"
+                                    >
                                 </div>
 
                                 <div>
                                     <h3 class="nome-prod">Banco Ajustável</h3>
+
                                     <div class="item-prod">
                                         <p class="quantia">Quantidade: 1</p>
                                         <p class="preco-produto">R$699,90</p>
                                     </div>
                                 </div>
+
                             </div>
 
                             <div class="continuar-but">
@@ -318,15 +439,20 @@
                             <div class="carrinho-but">
                                 <button type="button">Adicionar ao carrinho</button>
                             </div>
+
                         </div>
 
                     </div>
 
+
                     <!-- PRODUTO 2 -->
                     <div class="produto">
 
-                        <img src="/Frontend/Assets/IMG/halter-produto.png"
-                            alt="Halter Sextavado" class="item-produto">
+                        <img
+                            src="/Frontend/Assets/IMG/halter-produto.png"
+                            alt="Halter Sextavado"
+                            class="item-produto"
+                        >
 
                         <div class="card-produto">
                             <h2 class="nome-produto">Halter Sextavado</h2>
@@ -335,30 +461,40 @@
                         </div>
 
                         <div class="comprar">
-                            <button type="button" class="comprar-produto prod">
-                                <i class="bx bx-cart"></i> Comprar Produto
+                            <button type="button" class="comprar-produto">
+                                <i class="bx bx-cart"></i>
+                                Comprar Produto
                             </button>
                         </div>
 
                         <div class="card-compra prod2">
+
                             <div class="icone-x">
                                 <i class="bx bx-x"></i>
                             </div>
 
-                            <h2 class="nome-Adicionado">Produto adicionado!</h2>
+                            <h2 class="nome-Adicionado">
+                                Produto adicionado!
+                            </h2>
 
                             <div class="linha-prod">
+
                                 <div class="imagem-prod">
-                                    <img src="/Frontend/Assets/IMG/halter-produto.png" alt="Halter Sextavado">
+                                    <img
+                                        src="/Frontend/Assets/IMG/halter-produto.png"
+                                        alt="Halter Sextavado"
+                                    >
                                 </div>
 
                                 <div>
                                     <h3 class="nome-prod">Halter Sextavado</h3>
+
                                     <div class="item-prod">
                                         <p class="quantia">Quantidade: 1</p>
                                         <p class="preco-produto">R$129,90</p>
                                     </div>
                                 </div>
+
                             </div>
 
                             <div class="continuar-but">
@@ -368,15 +504,20 @@
                             <div class="carrinho-but">
                                 <button type="button">Adicionar ao carrinho</button>
                             </div>
+
                         </div>
 
                     </div>
 
+
                     <!-- PRODUTO 3 -->
                     <div class="produto">
 
-                        <img src="/Frontend/Assets/IMG/barraOlimpica.png"
-                            alt="Barra Olímpica" class="item-produto">
+                        <img
+                            src="/Frontend/Assets/IMG/barraOlimpica.png"
+                            alt="Barra Olímpica"
+                            class="item-produto"
+                        >
 
                         <div class="card-produto">
                             <h2 class="nome-produto">Barra Olímpica</h2>
@@ -385,30 +526,40 @@
                         </div>
 
                         <div class="comprar">
-                            <button type="button" class="comprar-produto prod">
-                                <i class="bx bx-cart"></i> Comprar Produto
+                            <button type="button" class="comprar-produto">
+                                <i class="bx bx-cart"></i>
+                                Comprar Produto
                             </button>
                         </div>
 
                         <div class="card-compra prod3">
+
                             <div class="icone-x">
                                 <i class="bx bx-x"></i>
                             </div>
 
-                            <h2 class="nome-Adicionado">Produto adicionado!</h2>
+                            <h2 class="nome-Adicionado">
+                                Produto adicionado!
+                            </h2>
 
                             <div class="linha-prod">
+
                                 <div class="imagem-prod">
-                                    <img src="/Frontend/Assets/IMG/barraOlimpica.png" alt="Barra Olímpica">
+                                    <img
+                                        src="/Frontend/Assets/IMG/barraOlimpica.png"
+                                        alt="Barra Olímpica"
+                                    >
                                 </div>
 
                                 <div>
                                     <h3 class="nome-prod">Barra Olímpica</h3>
+
                                     <div class="item-prod">
                                         <p class="quantia">Quantidade: 1</p>
                                         <p class="preco-produto">R$249,90</p>
                                     </div>
                                 </div>
+
                             </div>
 
                             <div class="continuar-but">
@@ -418,15 +569,20 @@
                             <div class="carrinho-but">
                                 <button type="button">Adicionar ao carrinho</button>
                             </div>
+
                         </div>
 
                     </div>
 
+
                     <!-- PRODUTO 4 -->
                     <div class="produto">
 
-                        <img src="/Frontend/Assets/IMG/Anilha.png"
-                            alt="Anilha Olímpica" class="item-produto">
+                        <img
+                            src="/Frontend/Assets/IMG/Anilha.png"
+                            alt="Anilha Olímpica"
+                            class="item-produto"
+                        >
 
                         <div class="card-produto">
                             <h2 class="nome-produto">Anilha Olímpica</h2>
@@ -435,30 +591,40 @@
                         </div>
 
                         <div class="comprar">
-                            <button type="button" class="comprar-produto prod">
-                                <i class="bx bx-cart"></i> Comprar Produto
+                            <button type="button" class="comprar-produto">
+                                <i class="bx bx-cart"></i>
+                                Comprar Produto
                             </button>
                         </div>
 
                         <div class="card-compra prod4">
+
                             <div class="icone-x">
                                 <i class="bx bx-x"></i>
                             </div>
 
-                            <h2 class="nome-Adicionado">Produto adicionado!</h2>
+                            <h2 class="nome-Adicionado">
+                                Produto adicionado!
+                            </h2>
 
                             <div class="linha-prod">
+
                                 <div class="imagem-prod">
-                                    <img src="/Frontend/Assets/IMG/Anilha.png" alt="Anilha Olímpica">
+                                    <img
+                                        src="/Frontend/Assets/IMG/Anilha.png"
+                                        alt="Anilha Olímpica"
+                                    >
                                 </div>
 
                                 <div>
                                     <h3 class="nome-prod">Anilha Olímpica</h3>
+
                                     <div class="item-prod">
                                         <p class="quantia">Quantidade: 1</p>
                                         <p class="preco-produto">R$99,90</p>
                                     </div>
                                 </div>
+
                             </div>
 
                             <div class="continuar-but">
@@ -468,15 +634,20 @@
                             <div class="carrinho-but">
                                 <button type="button">Adicionar ao carrinho</button>
                             </div>
+
                         </div>
 
                     </div>
 
+
                     <!-- PRODUTO 5 -->
                     <div class="produto">
 
-                        <img src="/Frontend/Assets/IMG/SmithMachine.png"
-                            alt="Smith Machine" class="item-produto">
+                        <img
+                            src="/Frontend/Assets/IMG/SmithMachine.png"
+                            alt="Smith Machine"
+                            class="item-produto"
+                        >
 
                         <div class="card-produto">
                             <h2 class="nome-produto">Smith Machine</h2>
@@ -485,30 +656,40 @@
                         </div>
 
                         <div class="comprar">
-                            <button type="button" class="comprar-produto prod">
-                                <i class="bx bx-cart"></i> Comprar Produto
+                            <button type="button" class="comprar-produto">
+                                <i class="bx bx-cart"></i>
+                                Comprar Produto
                             </button>
                         </div>
 
                         <div class="card-compra prod5">
+
                             <div class="icone-x">
                                 <i class="bx bx-x"></i>
                             </div>
 
-                            <h2 class="nome-Adicionado">Produto adicionado!</h2>
+                            <h2 class="nome-Adicionado">
+                                Produto adicionado!
+                            </h2>
 
                             <div class="linha-prod">
+
                                 <div class="imagem-prod">
-                                    <img src="/Frontend/Assets/IMG/SmithMachine.png" alt="Smith Machine">
+                                    <img
+                                        src="/Frontend/Assets/IMG/SmithMachine.png"
+                                        alt="Smith Machine"
+                                    >
                                 </div>
 
                                 <div>
                                     <h3 class="nome-prod">Smith Machine</h3>
+
                                     <div class="item-prod">
                                         <p class="quantia">Quantidade: 1</p>
                                         <p class="preco-produto">R$3.499,90</p>
                                     </div>
                                 </div>
+
                             </div>
 
                             <div class="continuar-but">
@@ -518,15 +699,20 @@
                             <div class="carrinho-but">
                                 <button type="button">Adicionar ao carrinho</button>
                             </div>
+
                         </div>
 
                     </div>
 
+
                     <!-- PRODUTO 6 -->
                     <div class="produto">
 
-                        <img src="/Frontend/Assets/IMG/Kettlebell.png"
-                            alt="Kettlebell" class="item-produto">
+                        <img
+                            src="/Frontend/Assets/IMG/Kettlebell.png"
+                            alt="Kettlebell"
+                            class="item-produto"
+                        >
 
                         <div class="card-produto">
                             <h2 class="nome-produto">Kettlebell</h2>
@@ -535,30 +721,40 @@
                         </div>
 
                         <div class="comprar">
-                            <button type="button" class="comprar-produto prod">
-                                <i class="bx bx-cart"></i> Comprar Produto
+                            <button type="button" class="comprar-produto">
+                                <i class="bx bx-cart"></i>
+                                Comprar Produto
                             </button>
                         </div>
 
                         <div class="card-compra prod6">
+
                             <div class="icone-x">
                                 <i class="bx bx-x"></i>
                             </div>
 
-                            <h2 class="nome-Adicionado">Produto adicionado!</h2>
+                            <h2 class="nome-Adicionado">
+                                Produto adicionado!
+                            </h2>
 
                             <div class="linha-prod">
+
                                 <div class="imagem-prod">
-                                    <img src="/Frontend/Assets/IMG/Kettlebell.png" alt="Kettlebell">
+                                    <img
+                                        src="/Frontend/Assets/IMG/Kettlebell.png"
+                                        alt="Kettlebell"
+                                    >
                                 </div>
 
                                 <div>
                                     <h3 class="nome-prod">Kettlebell</h3>
+
                                     <div class="item-prod">
                                         <p class="quantia">Quantidade: 1</p>
                                         <p class="preco-produto">R$179,90</p>
                                     </div>
                                 </div>
+
                             </div>
 
                             <div class="continuar-but">
@@ -568,15 +764,20 @@
                             <div class="carrinho-but">
                                 <button type="button">Adicionar ao carrinho</button>
                             </div>
+
                         </div>
 
                     </div>
 
+
                     <!-- PRODUTO 7 -->
                     <div class="produto">
 
-                        <img src="/Frontend/Assets/IMG/barrafixa.png"
-                            alt="Barra Fixa" class="item-produto">
+                        <img
+                            src="/Frontend/Assets/IMG/barrafixa.png"
+                            alt="Barra Fixa"
+                            class="item-produto"
+                        >
 
                         <div class="card-produto">
                             <h2 class="nome-produto">Barra Fixa</h2>
@@ -585,30 +786,40 @@
                         </div>
 
                         <div class="comprar">
-                            <button type="button" class="comprar-produto prod">
-                                <i class="bx bx-cart"></i> Comprar Produto
+                            <button type="button" class="comprar-produto">
+                                <i class="bx bx-cart"></i>
+                                Comprar Produto
                             </button>
                         </div>
 
                         <div class="card-compra prod7">
+
                             <div class="icone-x">
                                 <i class="bx bx-x"></i>
                             </div>
 
-                            <h2 class="nome-Adicionado">Produto adicionado!</h2>
+                            <h2 class="nome-Adicionado">
+                                Produto adicionado!
+                            </h2>
 
                             <div class="linha-prod">
+
                                 <div class="imagem-prod">
-                                    <img src="/Frontend/Assets/IMG/barrafixa.png" alt="Barra Fixa">
+                                    <img
+                                        src="/Frontend/Assets/IMG/barrafixa.png"
+                                        alt="Barra Fixa"
+                                    >
                                 </div>
 
                                 <div>
                                     <h3 class="nome-prod">Barra Fixa</h3>
+
                                     <div class="item-prod">
                                         <p class="quantia">Quantidade: 1</p>
                                         <p class="preco-produto">R$299,90</p>
                                     </div>
                                 </div>
+
                             </div>
 
                             <div class="continuar-but">
@@ -618,15 +829,20 @@
                             <div class="carrinho-but">
                                 <button type="button">Adicionar ao carrinho</button>
                             </div>
+
                         </div>
 
                     </div>
 
+
                     <!-- PRODUTO 8 -->
                     <div class="produto">
 
-                        <img src="/Frontend/Assets/IMG/rodaAbdominal.png"
-                            alt="Roda Abdominal" class="item-produto">
+                        <img
+                            src="/Frontend/Assets/IMG/rodaAbdominal.png"
+                            alt="Roda Abdominal"
+                            class="item-produto"
+                        >
 
                         <div class="card-produto">
                             <h2 class="nome-produto">Roda Abdominal</h2>
@@ -635,30 +851,40 @@
                         </div>
 
                         <div class="comprar">
-                            <button type="button" class="comprar-produto prod">
-                                <i class="bx bx-cart"></i> Comprar Produto
+                            <button type="button" class="comprar-produto">
+                                <i class="bx bx-cart"></i>
+                                Comprar Produto
                             </button>
                         </div>
 
                         <div class="card-compra prod8">
+
                             <div class="icone-x">
                                 <i class="bx bx-x"></i>
                             </div>
 
-                            <h2 class="nome-Adicionado">Produto adicionado!</h2>
+                            <h2 class="nome-Adicionado">
+                                Produto adicionado!
+                            </h2>
 
                             <div class="linha-prod">
+
                                 <div class="imagem-prod">
-                                    <img src="/Frontend/Assets/IMG/rodaAbdominal.png" alt="Roda Abdominal">
+                                    <img
+                                        src="/Frontend/Assets/IMG/rodaAbdominal.png"
+                                        alt="Roda Abdominal"
+                                    >
                                 </div>
 
                                 <div>
                                     <h3 class="nome-prod">Roda Abdominal</h3>
+
                                     <div class="item-prod">
                                         <p class="quantia">Quantidade: 1</p>
                                         <p class="preco-produto">R$89,90</p>
                                     </div>
                                 </div>
+
                             </div>
 
                             <div class="continuar-but">
@@ -668,6 +894,7 @@
                             <div class="carrinho-but">
                                 <button type="button">Adicionar ao carrinho</button>
                             </div>
+
                         </div>
 
                     </div>
@@ -678,33 +905,49 @@
 
         </section>
 
+
         <!-- BANNER INFERIOR -->
         <section>
 
             <div class="card-evolucao">
 
                 <div class="halteres-card">
-                    <img src="/Frontend/Assets/IMG/halteres-image.jpeg" alt="Halteres">
+
+                    <img
+                        src="/Frontend/Assets/IMG/halteres-image.jpeg"
+                        alt="Halteres"
+                    >
+
                 </div>
 
                 <div class="card-detalhe">
 
                     <div class="card-itens-prod">
 
-                        <p class="equipe-move">Equipamentos Move Academy</p>
-
-                        <h1 class="titulo-evolua">Evolua em</h1>
+                        <p class="equipe-move">
+                            Equipamentos Move Academy
+                        </p>
 
                         <h1 class="titulo-evolua">
-                            <span class="dest-evolua">cada detalhe</span>
+                            Evolua em
+                        </h1>
+
+                        <h1 class="titulo-evolua">
+                            <span class="dest-evolua">
+                                cada detalhe
+                            </span>
                         </h1>
 
                     </div>
 
                     <div class="conferir">
+
                         <p class="conferir-equipamento">
-                            <a href="#card-content">Confira todos os equipamentos</a>
+                            <a href="#card-content">
+                                Confira todos os equipamentos
+                            </a>
                         </p>
+
                     </div>
 
                 </div>
@@ -715,41 +958,62 @@
 
     </main>
 
+
     <!-- RODAPÉ -->
     <footer class="footer-box">
 
-        <img src="/Frontend/Assets/IMG/logo.png" alt="Logo MOVA Academy" class="logo-img">
+        <img
+            src="/Frontend/Assets/IMG/logo.png"
+            alt="Logo MOVA Academy"
+            class="logo-img"
+        >
 
         <div class="rede-social">
 
             <p class="icone-redes">
-                <a href="#"><i class="bx bxl-instagram"></i></a>
+                <a href="https://www.instagram.com/mov_academy_mov?fqnt=cDljaDJ4eG1rY2Q4" aria-label="Instagram">
+                    <i class="bx bxl-instagram"></i>
+                </a>
             </p>
 
             <p class="icone-redes">
-                <a href="#"><i class="bx bxl-facebook"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=61563498178251" aria-label="Facebook">
+                    <i class="bx bxl-facebook"></i>
+                </a>
             </p>
 
             <p class="icone-redes">
-                <a href="#"><i class="bx bxl-tiktok"></i></a>
+                <a href="https://www.instagram.com/mov_academy_mov?fqnt=cDljaDJ4eG1rY2Q4" aria-label="TikTok">
+                    <i class="bx bxl-tiktok"></i>
+                </a>
             </p>
 
         </div>
 
         <p class="politica">
-            <a href="#">Políticas de Privacidade</a>
+            <a href="/Frontend/pages/politicaeprivacidade.html">Políticas de Privacidade</a>
         </p>
 
         <div class="direito-uso">
-            <p class="direitos">© Todos os direitos reservados.</p>
-            <p class="direitos">Mov's Academia de Ginástica A/S CNPJ 455.796.890/0001</p>
+
+            <p class="direitos">
+                © Todos os direitos reservados.
+            </p>
+
+            <p class="direitos">
+                Mov's Academia de Ginástica A/S CNPJ 455.796.890/0001
+            </p>
+
         </div>
 
     </footer>
 
-    <script src="/Frontend/JS/produtotodos.js"></script>
-    <script src="/Frontend/JS/dropDown.js"></script>
-    <script src="/Frontend/JS/menu-Hamburguer.js"></script>
+
+    <!-- JAVASCRIPT -->
+    <script src="/Frontend/JS/produtotodos.js" defer></script>
+    <script src="/Frontend/JS/dropDown.js" defer></script>
+    <script src="/Frontend/JS/menu-Hamburguer.js" defer></script>
 
 </body>
+
 </html>
