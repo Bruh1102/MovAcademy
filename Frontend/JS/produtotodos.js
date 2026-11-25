@@ -85,6 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const card = botao.closest('.card-compra');
 
             if (card) {
+                alert('Obrigado por escolher nossa loja! Volte Sempre!')
                 card.classList.remove('ativo');
             }
 
