@@ -1309,6 +1309,29 @@ input:active {
     }
 }
 
+/* MODAL ACIMA DO CARD - NOTEBOOK E DESKTOP */
+@media screen and (min-width: 901px) {
+
+    .produto {
+        position: relative;
+        z-index: 1;
+    }
+
+    .produto:has(.card-compra.ativo) {
+        z-index: 10021;
+    }
+
+    .card-compra {
+        position: absolute !important;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translateX(-50%, -50%) !important;
+        z-index: 10022 !important;
+        margin: 0;
+    }
+
+}
+
 /* =====================================================
    MENU HAMBÚRGUER E MOBILE (ATÉ 900PX)
 ===================================================== */
