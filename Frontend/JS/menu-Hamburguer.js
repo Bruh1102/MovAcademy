@@ -1,108 +1,98 @@
 
-document.addEventListener("DOMContentLoaded", () => {
-    const botaoMenu = document.getElementById("menuHamburguer");
-    const menuPrincipal = document.querySelector(".menu-principal");
-    const menuLateral = document.querySelector(".menu-lateral");
-    const navBar = document.querySelector(".nav-bar");
-    const busca = document.querySelector(".busca-Treino");
+document.addEventListener('DOMContentLoaded', () => {
 
-    if (!botaoMenu || !menuPrincipal || !menuLateral || !navBar) {
-        return;
-    }
+    const btnHamburguer = document.querySelector('#btnHamburguer');
+    const painelMenu = document.querySelector('#painelMenu');
 
-    // Guarda as posições originais dos elementos
-    const referenciaMenu = menuPrincipal.nextSibling;
-    const referenciaBusca = busca ? busca.nextSibling : null;
+    const mobile = window.matchMedia('(max-width: 900px)');
 
-    const telaMobile = window.matchMedia("(max-width: 900px)");
+    if (!btnHamburguer || !painelMenu) return;
 
     function abrirMenu() {
-        menuLateral.classList.add("menu-aberto");
-        botaoMenu.classList.add("ativo");
+        painelMenu.classList.add('menu-aberto');
 
-        botaoMenu.setAttribute("aria-expanded", "true");
-        botaoMenu.setAttribute("aria-label", "Fechar menu");
+        painelMenu.inert = false;
+        painelMenu.setAttribute('aria-hidden', 'false');
 
-        const icone = botaoMenu.querySelector("i");
+        btnHamburguer.setAttribute('aria-expanded', 'true');
+        btnHamburguer.setAttribute('aria-label', 'Fechar menu');
 
-        if (icone) {
-            icone.classList.replace("bx-menu", "bx-x");
-        }
+        btnHamburguer.innerHTML = "<i class='bx bx-x'></i>";
     }
 
     function fecharMenu() {
-        menuLateral.classList.remove("menu-aberto");
-        botaoMenu.classList.remove("ativo");
+        painelMenu.classList.remove('menu-aberto');
 
-        botaoMenu.setAttribute("aria-expanded", "false");
-        botaoMenu.setAttribute("aria-label", "Abrir menu");
+        painelMenu.inert = mobile.matches;
+        painelMenu.setAttribute(
+            'aria-hidden',
+            mobile.matches ? 'true' : 'false'
+        );
 
-        const icone = botaoMenu.querySelector("i");
+        btnHamburguer.setAttribute('aria-expanded', 'false');
+        btnHamburguer.setAttribute('aria-label', 'Abrir menu');
 
-        if (icone) {
-            icone.classList.replace("bx-x", "bx-menu");
-        }
+        btnHamburguer.innerHTML = "<i class='bx bx-menu'></i>";
     }
 
-    function adaptarMenu() {
-        if (telaMobile.matches) {
-            // Coloca o menu superior dentro do menu lateral
-            menuLateral.insertBefore(
-                menuPrincipal,
-                menuLateral.firstChild
-            );
-
-            // Coloca a busca dentro do menu lateral
-            if (busca) {
-                menuLateral.appendChild(busca);
-            }
-
-        } else {
-            // Devolve os elementos às posições originais
-            navBar.insertBefore(menuPrincipal, referenciaMenu);
-
-            if (busca) {
-                navBar.insertBefore(busca, referenciaBusca);
-            }
-
+    function atualizarMenu() {
+        if (mobile.matches) {
             fecharMenu();
+        } else {
+            painelMenu.classList.remove('menu-aberto');
+            painelMenu.inert = false;
+            painelMenu.setAttribute('aria-hidden', 'false');
+
+            btnHamburguer.setAttribute('aria-expanded', 'false');
+            btnHamburguer.setAttribute('aria-label', 'Abrir menu');
+
+            btnHamburguer.innerHTML = "<i class='bx bx-menu'></i>";
         }
     }
 
-    botaoMenu.addEventListener("click", () => {
-        if (menuLateral.classList.contains("menu-aberto")) {
+    btnHamburguer.addEventListener('click', () => {
+        const menuAberto = painelMenu.classList.contains('menu-aberto');
+
+        if (menuAberto) {
             fecharMenu();
         } else {
             abrirMenu();
         }
     });
 
-    // Fecha o menu ao clicar em um link de navegação
-    menuLateral.querySelectorAll("a[href]").forEach(link => {
-        link.addEventListener("click", () => {
+    // Fecha ao clicar fora do painel
+    document.addEventListener('click', (event) => {
+        if (!mobile.matches) return;
+
+        const clicouNoPainel = painelMenu.contains(event.target);
+        const clicouNoBotao = btnHamburguer.contains(event.target);
+
+        if (!clicouNoPainel && !clicouNoBotao) {
+            fecharMenu();
+        }
+    });
+
+    // Fecha ao pressionar ESC
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && mobile.matches) {
+            fecharMenu();
+        }
+    });
+
+    // Fecha ao selecionar um link de navegação
+    painelMenu.querySelectorAll('a[href]').forEach((link) => {
+        link.addEventListener('click', () => {
             if (
-                telaMobile.matches &&
-                link.getAttribute("href") !== "#"
+                mobile.matches &&
+                link.getAttribute('href') !== '#'
             ) {
                 fecharMenu();
             }
         });
     });
 
-    // Fecha ao clicar fora do menu
-    document.addEventListener("click", event => {
-        if (
-            telaMobile.matches &&
-            menuLateral.classList.contains("menu-aberto") &&
-            !menuLateral.contains(event.target) &&
-            !botaoMenu.contains(event.target)
-        ) {
-            fecharMenu();
-        }
-    });
+    // Atualiza o comportamento ao mudar o tamanho da tela
+    mobile.addEventListener('change', atualizarMenu);
 
-    // Adapta o menu quando a largura da tela muda
-    telaMobile.addEventListener("change", adaptarMenu);
-
-    adaptarMenu();
+    atualizarMenu();
 });

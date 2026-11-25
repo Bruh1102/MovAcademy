@@ -1,93 +1,145 @@
 
-const comprarProduto = document.querySelectorAll('.comprar-produto');
-const iconeX = document.querySelectorAll('.icone-x i');
-const botaoComprar = document.querySelectorAll('.continuar-but button');
+document.addEventListener('DOMContentLoaded', () => {
 
-// =====================================
-// ABRIR MODAL DE COMPRA
-// =====================================
+    // =====================================
+    // SELETORES
+    // =====================================
 
-comprarProduto.forEach(botao => {
+    const comprarProduto = document.querySelectorAll('.comprar-produto');
+    const iconeX = document.querySelectorAll('.icone-x i');
+    const botaoContinuar = document.querySelectorAll('.continuar-but button');
+    const botaoCarrinho = document.querySelectorAll('.carrinho-but button');
 
-    botao.addEventListener('click', () => {
+    // =====================================
+    // FUNÇÃO PARA FECHAR OS MODAIS
+    // =====================================
 
-        // Localiza o card de compra dentro do produto clicado
-        const produto = botao.closest('.produto');
-        const card = produto.querySelector('.card-compra');
+    function fecharModais() {
 
-        // Fecha outros modais abertos
         document.querySelectorAll('.card-compra.ativo').forEach(modal => {
             modal.classList.remove('ativo');
         });
 
-        // Abre o modal correspondente
-        card.classList.add('ativo');
+    }
+
+    // =====================================
+    // ABRIR MODAL DE COMPRA
+    // =====================================
+
+    comprarProduto.forEach(botao => {
+
+        botao.addEventListener('click', event => {
+
+            event.stopPropagation();
+
+            // Localiza o produto
+            const produto = botao.closest('.produto');
+
+            if (!produto) return;
+
+            // Localiza o modal correspondente
+            const card = produto.querySelector('.card-compra');
+
+            if (!card) return;
+
+            // Fecha os outros modais
+            fecharModais();
+
+            // Abre o modal selecionado
+            card.classList.add('ativo');
+
+        });
 
     });
 
-});
+    // =====================================
+    // FECHAR MODAL PELO BOTÃO X
+    // =====================================
 
+    iconeX.forEach(icone => {
 
-// =====================================
-// FECHAR MODAL PELO X
-// =====================================
+        icone.addEventListener('click', event => {
 
-iconeX.forEach(icone => {
+            event.stopPropagation();
 
-    icone.addEventListener('click', () => {
+            const card = icone.closest('.card-compra');
 
-        // Encontra o card de compra correspondente
-        const card = icone.closest('.card-compra');
+            if (card) {
+                card.classList.remove('ativo');
+            }
 
-        if (card) {
-            card.classList.remove('ativo');
-        }
-
-    });
-
-});
-
-
-// =====================================
-// CONTINUAR COMPRANDO
-// =====================================
-
-botaoComprar.forEach(botao => {
-
-    botao.addEventListener('click', () => {
-
-        const card = botao.closest('.card-compra');
-
-        if (card) {
-            card.classList.remove('ativo');
-        }
-
-        alert('Compra realizada com sucesso! Agradecemos pela preferência.');
+        });
 
     });
 
-});
+    // =====================================
+    // CONTINUAR COMPRANDO
+    // =====================================
 
+    botaoContinuar.forEach(botao => {
 
-// =====================================
-// FECHAR AO CLICAR FORA DO MODAL
-// =====================================
+        botao.addEventListener('click', event => {
 
-document.addEventListener('click', event => {
+            event.stopPropagation();
 
-    document.querySelectorAll('.card-compra.ativo').forEach(card => {
+            const card = botao.closest('.card-compra');
 
-        // Não fecha se clicar dentro do modal
-        if (card.contains(event.target)) {
+            if (card) {
+                card.classList.remove('ativo');
+            }
+
+        });
+
+    });
+
+    // =====================================
+    // ADICIONAR AO CARRINHO
+    // =====================================
+
+    botaoCarrinho.forEach(botao => {
+
+        botao.addEventListener('click', event => {
+
+            event.stopPropagation();
+
+            const card = botao.closest('.card-compra');
+
+            if (card) {
+                card.classList.remove('ativo');
+            }
+
+            alert('Produto adicionado ao carrinho!');
+
+        });
+
+    });
+
+    // =====================================
+    // FECHAR AO CLICAR FORA DO MODAL
+    // =====================================
+
+    document.addEventListener('click', event => {
+
+        const clicouDentroDoModal = event.target.closest('.card-compra');
+        const clicouNoBotaoComprar = event.target.closest('.comprar-produto');
+
+        if (clicouDentroDoModal || clicouNoBotaoComprar) {
             return;
         }
 
-        // Não fecha se clicar no botão comprar
-        if (event.target.closest('.comprar-produto')) {
-            return;
-        }
+        fecharModais();
 
-        card.classList.remove('ativo');
+    });
+
+    // =====================================
+    // FECHAR MODAL COM A TECLA ESC
+    // =====================================
+
+    document.addEventListener('keydown', event => {
+
+        if (event.key === 'Escape') {
+            fecharModais();
+        }
 
     });
 

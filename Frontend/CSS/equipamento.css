@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&display=swap');
 
@@ -12,6 +13,9 @@ CONFIGURAÇÕES GERAIS
     --amarelo-neon: #E6FF00;
     --branco: #FFFFFF;
     --cinza: #999999;
+
+    /* ALTURA DO CABEÇALHO */
+    --altura-header-equipamento: 120px;
 }
 
 * {
@@ -188,18 +192,28 @@ BOTÃO MENU HAMBÚRGUER
 }
 
 /* =====================================================
+PAINEL UNIFICADO DO MENU MOBILE
+===================================================== */
+
+/* No desktop, os elementos continuam separados no cabeçalho. */
+
+.painel-menu-mobile {
+    display: contents;
+}
+
+/* =====================================================
 MENU LATERAL
 ===================================================== */
 
 .menu-lateral {
     position: fixed;
-    top: 0;
+    top: var(--altura-header-equipamento);
     left: 0;
     z-index: 999;
-    padding: 10rem 4rem;
+    width: 22rem;
+    height: calc(100dvh - var(--altura-header-equipamento));
+    padding: 2rem 3rem;
     background-color: #000;
-    height: 100vh;
-    height: 100dvh;
     border-right: 1px solid #333;
     overflow-y: auto;
     overflow-x: hidden;
@@ -545,28 +559,26 @@ GRID DE PRODUTOS
 }
 
 /* =====================================================
-MODAL DE COMPRA (ESTILO LOJA - CENTRALIZADO E COMPACTO NO CARD)
+MODAL DE COMPRA
+CENTRALIZADO NA TELA INTEIRA
 ===================================================== */
 
 .card-compra {
-    width: calc(100% - 16px);
-    max-width: 335px;
-    height: auto;
-    max-height: calc(100% - 16px);
-    overflow-y: auto;
-
-    border: 1px solid #E6FF00;
-    padding: 12px;
-    border-radius: 10px;
-
-    position: absolute;
+    display: none;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
-    z-index: 20;
+    width: min(380px, calc(100vw - 30px));
+    max-height: 85vh;
+    max-height: 85dvh;
+    overflow-y: auto;
+    padding: 18px;
+    border: 1px solid #E6FF00;
+    border-radius: 12px;
     background-color: #2b2a2a;
-    display: none;
+    box-shadow: 0 12px 45px rgba(0, 0, 0, 0.75);
+    z-index: 10020;
 }
 
 .card-compra.ativo {
@@ -576,29 +588,41 @@ MODAL DE COMPRA (ESTILO LOJA - CENTRALIZADO E COMPACTO NO CARD)
 .nome-Adicionado {
     color: #fff;
     text-align: left;
-    margin-bottom: 12px;
-    padding-right: 28px;
-    font-size: 15px;
+    margin-bottom: 14px;
+    padding-right: 30px;
+    font-size: 16px;
     font-weight: 700;
-    line-height: 1.25;
+    line-height: 1.3;
+}
+
+.icone-x {
+    position: absolute;
+    top: 10px;
+    right: 10px;
 }
 
 .icone-x i {
-    position: absolute;
-    top: 8px;
-    right: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: #ccc;
-    font-size: 18px;
+    font-size: 21px;
     border: 1px solid #D6F90B;
     border-radius: 50%;
     cursor: pointer;
-    padding: 2px;
+    padding: 3px;
+    transition: 0.3s ease;
+}
+
+.icone-x i:hover {
+    color: #E6FF00;
+    transform: scale(1.08);
 }
 
 .linha-prod {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
 }
 
 .imagem-prod {
@@ -606,11 +630,11 @@ MODAL DE COMPRA (ESTILO LOJA - CENTRALIZADO E COMPACTO NO CARD)
 }
 
 .imagem-prod img {
-    width: 66px;
-    height: 76px;
+    width: 75px;
+    height: 80px;
     object-fit: contain;
     background-color: #fff;
-    padding: 4px;
+    padding: 5px;
     border-radius: 8px;
 }
 
@@ -621,32 +645,42 @@ MODAL DE COMPRA (ESTILO LOJA - CENTRALIZADO E COMPACTO NO CARD)
 
 .nome-prod {
     color: #fff;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 600;
     text-align: left;
-    line-height: 1.25;
+    line-height: 1.3;
 }
 
 .quantia {
     color: #ccc;
     font-size: 12px;
-    line-height: 1.35;
+    line-height: 1.4;
+}
+
+.card-compra .preco-produto {
+    color: #fff;
+    font-size: 14px;
+    margin-top: 3px;
 }
 
 .continuar-but button {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 14px;
+    margin-top: 16px;
     background-color: #D6F90B;
     color: #000;
-    padding: 9px 8px;
+    padding: 10px;
     border-radius: 8px;
-    border: none;
     width: 100%;
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 700;
     cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.continuar-but button:hover {
+    background-color: #c5e600;
 }
 
 .carrinho-but button {
@@ -656,12 +690,16 @@ MODAL DE COMPRA (ESTILO LOJA - CENTRALIZADO E COMPACTO NO CARD)
     color: #A3F000;
     background-color: transparent;
     font-weight: 600;
-    font-size: 12px;
+    font-size: 13px;
     margin-top: 10px;
-    padding: 4px;
+    padding: 5px;
     cursor: pointer;
-    border: none;
     width: 100%;
+    transition: 0.3s ease;
+}
+
+.carrinho-but button:hover {
+    color: #fff;
 }
 
 /* =====================================================
@@ -710,8 +748,8 @@ BANNER DE EVOLUÇÃO
 .equipe-move {
     color: #E6FF00;
     font-weight: 600;
-    font-size: 20px;
-    margin-bottom: 10px;
+    font-size: 18px;
+    margin-bottom: 8px;
     text-transform: uppercase;
 }
 
@@ -719,7 +757,8 @@ BANNER DE EVOLUÇÃO
     color: #fff;
     font-weight: 800;
     text-transform: uppercase;
-    font-size: 40px;
+    font-size: 36px;
+    line-height: 1.1;
     margin: 0;
 }
 
@@ -750,6 +789,7 @@ BANNER DE EVOLUÇÃO
     background: transparent;
     text-transform: uppercase;
     transition: 0.5s ease;
+    font-size: 13px;
 }
 
 .conferir:hover .conferir-equipamento a {
@@ -937,7 +977,7 @@ NOTEBOOKS
     }
 
     .menu-lateral {
-        padding: 9rem 2rem;
+        padding: 2rem 2rem;
     }
 
     .content-principal {
@@ -1008,7 +1048,7 @@ TABLETS E IPADS
 
     .menu-lateral {
         width: 210px;
-        padding: 8rem 12px 20px;
+        padding: 2rem 12px 20px;
         overflow-y: auto;
     }
 
@@ -1077,8 +1117,12 @@ TABLETS E IPADS
         width: 100%;
     }
 
+    .equipe-move {
+        font-size: 15px;
+    }
+
     .titulo-evolua {
-        font-size: 32px;
+        font-size: 30px;
     }
 }
 
@@ -1107,7 +1151,6 @@ CELULARES GRANDES E TELAS ATÉ 900PX
         margin-left: auto;
     }
 
-    /* Navegação superior */
     .menu-principal {
         display: flex;
         flex-direction: column;
@@ -1132,79 +1175,8 @@ CELULARES GRANDES E TELAS ATÉ 900PX
         display: none;
     }
 
-    /* MENU LATERAL EM PAINEL À DIREITA */
-    .menu-lateral {
-        position: fixed;
-        top: 80px;
-        right: 30px;
-        left: auto;
-        z-index: 10000;
+    /* CONTEÚDO PRINCIPAL */
 
-        width: min(320px, calc(100vw - 30px));
-        height: calc(100dvh - 100px);
-
-        padding: 20px 15px 30px;
-
-        background-color: #111;
-        border: 1px solid #39363B;
-        border-radius: 12px;
-
-        overflow-y: auto;
-        overflow-x: hidden;
-
-        transform: translateY(-10px);
-        transition: opacity 0.3s ease,
-                    transform 0.3s ease,
-                    visibility 0.3s ease;
-
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
-
-        box-shadow: 0 10px 35px rgba(0, 0, 0, 0.7);
-    }
-
-    .menu-lateral.menu-aberto {
-        transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
-        pointer-events: auto;
-    }
-
-    .menu-lateral::-webkit-scrollbar {
-        width: 7px;
-    }
-
-    .menu-lateral::-webkit-scrollbar-thumb {
-        background-color: #777;
-        border-radius: 10px;
-    }
-
-    .menu-lateral::-webkit-scrollbar-track {
-        background-color: #222;
-    }
-
-    .lista-lateral a,
-    .lista-lateral1 a {
-        font-size: 16px;
-        padding: 11px 15px;
-    }
-
-    .premium-lojamove {
-        max-width: 100%;
-    }
-
-    .busca-Treino {
-        width: 100%;
-        margin-top: 15px;
-    }
-
-    .busca-Treino input {
-        width: 100%;
-        padding: 13px 45px 13px 15px;
-    }
-
-    /* Conteúdo principal */
     .content-principal {
         margin: 105px 20px 0;
         width: auto;
@@ -1234,7 +1206,8 @@ CELULARES GRANDES E TELAS ATÉ 900PX
         font-size: 12px;
     }
 
-    /* Benefícios */
+    /* BENEFÍCIOS */
+
     .info-loja2 {
         width: 100%;
         max-width: 100%;
@@ -1251,7 +1224,8 @@ CELULARES GRANDES E TELAS ATÉ 900PX
         justify-content: flex-start;
     }
 
-    /* Produtos */
+    /* PRODUTOS */
+
     .equipamento-card {
         margin: 30px 0;
     }
@@ -1296,25 +1270,31 @@ CELULARES GRANDES E TELAS ATÉ 900PX
         font-size: 14px;
     }
 
-    /* Banner */
+    /* BANNER */
+
     .card-evolucao {
         width: 100%;
-        height: 300px;
+        height: 280px;
     }
 
     .card-detalhe {
         width: 90%;
     }
 
-    .titulo-evolua {
-        font-size: 28px;
-    }
-
     .equipe-move {
-        font-size: 15px;
+        font-size: 14px;
     }
 
-    /* Rodapé */
+    .titulo-evolua {
+        font-size: 27px;
+    }
+
+    .conferir-equipamento a {
+        font-size: 12px;
+    }
+
+    /* RODAPÉ */
+
     .footer-box {
         margin-top: 50px;
         margin-left: 0;
@@ -1338,13 +1318,6 @@ CELULARES MÉDIOS
 
     .menu-hamburguer {
         font-size: 32px;
-    }
-
-    .menu-lateral {
-        top: 72px;
-        right: 12px;
-        width: min(300px, calc(100vw - 24px));
-        height: calc(100dvh - 85px);
     }
 
     .content-principal {
@@ -1384,14 +1357,15 @@ CELULARES MÉDIOS
     }
 
     .nossos-Itens h1 {
-        font-size: 23px;
+        font-size: 21px;
     }
 
     .barra-verde {
         max-width: 100%;
     }
 
-    /* Benefícios */
+    /* BENEFÍCIOS */
+
     .info-loja2 {
         gap: 15px 5px;
         padding: 15px 5px;
@@ -1415,7 +1389,8 @@ CELULARES MÉDIOS
         font-weight: 400;
     }
 
-    /* Produtos */
+    /* PRODUTOS */
+
     .card-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 10px;
@@ -1457,60 +1432,66 @@ CELULARES MÉDIOS
         gap: 4px;
     }
 
-    /* Modal */
+    /* MODAL */
+
     .card-compra {
-        width: calc(100% - 10px);
-        max-width: 100%;
-        height: auto;
-        max-height: calc(100% - 10px);
-        padding: 9px;
-        z-index: 20;
+        width: min(330px, calc(100vw - 30px));
+        max-height: 85dvh;
+        padding: 14px;
     }
 
     .nome-Adicionado {
-        font-size: 12px;
-        margin-bottom: 8px;
-        padding-right: 22px;
+        font-size: 14px;
+        margin-bottom: 10px;
+        padding-right: 25px;
+    }
+
+    .icone-x {
+        top: 8px;
+        right: 8px;
     }
 
     .icone-x i {
-        font-size: 16px;
-        top: 6px;
-        right: 6px;
+        font-size: 18px;
     }
 
     .linha-prod {
-        gap: 6px;
+        gap: 9px;
     }
 
     .imagem-prod img {
-        width: 48px;
-        height: 48px;
-        padding: 3px;
+        width: 60px;
+        height: 60px;
+        padding: 4px;
     }
 
     .nome-prod {
-        font-size: 11px;
+        font-size: 12px;
     }
 
     .quantia {
-        font-size: 10px;
+        font-size: 11px;
+    }
+
+    .card-compra .preco-produto {
+        font-size: 12px;
     }
 
     .continuar-but button {
-        font-size: 10px;
-        padding: 7px 4px;
-        margin-top: 9px;
+        font-size: 11px;
+        padding: 8px;
+        margin-top: 11px;
     }
 
     .carrinho-but button {
-        font-size: 10px;
-        margin-top: 6px;
+        font-size: 11px;
+        margin-top: 7px;
     }
 
-    /* Banner */
+    /* BANNER */
+
     .card-evolucao {
-        height: 280px;
+        height: 250px;
         margin: 35px auto;
     }
 
@@ -1518,26 +1499,28 @@ CELULARES MÉDIOS
         width: 85%;
         align-items: flex-start;
         flex-direction: column;
-        gap: 20px;
+        gap: 15px;
     }
 
     .equipe-move {
-        font-size: 12px;
+        font-size: 11px;
+        margin-bottom: 7px;
     }
 
     .titulo-evolua {
-        font-size: 25px;
+        font-size: 23px;
     }
 
     .conferir {
-        padding: 10px;
+        padding: 9px 12px;
     }
 
     .conferir-equipamento a {
-        font-size: 11px;
+        font-size: 10px;
     }
 
-    /* Rodapé */
+    /* RODAPÉ */
+
     .footer-box {
         padding: 0 12px;
     }
@@ -1555,7 +1538,7 @@ CELULARES MÉDIOS
 CELULARES PEQUENOS
 ===================================================== */
 
-@media (max-width: 398px) {
+@media (max-width: 399px) {
 
     .header-box .logo-img {
         width: 55px;
@@ -1566,16 +1549,8 @@ CELULARES PEQUENOS
         font-size: 29px;
     }
 
-    .menu-lateral {
-        top: 65px;
-        right: 12px;
-        width: min(280px, calc(100vw - 24px));
-        height: calc(100dvh - 75px);
-    }
-
     .content-principal {
-        margin-left: 8px;
-        margin-right: 8px;
+        margin: 85px 8px 0;
     }
 
     .equipamento-image img {
@@ -1596,14 +1571,37 @@ CELULARES PEQUENOS
         margin-bottom: 5px;
         margin-top: 0;
     }
-     
-    .nossos-Itens{
-        font-size: 8px;
+
+    .garanta-equipa {
+        font-size: 9px;
+        padding: 7px;
+        max-width: 145px;
     }
 
-    .barra-verde{
+    .nossos-equipa {
+        gap: 8px;
+    }
+
+    .nossos-Itens h1 {
+        font-size: 17px;
+    }
+
+    .barra-verde {
         width: 60px;
     }
+
+    /* BENEFÍCIOS */
+
+    .info-loja2 {
+        gap: 12px 4px;
+        padding: 12px 5px;
+    }
+
+    .entregar {
+        width: 48%;
+        gap: 5px;
+    }
+
     .entrega-local {
         font-size: 10px;
     }
@@ -1615,6 +1613,8 @@ CELULARES PEQUENOS
     .icone-entrega i {
         font-size: 25px;
     }
+
+    /* PRODUTOS */
 
     .card-grid {
         gap: 8px;
@@ -1629,8 +1629,16 @@ CELULARES PEQUENOS
         height: 125px;
     }
 
+    .card-produto {
+        padding: 0 4px;
+    }
+
     .nome-produto {
         font-size: 12px;
+    }
+
+    .cor-produto {
+        font-size: 10px;
     }
 
     .preco-produto {
@@ -1639,54 +1647,102 @@ CELULARES PEQUENOS
 
     .comprar-produto {
         font-size: 10px;
+        padding: 7px 4px;
+        gap: 3px;
     }
 
-    .titulo-evolua {
-        font-size: 22px;
+    /* MODAL */
+
+    .card-compra {
+        width: calc(100vw - 28px);
+        max-width: 340px;
+        max-height: 85dvh;
+        padding: 13px;
     }
 
-    .card-evolucao {
-        height: 250px;
+    .nome-Adicionado {
+        font-size: 13px;
+        margin-bottom: 9px;
     }
 
-     .card-compra{
-        width: 150px;
-        height: 150px;
+    .icone-x {
+        top: 7px;
+        right: 7px;
     }
 
-    .imagem-prod img{
-        width: 50px;
-        height: 50px;
-    }
-    .nome-Adicionado{
-        font-size: 8px;
+    .icone-x i {
+        font-size: 17px;
     }
 
-    .nome-prod{
-        font-size: 8px;
+    .linha-prod {
+        gap: 8px;
     }
 
-    .icone-x i{
+    .imagem-prod img {
+        width: 55px;
+        height: 55px;
+    }
+
+    .nome-prod {
+        font-size: 11px;
+    }
+
+    .quantia {
         font-size: 10px;
     }
 
-    .quantia{
-        font-size: 8px;
+    .card-compra .preco-produto {
+        font-size: 11px;
     }
 
-    .preco-produto{
-        font-size: 8px;
+    .continuar-but button {
+        font-size: 10px;
+        padding: 7px;
+        margin-top: 9px;
     }
 
-    .continuar-but button{
-        font-size: 8px;
-        padding: 5px;
-        margin-bottom: 0;
+    .carrinho-but button {
+        font-size: 10px;
+        margin-top: 6px;
     }
 
-    .carrinho-but button{
-         font-size: 8px;
-         margin-top: 0;
+    /* BANNER */
+
+    .card-evolucao {
+        height: 220px;
+        margin: 30px auto;
+    }
+
+    .card-detalhe {
+        width: 88%;
+        gap: 13px;
+    }
+
+    .equipe-move {
+        font-size: 10px;
+        margin-bottom: 6px;
+    }
+
+    .titulo-evolua {
+        font-size: 20px;
+    }
+
+    .conferir {
+        padding: 8px 10px;
+    }
+
+    .conferir-equipamento a {
+        font-size: 9px;
+    }
+
+    /* RODAPÉ */
+
+    .direitos {
+        font-size: 10px;
+    }
+
+    .politica a {
+        font-size: 12px;
     }
 }
 
@@ -1724,7 +1780,21 @@ CELULARES MUITO ESTREITOS
         width: 100%;
     }
 
-   
+    .card-compra {
+        width: calc(100vw - 24px);
+    }
+
+    .equipe-move {
+        font-size: 9px;
+    }
+
+    .titulo-evolua {
+        font-size: 18px;
+    }
+
+    .conferir-equipamento a {
+        font-size: 8px;
+    }
 }
 
 /* =====================================================
@@ -1733,16 +1803,445 @@ TELAS HORIZONTAIS COM POUCA ALTURA
 
 @media (max-height: 500px) and (max-width: 900px) {
 
-    .menu-lateral {
-        padding-top: 15px;
+    .content-principal {
+        margin-top: 90px;
     }
 
-    .premium-lojamove {
-        margin-bottom: 20px;
+    .card-compra {
+        max-height: 90dvh;
+    }
+}
+
+/* =====================================================
+AJUSTES FINAIS DO MENU UNIFICADO
+===================================================== */
+
+/* DESKTOP E NOTEBOOKS */
+
+@media (min-width: 901px) {
+
+    .painel-menu-mobile {
+        display: contents;
+    }
+
+    .menu-hamburguer {
+        display: none;
+    }
+
+    .menu-lateral {
+        position: fixed;
+        top: var(--altura-header-equipamento);
+        left: 0;
+        right: auto;
+        width: 22rem;
+        height: calc(100dvh - var(--altura-header-equipamento));
+        padding: 2rem 3rem;
+        border-radius: 0;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: none;
+        box-shadow: none;
+    }
+
+    .content-principal {
+        margin-left: 24rem;
+    }
+}
+
+/* NOTEBOOKS */
+
+@media (min-width: 1201px) and (max-width: 1599px) {
+
+    .menu-lateral {
+        width: 19rem;
+        padding: 2rem;
+    }
+
+    .content-principal {
+        margin-left: 21rem;
+    }
+}
+
+/* TABLETS */
+
+@media (min-width: 769px) and (max-width: 1200px) {
+
+    .menu-lateral {
+        width: 210px;
+        padding: 2rem 12px;
+    }
+
+    .content-principal {
+        margin-left: 225px;
+    }
+}
+
+/* =====================================================
+MENU MOBILE UNIFICADO
+===================================================== */
+
+@media (max-width: 900px) {
+
+    :root {
+        --altura-header-equipamento: 91px;
+    }
+
+    .header-box {
+        padding: 8px 18px;
+    }
+
+    .nav-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 15px;
+    }
+
+    .header-box .logo-img {
+        width: 75px;
+        height: 75px;
+    }
+
+    .menu-hamburguer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: auto;
+        position: relative;
+        z-index: 10002;
+    }
+
+    /* PAINEL QUE REÚNE TODOS OS MENUS */
+
+    .painel-menu-mobile {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+
+        position: fixed;
+        top: 100px;
+        right: 15px;
+        left: auto;
+        z-index: 10000;
+
+        width: min(320px, calc(100vw - 30px));
+        max-height: calc(100dvh - 115px);
+
+        padding: 18px 15px 22px;
+
+        background-color: #111;
+        border: 1px solid #39363B;
+        border-radius: 12px;
+
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+
+        transform: translateY(-10px);
+
+        transition:
+            opacity 0.3s ease,
+            transform 0.3s ease,
+            visibility 0.3s ease;
+
+        box-shadow: 0 10px 35px rgba(0, 0, 0, 0.7);
+    }
+
+    .painel-menu-mobile.menu-aberto {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+
+    .painel-menu-mobile::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .painel-menu-mobile::-webkit-scrollbar-thumb {
+        background-color: #777;
+        border-radius: 10px;
+    }
+
+    .painel-menu-mobile::-webkit-scrollbar-track {
+        background-color: #222;
+    }
+
+    /* MENU PRINCIPAL DENTRO DO PAINEL */
+
+    .painel-menu-mobile .menu-principal {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 5px;
+
+        width: 100%;
+        margin: 0;
+        padding: 0;
+
+        list-style: none;
+    }
+
+    .painel-menu-mobile .lista-menu,
+    .painel-menu-mobile .lista-menu1 {
+        width: 100%;
+    }
+
+    .painel-menu-mobile .lista-menu a,
+    .painel-menu-mobile .lista-menu1 a {
+        display: flex;
+        align-items: center;
+
+        width: 100%;
+        padding: 10px 12px;
+
+        color: #fff;
+        font-size: 15px;
+        text-align: left;
+
+        border-bottom: 1px solid #39363B;
+    }
+
+    .painel-menu-mobile .lista-menu a::after,
+    .painel-menu-mobile .lista-menu1 a::after {
+        display: none;
+    }
+
+    .painel-menu-mobile .lista-menu a:hover,
+    .painel-menu-mobile .lista-menu1 a:hover {
+        color: #E6FF00;
+        background-color: transparent;
+        transform: none;
+    }
+
+    /* BUSCA DENTRO DO PAINEL */
+
+    .painel-menu-mobile .busca-Treino {
+        display: flex;
+        width: 100%;
+        margin: 0;
+    }
+
+    .painel-menu-mobile .busca-Treino input {
+        width: 100%;
+        min-width: 0;
+        padding: 12px 42px 12px 14px;
+        font-size: 13px;
+        cursor: text;
+    }
+
+    .painel-menu-mobile .busca i {
+        right: 14px;
+    }
+
+    /* MENU LATERAL DENTRO DO PAINEL */
+
+    .painel-menu-mobile .menu-lateral {
+        display: block;
+
+        position: relative;
+        top: auto;
+        right: auto;
+        bottom: auto;
+        left: auto;
+
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        max-height: none;
+
+        padding: 5px 0 0;
+
+        background-color: transparent;
+        border: none;
+        border-top: 1px solid #39363B;
+        border-radius: 0;
+
+        overflow: visible;
+
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+
+        transform: none;
+        transition: none;
+
+        box-shadow: none;
+    }
+
+    .painel-menu-mobile .lista-lateral {
+        width: 100%;
+        padding: 5px 0;
+    }
+
+    .painel-menu-mobile .lista-lateral a,
+    .painel-menu-mobile .lista-lateral1 a {
+        display: flex;
+        align-items: center;
+
+        width: 100%;
+        padding: 10px 12px;
+
+        font-size: 15px;
+    }
+
+    .painel-menu-mobile .lista-lateral a:hover {
+        transform: none;
+    }
+
+    /* CARD PREMIUM */
+
+    .painel-menu-mobile .premium-lojamove {
+        width: 100%;
+        max-width: none;
+        margin-top: 15px;
+        padding: 12px;
+    }
+
+    .painel-menu-mobile .loja-video i {
+        font-size: 40px;
+    }
+
+    .painel-menu-mobile .botao-lojas {
+        margin-top: 12px;
+    }
+
+    .painel-menu-mobile .botao-lojas a {
+        justify-content: center;
+        font-size: 15px;
+    }
+
+    /* CONTEÚDO DA PÁGINA */
+
+    .content-principal {
+        margin: 105px 20px 0;
+        width: auto;
+    }
+}
+
+/* =====================================================
+CELULARES MÉDIOS
+===================================================== */
+
+@media (min-width: 400px) and (max-width: 700px) {
+
+    :root {
+        --altura-header-equipamento: 81px;
+    }
+
+    .header-box {
+        padding: 8px 12px;
+    }
+
+    .header-box .logo-img {
+        width: 65px;
+        height: 65px;
+    }
+
+    .menu-hamburguer {
+        font-size: 32px;
+    }
+
+    .painel-menu-mobile {
+        top: 90px;
+        right: 12px;
+        width: min(300px, calc(100vw - 24px));
+        max-height: calc(100dvh - 105px);
+        padding: 15px 12px 20px;
+    }
+
+    .content-principal {
+        margin: 90px 12px 0;
+    }
+}
+
+/* =====================================================
+CELULARES PEQUENOS
+===================================================== */
+
+@media (max-width: 399px) {
+
+    :root {
+        --altura-header-equipamento: 71px;
+    }
+
+    .header-box {
+        padding: 8px 12px;
+    }
+
+    .header-box .logo-img {
+        width: 55px;
+        height: 55px;
+    }
+
+    .menu-hamburguer {
+        font-size: 29px;
+    }
+
+    .painel-menu-mobile {
+        top: 80px;
+        right: 12px;
+        width: min(280px, calc(100vw - 24px));
+        max-height: calc(100dvh - 95px);
+        padding: 13px 10px 18px;
+    }
+
+    .painel-menu-mobile .lista-menu a,
+    .painel-menu-mobile .lista-menu1 a {
+        font-size: 14px;
+        padding: 9px 10px;
+    }
+
+    .painel-menu-mobile .lista-lateral a,
+    .painel-menu-mobile .lista-lateral1 a {
+        font-size: 14px;
+        padding: 9px 10px;
+    }
+
+    .content-principal {
+        margin: 85px 8px 0;
+    }
+}
+
+/* =====================================================
+CELULARES MUITO ESTREITOS
+===================================================== */
+
+@media (max-width: 330px) {
+
+    .painel-menu-mobile {
+        right: 8px;
+        width: calc(100vw - 16px);
+        max-height: calc(100dvh - 90px);
+    }
+}
+
+/* =====================================================
+TELAS HORIZONTAIS COM POUCA ALTURA
+===================================================== */
+
+@media (max-height: 500px) and (max-width: 900px) {
+
+    .painel-menu-mobile {
+        max-height: calc(100dvh - 90px);
+        padding-top: 12px;
+    }
+
+    .painel-menu-mobile .premium-lojamove {
+        margin-bottom: 10px;
     }
 
     .content-principal {
         margin-top: 90px;
+    }
+
+    .card-compra {
+        max-height: 90dvh;
     }
 }
 
