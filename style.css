@@ -319,19 +319,31 @@ img {
 ========================================= */
 
 .treino-Imagem {
+
     position: relative;
+
     width: 100%;
+
     max-width: 100%;
+
     overflow: hidden;
+
 }
 
 .treino-Imagem img {
+
     display: block;
+
     width: 100%;
+
     max-width: 100%;
+
     max-height: 620px;
+
     object-fit: cover;
+
     object-position: center;
+
 }
 
 .motivacao-text {
@@ -911,6 +923,7 @@ img {
     font-size: 18px;
 
     transition: 0.3s ease;
+    text-decoration: none;
 
 }
 
@@ -1951,6 +1964,7 @@ img {
 ========================================= */
 
 @media screen and (min-width: 200px) and (max-width: 550px) {
+
     main {
 
         padding-top: 74px;
@@ -2022,6 +2036,7 @@ img {
 .titulo-motivacao {
 
         width: 230px;
+
         font-size: 26px;
 
     }
@@ -2077,9 +2092,8 @@ img {
     }
 
 .text-modal {
-
+        
         bottom: 8px;
-
         left: 12px;
 
     }
@@ -2089,12 +2103,13 @@ img {
         width: 70px;
 
         height: 70px;
+        
 
     }
 
 .matricula-titulo {
-
-        font-size: 25px;
+         
+        font-size: 2px;
 
     }
 
@@ -2294,7 +2309,7 @@ img {
 
         font-size: 22px;
 
-    }
+    }   
 
 .input-model {
 
@@ -2648,8 +2663,6 @@ img {
 
     }
 
-
-
     /* PAINEL DO MENU */
 
 .menu-lateral,
@@ -2693,326 +2706,707 @@ img {
 }
 
 /* =========================================================
+
    CABEÇALHO — MESMO POSICIONAMENTO DA PÁGINA SOBRE NÓS
+
    Ajuste somente do alinhamento e posição do menu.
+
 ========================================================= */
 
 .header-box {
+
     position: fixed;
+
     top: 0;
+
     left: 0;
+
     z-index: 9999;
+
     width: 100%;
+
     padding: 8px clamp(15px, 3vw, 40px);
+
     background-color: #000;
+
     border-bottom: 1px solid #222;
+
 }
 
 .nav-bar {
+
     display: flex;
+
     align-items: center;
+
     justify-content: space-around;
+
     gap: 25px;
+
     position: relative;
+
     max-width: 1440px;
+
     width: 100%;
+
     margin: auto;
+
 }
 
 .header-box .logo-img {
+
     width: clamp(65px, 7vw, 100px);
+
     height: clamp(65px, 7vw, 100px);
+
     object-fit: contain;
+
     flex-shrink: 0;
+
 }
 
 .menu-lateral,
+
 .menu-lateral1 {
+
     display: flex;
+
     align-items: center;
+
     justify-content: space-around;
+
     gap: clamp(20px, 3vw, 45px);
+
     flex: 1;
+
     min-width: 0;
+
 }
 
 .menu-principal {
+
     position: relative;
+
     list-style: none;
+
     display: flex;
+
     align-items: center;
+
     gap: clamp(15px, 2.5vw, 40px);
+
 }
 
 .lista-menu a,
+
 .lista-menu1 a {
+
     color: #fff;
+
     text-decoration: none;
+
     font-size: 20px;
+
     cursor: pointer;
+
     position: relative;
+
     display: inline-block;
+
     transition: 0.3s ease;
+
     text-transform: uppercase;
+
     white-space: nowrap;
+
 }
 
 .lista-menu a:hover,
+
 .lista-menu1 a:hover {
+
     transform: scale(1.08);
+
 }
 
 .lista-menu a::after,
+
 .lista-menu1 a::after {
+
     content: '';
+
     width: 0;
+
     height: 3px;
+
     background-color: #D6F90B;
+
     position: absolute;
+
     bottom: -8px;
+
     left: 0;
+
     transition: width 0.3s ease;
+
 }
 
 .lista-menu a:hover::after,
+
 .lista-menu1 a:hover::after {
+
     width: 100%;
+
 }
 
 .lista-menu1 a::after {
+
     width: 100%;
+
 }
 
 .busca-Treino {
+
     display: flex;
+
     align-items: center;
+
     position: relative;
+
     width: clamp(180px, 20vw, 260px);
+
     flex-shrink: 1;
+
 }
 
 .busca-Treino input {
+
     width: 100%;
+
     min-width: 0;
+
     padding: 14px 45px 14px 15px;
+
     background-color: #1a1025;
+
     border: 1px solid #8A2BE2;
+
     border-radius: 10px;
+
     color: #fff;
+
     font-family: 'Poppins', sans-serif;
+
     font-size: 14px;
+
 }
 
 .busca-Treino input::placeholder {
+
     color: #afafaf;
+
 }
 
 #textBusca:focus {
+
     outline: none;
+
     box-shadow: 0 0 8px #8A2BE2;
+
 }
 
 .busca i {
+
     color: #A855F7;
+
     font-size: 22px;
+
     display: block;
+
     position: absolute;
+
     right: 14px;
+
     top: 50%;
+
     transform: translateY(-50%);
+
     pointer-events: none;
+
 }
 
 .btn-menu {
+
     display: none;
+
     align-items: center;
+
     justify-content: center;
+
     width: 45px;
+
     height: 45px;
+
     border: 1px solid #8A2BE2;
+
     border-radius: 8px;
+
     background-color: #1a1025;
+
     color: #D6F90B;
+
     font-size: 30px;
+
     cursor: pointer;
+
     flex-shrink: 0;
+
 }
 
 /* Menu hambúrguer — mesmo comportamento da página Sobre Nós */
+
 @media screen and (max-width: 768px) {
-    .header-box {
+
+.header-box {
+
         padding: 8px 20px;
+
     }
 
-    .nav-bar {
+.nav-bar {
+
         justify-content: space-between;
+
         gap: 12px;
+
     }
 
-    .header-box .logo-img {
+.header-box .logo-img {
+
         width: 70px;
+
         height: 70px;
+
     }
 
-    .btn-menu {
+.btn-menu {
+
         display: flex;
+
         font-size: 35px;
+
         z-index: 10002;
+
     }
 
-    .menu-lateral,
-    .menu-lateral1 {
+.menu-lateral,
+
+.menu-lateral1 {
+
         display: block;
+
         position: absolute;
+
         top: calc(100% + 12px);
+
         right: 0;
+
         left: auto;
+
         z-index: 10000;
+
         width: min(280px, 85vw);
+
         height: auto;
+
         max-height: calc(100dvh - 110px);
+
         padding: 15px;
+
         overflow-y: auto;
+
         overflow-x: hidden;
+
         background: #0b0b0b;
+
         border: 1px solid #39363B;
+
         border-radius: 12px;
+
         box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+
         opacity: 0;
+
         visibility: hidden;
+
         pointer-events: none;
+
         transform: translateY(-10px);
+
         transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+
     }
 
-    .menu-lateral.menu-aberto,
-    .menu-lateral1.menu-aberto {
+.menu-lateral.menu-aberto,
+
+.menu-lateral1.menu-aberto {
+
         opacity: 1;
+
         visibility: visible;
+
         pointer-events: auto;
+
         transform: translateY(0);
+
     }
 
-    .menu-principal {
+.menu-principal {
+
         display: flex;
+
         flex-direction: column;
+
         align-items: stretch;
+
         justify-content: flex-start;
+
         gap: 0;
+
         width: 100%;
+
     }
 
-    .menu-principal li {
+.menu-principal li {
+
         width: 100%;
+
     }
 
-    .lista-menu a,
-    .lista-menu1 a {
+.lista-menu a,
+
+.lista-menu1 a {
+
         display: flex;
+
         align-items: center;
+
         width: 100%;
+
         padding: 12px 13px;
+
         font-size: 15px;
+
         border-bottom: 1px solid #252525;
+
         text-transform: uppercase;
+
     }
 
-    .lista-menu a::after,
-    .lista-menu1 a::after {
+.lista-menu a::after,
+
+.lista-menu1 a::after {
+
         display: none;
+
     }
 
-    .lista-menu a:hover,
-    .lista-menu1 a:hover {
+.lista-menu a:hover,
+
+.lista-menu1 a:hover {
+
         color: #D6F90B;
+
         transform: none;
+
         padding-left: 18px;
+
     }
 
-    .menu-lateral .busca-Treino,
-    .menu-lateral1 .busca-Treino {
+.menu-lateral .busca-Treino,
+
+.menu-lateral1 .busca-Treino {
+
         display: flex;
+
         width: 100%;
+
         min-width: 0;
+
         margin-top: 15px;
+
         flex: none;
+
     }
 
-    .menu-lateral .busca-Treino input,
-    .menu-lateral1 .busca-Treino input {
+.menu-lateral .busca-Treino input,
+
+.menu-lateral1 .busca-Treino input {
+
         width: 100%;
+
         padding: 12px 38px 12px 12px;
+
         font-size: 12px;
+
     }
+
 }
 
 @media screen and (max-width: 480px) {
-    .header-box {
+
+.header-box {
+
         padding: 7px 15px;
+
     }
 
-    .header-box .logo-img {
+.header-box .logo-img {
+
         width: 60px;
+
         height: 60px;
+
     }
 
-    .btn-menu {
+.btn-menu {
+
         font-size: 32px;
+
     }
 
-    .menu-lateral,
-    .menu-lateral1 {
+.menu-lateral,
+
+.menu-lateral1 {
+
         width: min(280px, 90vw);
+
         padding: 13px;
+
     }
+
 }
 
 /* Mantém o menu em linha entre 769px e 1024px, como na página de planos */
+
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-    .btn-menu {
+
+.btn-menu {
+
         display: none;
+
     }
 
-    .menu-lateral,
-    .menu-lateral1 {
+.menu-lateral,
+
+.menu-lateral1 {
+
         position: static;
+
         display: flex;
+
         flex-direction: row;
+
         align-items: center;
+
         justify-content: space-around;
+
         width: auto;
+
         max-height: none;
+
         padding: 0;
+
         overflow: visible;
+
         background: transparent;
+
         border: 0;
+
         border-radius: 0;
+
         box-shadow: none;
+
         opacity: 1;
+
         visibility: visible;
+
         pointer-events: auto;
+
         transform: none;
+
     }
 
-    .menu-principal {
+.menu-principal {
+
         flex-direction: row;
+
         align-items: center;
+
         justify-content: flex-start;
+
         width: auto;
+
     }
 
-    .lista-menu a,
-    .lista-menu1 a {
+.lista-menu a,
+
+.lista-menu1 a {
+
         display: inline-block;
+
         width: auto;
+
         padding: 0;
+
         border-bottom: 0;
+
         font-size: 20px;
+
     }
 
-    .menu-lateral .busca-Treino,
-    .menu-lateral1 .busca-Treino {
+.menu-lateral .busca-Treino,
+
+.menu-lateral1 .busca-Treino {
+
         width: clamp(180px, 20vw, 260px);
+
         margin: 0;
+
+    }
+
+}
+
+/* =========================================
+   AJUSTE DO MODAL DE MATRÍCULA PARA CELULARES
+========================================= */
+
+@media screen and (max-width: 600px) {
+    .modal {
+        padding: 8px;
+        align-items: center;
+        overflow-y: auto;
+    }
+
+    .modal-site {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+        max-width: 380px;
+        min-height: auto;
+        max-height: 90dvh;
+        margin: auto;
+        border-radius: 14px;
+        overflow-y: auto;
+    }
+
+    .modal-imagem {
+        width: 100%;
+        height: 105px;
+        min-height: 105px;
+    }
+
+    .modal-imagem img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 40%;
+    }
+
+    .text-modal {
+        position: absolute;
+        top: 0px;
+        left: 12px;
+        max-width: 65%;
+    }
+
+    .modal-logo img {
+        width: 45px;
+        height: 45px;
+        
+        
+    }
+
+    .matricula-titulo {
+        font-size: 19px;
+        margin-top: -4px;
+    }
+
+    .matri-para {
+        font-size: 10px;
+        line-height: 1.3;
+        
+    }
+
+    .input-model {
+        width: 100%;
+        padding: 12px 18px 18px;
+    }
+
+    .cad-model {
+        gap: 5px;
+    }
+
+    .item-model {
+        font-size: 22px;
+    }
+
+    .matri-text {
+        font-size: 17px;
+        padding: 5px;
+    }
+
+    .vaga {
+        font-size: 11px;
+        padding: 10px 0;
+        margin-bottom: 8px;
+    }
+
+    .input-box {
+        padding: 5px 0;
+    }
+
+    .input-box input {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .button-criar {
+        margin-top: 8px;
+    }
+
+    .button-criar button {
+        padding: 11px;
+        font-size: 14px;
+    }
+
+    .fechar-modal {
+        top: 5px;
+        right: 10px;
+        font-size: 28px;
+    }
+}
+
+@media screen and (max-width: 359px) {
+    .modal-site {
+        max-width: 320px;
+    }
+
+    .modal-imagem {
+        height: 90px;
+        min-height: 90px;
+    }
+
+    .input-model {
+        padding: 10px 13px 14px;
+    }
+
+    .matricula-titulo {
+        font-size: 17px;
+    }
+
+    .input-box input {
+        padding: 9px;
+        font-size: 11px;
     }
 }
