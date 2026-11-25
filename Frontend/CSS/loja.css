@@ -1166,7 +1166,6 @@ input:active {
     display: inline-block;
     color: #fff;
     font-size: clamp(13px, 1.2vw, 16px);
-    text-decoration: none;
     transition: 0.3s ease;
 }
 
