@@ -799,7 +799,7 @@ BANNER DE EVOLUÇÃO
     background: transparent;
     text-transform: uppercase;
     transition: 0.5s ease;
-    font-size: 13px;
+    font-size: 15px;
 }
 
 .conferir:hover .conferir-equipamento a {
@@ -815,7 +815,7 @@ RODAPÉ
     text-align: center;
     margin-top: 80px;
     border-top: 1px solid #2b2a2a;
-    margin-left: 0;
+    margin-left: 100px;
     padding: 0 20px;
     box-sizing: border-box;
 }
@@ -1405,7 +1405,7 @@ MENU HAMBÚRGUER
 CELULARES MÉDIOS
 ===================================================== */
 
-@media (min-width: 400px) and (max-width: 700px) {
+@media (min-width: 350px) and (max-width: 700px) {
 
     .header-box {
         height: 81px;
@@ -1608,7 +1608,7 @@ CELULARES MÉDIOS
     }
 
     .titulo-evolua {
-        font-size: 23px;
+        font-size: 18px;
     }
 
     .conferir {
